@@ -3,7 +3,7 @@
         <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
             <div class="flex items-center gap-4">
                 <h1 class="font-bold text-xl text-black ">Content List</h1>
-                <a href="#">
+                <a href="{{ route('addContent') }}">
                     <i class="fa-solid fa-circle-plus mt-1"></i>
                 </a>
             </div>

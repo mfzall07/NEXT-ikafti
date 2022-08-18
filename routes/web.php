@@ -37,5 +37,6 @@ Route::get('/ikafti/agenda/id', [AlumniController::class, 'agendaDetail'])->name
 
 // Super Admin
 Route::get('/ikafti/Dashboard-SA', [SuperAdminController::class, 'Dashboard'])->name('DashboardSA');
+Route::get('/ikafti/add-content', [SuperAdminController::class, 'addContent'])->name('addContent');
 // Admin
 Route::get('/ikafti/Dashboard-Admin', [AdminController::class, 'Dashboard'])->name('DashboardAdmin');
