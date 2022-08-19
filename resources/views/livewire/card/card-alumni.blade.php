@@ -1,5 +1,5 @@
 <div>
-    <div class="grid grid-cols-12 gap-5 mb-10">
+    <div class="flex flex-col laptop:grid grid-cols-12 gap-5 mb-10">
         <div class="col-span-4 relative">
             <input type="text" class="rounded-full w-full border border-gray-400 pl-14" placeholder="Nama Lengkap">
             <i class="fa-solid fa-user-tie absolute left-5 top-1.5 text-xl"></i>
@@ -13,8 +13,8 @@
             <i class="fa-solid fa-location-dot absolute left-5 top-1.5 text-xl"></i>
         </div>
     </div>
-    <div class="grid grid-cols-12 gap-5">
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+    <div class="flex flex-col laptop:flex-row items-center justify-between flex-wrap gap-5">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
@@ -42,7 +42,7 @@
             </div>
             <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
@@ -70,7 +70,7 @@
             </div>
             <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
@@ -98,7 +98,7 @@
             </div>
             <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
@@ -126,7 +126,7 @@
             </div>
             <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
@@ -154,7 +154,7 @@
             </div>
             <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
@@ -182,7 +182,7 @@
             </div>
             <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
@@ -210,7 +210,7 @@
             </div>
             <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[365px]">
+        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
                     <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
