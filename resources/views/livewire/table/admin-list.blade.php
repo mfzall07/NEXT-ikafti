@@ -38,7 +38,7 @@
                         <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
                     </th>
                     <th scope="col" class="py-3 px-6 truncate rounded-tr-lg">
-                        
+                        Action
                     </th>
                 </tr>
             </thead>
@@ -58,22 +58,10 @@
                         <h1 class="font-semibold truncate">+6281245527645</h1>
                     </td>
                     <td class="py-4 px-6">
-                        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="text-gray-400 hover:text-blue-500 text-xl " type="button">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-    
-                        <!-- Dropdown menu -->
-                        <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
-                            <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDividerButton">
-                            <li>
-                                <a href="" class="block py-2 px-4 hover:bg-gray-100">View</a>
-                            </li>
-                            <li>
-                                <a href="" class="block py-2 px-4 hover:bg-gray-100">Edit</a>
-                            </li>
-                            <li>
-                                <button type="button" class="border-0 bg-transparent w-full text-start block py-2 px-4 hover:bg-gray-100">Delete</button>
-                            </li>
+                        <div class="flex items-center gap-4">
+                            <button class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</button>
+                            <button type="button" data-modal-toggle="edit-admin" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
+                            <button type="button" data-modal-toggle="delete" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
                         </div>
                     </td>
                 </tr>

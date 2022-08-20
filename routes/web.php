@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +35,13 @@ Route::get('/ikafti/agenda', [AlumniController::class, 'agenda'])->name('agenda'
 Route::get('/ikafti/agenda/id', [AlumniController::class, 'agendaDetail'])->name('agendaDetail');
 
 
+// Content
+Route::get('/ikafti/add-content', [ContentController::class, 'addContent'])->name('addContent');
+Route::get('/ikafti/edit-content/id', [ContentController::class, 'editContent'])->name('editContent');
+Route::get('/ikafti/informations/id', [ContentController::class, 'informationDetails'])->name('informationDetails');
+Route::get('/ikafti/karirs/id', [ContentController::class, 'karirDetails'])->name('karirDetails');
 
 // Super Admin
 Route::get('/ikafti/Dashboard-SA', [SuperAdminController::class, 'Dashboard'])->name('DashboardSA');
-Route::get('/ikafti/add-content', [SuperAdminController::class, 'addContent'])->name('addContent');
 // Admin
 Route::get('/ikafti/Dashboard-Admin', [AdminController::class, 'Dashboard'])->name('DashboardAdmin');

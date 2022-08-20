@@ -59,8 +59,9 @@
                     </td>
                     <td class="py-4 px-6">
                         <div class="flex items-center gap-4">
-                            <button class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
-                            <button class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
+                            <a href="/ikafti/karir/id" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</a>
+                            <button type="button" data-modal-toggle="edit-job" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
+                            <button type="button" data-modal-toggle="delete" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
                         </div>
                     </td>
                 </tr>

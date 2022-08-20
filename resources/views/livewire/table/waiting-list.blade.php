@@ -46,9 +46,8 @@
                     </td>
                     <td class="py-4 px-6">
                         <div class="flex items-center gap-4">
-                            <button class="px-4 py-1 rounded-full font-semibold text-white bg-yellow-300">Detail</button>
-                            <button class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">Verification</button>
-                            <button class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Decline</button>
+                            <button type="button" data-modal-toggle="accept" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">Accept</button>
+                            <button type="button" data-modal-toggle="delete" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Decline</button>
                         </div>
                     </td>
                 </tr>

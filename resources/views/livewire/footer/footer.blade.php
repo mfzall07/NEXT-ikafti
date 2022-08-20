@@ -1,6 +1,6 @@
 <div class="bg-black shadow px-10 laptop:px-20 py-20">
     <div class="flex flex-col laptop:flex-row gap-5 items-baseline justify-between">
-        <img src="../../assets/images/logo/IkaftiBlack.png" class="w-56 self-center" alt="">
+        <img src="../../assets/images/logo/IkaftiWhite.png" class="w-56 self-center" alt="">
         <div class="flex flex-col gap-5 laptop:self-center">
             <div class="flex items-center gap-4">
                 <i class="fa-solid fa-location-dot text-white"></i>

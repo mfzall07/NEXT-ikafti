@@ -1,6 +1,6 @@
 <!-- Main modal -->
 <div id="add-alumni" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+    <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow">
             <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="add-alumni">
@@ -22,9 +22,15 @@
                         </div>
                         <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Image</h1>
                     </div>
-                    <div>
-                        <label for="fullname" class="block mb-2 text-sm font-medium text-gray-900">Fullname</label>
-                        <input type="text" name="fullname" id="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Fullname" required>
+                    <div class="flex items-center gap-5">
+                        <div class="w-full">
+                            <label for="fullname" class="block mb-2 text-sm font-medium text-gray-900">Fullname</label>
+                            <input type="text" name="fullname" id="fullnames" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Fullname" required>
+                        </div>
+                        <div class="w-full">
+                            <label for="current_company" class="block mb-2 text-sm font-medium text-gray-900">Current Company</label>
+                            <input type="text" name="current_company" id="current_company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Current Company" required>
+                        </div>
                     </div>
                     <div class="flex items-center gap-5">
                         <div class="w-full">
@@ -35,15 +41,13 @@
                             <label for="domicile" class="block mb-2 text-sm font-medium text-gray-900">Domicile</label>
                             <input type="text" name="domicile" id="domicile" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Domicile" required>
                         </div>
-                    </div>
-                    <div class="flex items-center gap-5">
                         <div class="w-full">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required>
+                            <input type="email" name="email" id="emails" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required>
                         </div>
                         <div class="w-full">
                             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                            <input type="text" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
+                            <input type="text" name="phone" id="phones" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
                         </div>
                     </div>
                     <div class="flex items-center gap-5">
@@ -55,14 +59,32 @@
                             <label for="birth_date" class="block mb-2 text-sm font-medium text-gray-900">Birth Date</label>
                             <input datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Birth Date">
                         </div>
+                        <div class="w-full">
+                            <label for="generation" class="block mb-2 text-sm font-medium text-gray-900">Generation</label>
+                            <input type="text" name="generation" id="generation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Generation" required>
+                        </div>
+                        <div class="w-full">
+                            <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900">Program Studi</label>
+                            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <option selected>Program Studi</option>
+                                <option value="">Teknik Industri</option>
+                                <option value="">Teknik Kimia</option>
+                                <option value="">Teknik Pertambangan</option>
+                                <option value="">PII</option>
+                            </select>
+                        </div>
                     </div>
                     <div>
-                        <label for="generation" class="block mb-2 text-sm font-medium text-gray-900">Generation</label>
-                        <input type="text" name="generation" id="generation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Generation" required>
-                    </div>
-                    <div>
-                        <label for="current_company" class="block mb-2 text-sm font-medium text-gray-900">Current Company</label>
-                        <input type="text" name="current_company" id="current_company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Current Company" required>
+                        <div class="flex justify-center items-center w-full">
+                            <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                <div class="flex flex-col justify-center items-center pt-5 pb-6">
+                                    <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload the proof</span> or drag and drop</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG & PDF</p>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div> 
                     </div>
                     <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add Alumni</button>
                 </form>

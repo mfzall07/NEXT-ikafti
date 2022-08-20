@@ -15,7 +15,7 @@
 </head>
 <body>
     <section class="sticky w-full z-20 top-0 border">
-        <livewire:navbar.navbar-admin>
+        <livewire:navbar.navbars>
     </section>
     
     <section class="px-5 laptop:px-20 mt-5">
@@ -37,8 +37,8 @@
     {{-- End::Livewire --}}
 
     {{-- Begin::Javascript --}}
-    <script src="../assets/js/ckeditor/ckeditor.js"></script>
-    <script src="../assets/js/flowbite/dist/flowbite.js"></script>
+    <script src="../../assets/js/ckeditor/ckeditor.js"></script>
+    <script src="../../assets/js/flowbite/dist/flowbite.js"></script>
     <script>
         ClassicEditor
             .create( document.querySelector( '#editor' ) )

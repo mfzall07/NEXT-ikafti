@@ -15,18 +15,22 @@
 </head>
 <body>
     <section class="sticky w-full z-20 top-0 border">
-        <livewire:navbar.navbar-admin>
+        <livewire:navbar.navbars>
     </section>
 
     <section class="px-5 laptop:px-20 pt-5">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 laptop:col-span-6">
-                <livewire:table.waiting-list>
+                <livewire:table.admin-list>
             </div>
             <div class="col-span-12 laptop:col-span-6">
-                <livewire:table.alumni-list>
+                <livewire:table.waiting-list>
             </div>
         </div>
+    </section>
+    
+    <section class="px-5 laptop:px-20 pt-5">
+        <livewire:table.alumni-list>
     </section>
 
     <section class="px-5 laptop:px-20 pt-5">
@@ -41,13 +45,18 @@
     </section>
 
     <section class="pt-10">
-        <livewire:footer.footer>
+        <livewire:footer.footers>
     </section>
 
     {{-- Begin::Modal --}}
     <livewire:modal.add-admin>
     <livewire:modal.add-alumni>
     <livewire:modal.add-job>
+    <livewire:modal.edit-admin>
+    <livewire:modal.edit-alumni>
+    <livewire:modal.edit-job>
+    <livewire:modal.accept>
+    <livewire:modal.delete>
     {{-- End::Modal --}}
 
     {{-- Begin::Livewire --}}
