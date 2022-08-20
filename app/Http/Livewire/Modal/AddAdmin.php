@@ -33,5 +33,9 @@ class AddAdmin extends Component
         ]);
         $this->reset();
         $this->emit('adminStored');
+        $this->dispatchBrowserEvent('alert',[
+            'type'=>'success',
+            'message'=>"Admin added successfully"
+        ]);
     }
 }

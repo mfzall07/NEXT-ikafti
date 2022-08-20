@@ -10,6 +10,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     @vite('resources/css/app.css')
     @livewireStyles
@@ -86,11 +88,26 @@
         window.livewire.on('view-admin', function(){
             $('[modal-view-admin]').trigger('click');
         });
+        window.livewire.on('edit-admin', function(){
+            $('[modal-edit-admin]').trigger('click');
+        });
+        window.livewire.on('adminEdited', function(){
+            $('[modal-edit-admin]').trigger('click');
+        });
         window.livewire.on('delete-admin', function(){
             $('[modal-delete-admin]').trigger('click');
         });
         window.livewire.on('adminDeleted', function(){
             $('[modal-delete-admin]').trigger('click');
+        });
+    </script>
+    <script>
+        window.addEventListener('alert', event => {
+            toastr[event.detail.type](event.detail.message,
+            event.detail.title ?? ''), toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+            }
         });
     </script>
     <script>

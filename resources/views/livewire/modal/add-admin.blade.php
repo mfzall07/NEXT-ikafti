@@ -26,25 +26,30 @@
                         <div>
                             <label for="fullname" class="block mb-2 text-sm font-medium text-gray-900">Fullname</label>
                             <input type="text" wire:model.defer="fullname" name="fullname" id="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Fullname" required>
+                            @error('fullname') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                         <div class="flex items-center gap-5">
                             <div class="w-full">
                                 <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
                                 <input type="text" wire:model.defer="phone" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
+                                @error('phone') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
                                 <input type="email" wire:model.defer="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required>
+                                @error('email') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="flex items-center gap-5">
                             <div class="w-full">
                                 <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
                                 <input type="text" wire:model.defer="username" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Username" required>
+                                @error('username') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
                                 <input type="password" wire:model.defer="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                @error('password') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <button type="submit" wire:click.prevent="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add Admin</button>

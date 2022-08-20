@@ -26,6 +26,10 @@ class Delete extends Component
             $user = User::findOrFail($this->deletedId);
             $user->delete();
             $this->emit('adminDeleted');
+            $this->dispatchBrowserEvent('alert',[
+                'type'=>'success',
+                'message'=>"Admin deleted successfully"
+            ]);
         }
     }
 }
