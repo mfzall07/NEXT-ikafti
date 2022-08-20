@@ -80,6 +80,12 @@
         window.livewire.on('adminStored', function() {
             $('[modal-add-admin]').trigger('click');
         });
+        window.livewire.on('delete-admin', function(){
+            $('[modal-delete-admin]').trigger('click');
+        });
+        window.livewire.on('adminDeleted', function(){
+            $('[modal-delete-admin]').trigger('click');
+        });
     </script>
 </body>
 </html>

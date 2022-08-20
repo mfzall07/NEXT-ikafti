@@ -11,7 +11,8 @@ class AdminList extends Component
     use WithPagination;
     public $search;
     protected $listeners = [
-        'adminStored' => '$refresh'
+        'adminStored' => '$refresh',
+        'adminDeleted' => '$refresh'
     ];
     public function render()
     {
