@@ -49,6 +49,8 @@
     </section>
 
     {{-- Begin::Modal --}}
+    <livewire:modal.view-admin>
+    <livewire:modal.view-alumni>
     <livewire:modal.add-admin>
     <livewire:modal.add-alumni>
     <livewire:modal.add-job>
