@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>IKAFTI</title>
-    
+
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     @vite('resources/css/app.css')
     @livewireStyles
@@ -28,7 +29,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="px-5 laptop:px-20 pt-5">
         <livewire:table.alumni-list>
     </section>
@@ -74,5 +75,13 @@
     <script src="../assets/js/table/alumniList.js"></script>
     <script src="../assets/js/table/contentList.js"></script>
     {{-- End::Javascript --}}
+    <script>
+        window.livewire.on('add-admin', function(){
+            $('[modal-add-admin]').trigger('click');
+        });
+        window.livewire.on('adminStored', function() {
+            $('[modal-add-admin]').trigger('click');
+        });
+    </script>
 </body>
 </html>
