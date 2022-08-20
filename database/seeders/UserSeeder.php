@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
                 'username' => 'super',
                 'email' => 'superadmin@ikafti.com',
                 'password' => Hash::make('12341234'),
+                'phone' => '62891215865841'
             ],
             [
                 'role_id' => 2,
@@ -30,6 +31,7 @@ class UserSeeder extends Seeder
                 'username' => 'admin',
                 'email' => 'admin@ikafti.com',
                 'password' => Hash::make('12341234'),
+                'phone' => '628912156641'
             ],
 
         ];
