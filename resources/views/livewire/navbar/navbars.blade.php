@@ -18,7 +18,7 @@
                     <div class="hidden laptop:block py-4 border-r-2 border-gray-400"></div>
                 </li>
                 <li>
-                    <button type="button" class="block border w-full border-red-500 text-center text-black px-4 py-1 rounded-full mt-5 laptop:mt-0">Logout</button>
+                    <button type="button" wire:click="logout" class="block border w-full border-red-500 text-center text-black px-4 py-1 rounded-full mt-5 laptop:mt-0">Logout</button>
                 </li>
             </ul>
         </div>
