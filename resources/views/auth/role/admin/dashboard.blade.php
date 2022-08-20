@@ -7,6 +7,7 @@
     
     <title>IKAFTI</title>
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
 
     @vite('resources/css/app.css')
@@ -18,7 +19,7 @@
         <livewire:navbar.navbar-admin>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-5">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 laptop:col-span-6">
                 <livewire:table.waiting-list>
@@ -29,7 +30,7 @@
         </div>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-5">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 laptop:col-span-6">
                 <livewire:table.content-list>
@@ -60,6 +61,7 @@
     {{-- End::Livewire --}}
 
     {{-- Begin::Javascript --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../assets/js/flowbite/dist/flowbite.js"></script>
     <script src="../assets/js/flowbite/dist/datepicker.js"></script>
     <script src="../assets/js/uploadImage/index.js"></script>
@@ -67,6 +69,9 @@
     <script src="../assets/js/table/waitingList.js"></script>
     <script src="../assets/js/table/alumniList.js"></script>
     <script src="../assets/js/table/contentList.js"></script>
+    <script>
+        AOS.init();
+    </script>
     {{-- End::Javascript --}}
 </body>
 </html>

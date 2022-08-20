@@ -7,6 +7,7 @@
 
     <title>IKAFTI</title>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -19,7 +20,7 @@
         <livewire:navbar.navbars>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-5">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 laptop:col-span-6">
                 <livewire:table.admin-list>
@@ -30,11 +31,11 @@
         </div>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-5">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-top" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <livewire:table.alumni-list>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-5">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 laptop:col-span-6">
                 <livewire:table.content-list>
@@ -67,6 +68,7 @@
     {{-- End::Livewire --}}
 
     {{-- Begin::Javascript --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../assets/js/flowbite/dist/flowbite.js"></script>
     <script src="../assets/js/flowbite/dist/datepicker.js"></script>
     <script src="../assets/js/uploadImage/index.js"></script>
@@ -74,7 +76,6 @@
     <script src="../assets/js/table/waitingList.js"></script>
     <script src="../assets/js/table/alumniList.js"></script>
     <script src="../assets/js/table/contentList.js"></script>
-    {{-- End::Javascript --}}
     <script>
         window.livewire.on('add-admin', function(){
             $('[modal-add-admin]').trigger('click');
@@ -83,5 +84,9 @@
             $('[modal-add-admin]').trigger('click');
         });
     </script>
+    <script>
+        AOS.init();
+    </script>
+    {{-- End::Javascript --}}
 </body>
 </html>

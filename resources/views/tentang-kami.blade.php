@@ -7,6 +7,7 @@
     
     <title>IKAFTI</title>
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
@@ -20,14 +21,14 @@
         <livewire:navbar.navbar>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-5">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <h1 class="text-4xl font-bold uppercase">About</h1>
         <div class="border-b-2 border-b-black w-full"></div>
     </section>
 
     <section class="px-5 laptop:px-20 pt-5">
         <div class="grid grid-cols-12">
-            <div class="col-span-12 laptop:col-span-8 gap-5 order-2 laptop:order-1">
+            <div class="col-span-12 laptop:col-span-8 gap-5 order-2 laptop:order-1" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
                 <h1 class="text-base laptop:text-2xl font-bold">IKAFTI (Ikatan Alumni Fakultas Teknik Industri)</h1>
                 <p class="text-justify text-sm laptop:text-base">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit numquam quae aspernatur adipisci ab? Ab, dolores! Blanditiis aut labore 
@@ -49,13 +50,13 @@
                     optio magni nemo sequi ducimus. Laborum autem repellat nostrum deserunt?
                 </p>
             </div>
-            <div class="col-span-12 laptop:col-span-4 m-auto order-1 laptop:order-2 py-10 laptop:py-0">
+            <div class="col-span-12 laptop:col-span-4 m-auto order-1 laptop:order-2 py-10 laptop:py-0" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
                 <img src="../assets/images/logo/IkaftiBlack.png" class="w-56 self-center" alt="">
             </div>
         </div>
     </section>
     
-    <section class="px-5 laptop:px-20 pt-5">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
             <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
             <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
@@ -82,6 +83,7 @@
     {{-- Begin::CDN --}}
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     {{-- End::CDN --}}
 
     {{-- Begin::Javascript --}}
@@ -89,6 +91,9 @@
     <script src="../assets/js/flowbite/dist/flowbite.js"></script>
     <script src="../assets/js/flowbite/dist/datepicker.js"></script>
     <script src="../assets/js/carousel/imageSlide.js"></script>
+    <script>
+        AOS.init();
+    </script>
     {{-- End::Javascript --}}
 </body>
 </html>

@@ -7,6 +7,7 @@
     
     <title>IKAFTI</title>
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
 
@@ -44,6 +45,7 @@
     {{-- End::Livewire --}}
 
     {{-- Begin::CDN --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     {{-- End::CDN --}}
 
@@ -51,6 +53,9 @@
     <script src="../assets/js/activatedNav/index.js"></script>
     <script src="../assets/js/flowbite/dist/flowbite.js"></script>
     <script src="../assets/js/carousel/index.js"></script>
+    <script>
+        AOS.init();
+    </script>
     {{-- End::Javascript --}}
 </body>
 </html>

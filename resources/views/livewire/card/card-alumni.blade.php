@@ -1,5 +1,5 @@
 <div>
-    <div class="flex flex-col laptop:grid grid-cols-12 gap-5 mb-10">
+    <div class="flex flex-col laptop:grid grid-cols-12 gap-5 mb-10" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="col-span-4 relative">
             <input type="text" class="rounded-full w-full border border-gray-400 pl-14" placeholder="Nama Lengkap">
             <i class="fa-solid fa-user-tie absolute left-5 top-1.5 text-xl"></i>
@@ -13,7 +13,7 @@
             <i class="fa-solid fa-location-dot absolute left-5 top-1.5 text-xl"></i>
         </div>
     </div>
-    <div class="flex flex-col laptop:flex-row items-center justify-between flex-wrap gap-5">
+    <div class="flex flex-col laptop:flex-row items-center justify-between flex-wrap gap-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
             <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
                 <div class="col-span-4">
