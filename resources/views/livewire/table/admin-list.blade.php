@@ -1,5 +1,6 @@
 <div>
     <button data-modal-toggle="add-admin" modal-add-admin hidden></button>
+    <button data-modal-toggle="view-admin" modal-view-admin hidden></button>
     <button data-modal-toggle="delete" modal-delete-admin hidden></button>
     <div class="relative bg-white border shadow-lg p-5 rounded-xl overflow-hidden">
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
@@ -62,7 +63,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-4">
-                                    <button type="button" data-modal-toggle="view-admin" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</button>
+                                    <button type="button" wire:click="$emit('view-admin', {{ $admin->id }})" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</button>
                                     <button type="button" data-modal-toggle="edit-admin" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
                                     <button type="button" wire:click="$emit('delete-admin', {{ $admin->id }})" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
                                 </div>

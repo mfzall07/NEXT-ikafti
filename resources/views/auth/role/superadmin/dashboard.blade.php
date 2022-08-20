@@ -83,6 +83,9 @@
         window.livewire.on('adminStored', function() {
             $('[modal-add-admin]').trigger('click');
         });
+        window.livewire.on('view-admin', function(){
+            $('[modal-view-admin]').trigger('click');
+        });
         window.livewire.on('delete-admin', function(){
             $('[modal-delete-admin]').trigger('click');
         });
