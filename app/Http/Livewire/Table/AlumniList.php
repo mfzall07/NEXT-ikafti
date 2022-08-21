@@ -12,6 +12,7 @@ class AlumniList extends Component
     public $search;
     protected $listeners = [
         'alumniStored' => '$refresh',
+        'alumniDeleted' => '$refresh',
         'alumniEdited' => '$refresh',
     ];
     public function render()

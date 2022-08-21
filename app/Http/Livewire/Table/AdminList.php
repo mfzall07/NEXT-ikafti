@@ -12,6 +12,7 @@ class AdminList extends Component
     public $search;
     protected $listeners = [
         'adminStored' => '$refresh',
+        'adminEdited' => '$refresh',
         'adminDeleted' => '$refresh'
     ];
     public function render()

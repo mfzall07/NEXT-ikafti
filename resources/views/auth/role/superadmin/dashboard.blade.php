@@ -117,6 +117,12 @@
         window.livewire.on('alumniEdited', function(){
             $('[modal-edit-alumni]').trigger('click');
         });
+        window.livewire.on('delete-alumni', function(){
+            $('[modal-delete-alumni]').trigger('click');
+        });
+        window.livewire.on('alumniDeleted', function(){
+            $('[modal-delete-alumni]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {
