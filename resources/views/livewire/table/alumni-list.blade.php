@@ -1,5 +1,6 @@
 <div>
     <button data-modal-toggle="add-alumni" modal-add-alumni hidden></button>
+    <button data-modal-toggle="view-alumni" modal-view-alumni hidden></button>
     <div class="relative bg-white border shadow-lg p-5 rounded-xl overflow-hidden">
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
             <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
@@ -75,7 +76,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-4">
-                                    <button type="button" data-modal-toggle="view-alumni" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</button>
+                                    <button type="button" wire:click="$emit('view-alumni', {{ $alumni->id }})" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</button>
                                     <button type="button" data-modal-toggle="edit-alumni" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
                                     <button type="button" data-modal-toggle="delete" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
                                 </div>

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('generation');
             $table->string('program_studi');
             $table->string('image')->nullable();
-            $table->string('proff')->nullable();
+            $table->string('proof')->nullable();
             $table->timestamps();
         });
     }

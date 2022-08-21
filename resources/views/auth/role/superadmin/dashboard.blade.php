@@ -108,6 +108,9 @@
         window.livewire.on('alumniStored', function() {
             $('[modal-add-alumni]').trigger('click');
         });
+        window.livewire.on('view-alumni', function(){
+            $('[modal-view-alumni]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {
