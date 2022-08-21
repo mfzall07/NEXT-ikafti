@@ -23,17 +23,20 @@
     </section>
 
     <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-        <div class="grid grid-cols-12 gap-5">
-            <div class="col-span-12 laptop:col-span-3">
+        <div class="flex flex-col items-center laptop:grid grid-flow-col auto-cols-auto gap-5">
+            <div class="w-full">
                 <livewire:card.total-admin>
             </div>
-            <div class="col-span-12 laptop:col-span-3">
+            <div class="w-full">
                 <livewire:card.total-alumni>
             </div>
-            <div class="col-span-12 laptop:col-span-3">
+            <div class="w-full">
                 <livewire:card.total-content>
             </div>
-            <div class="col-span-12 laptop:col-span-3">
+            <div class="w-full">
+                <livewire:card.total-job>
+            </div>
+            <div class="w-full">
                 <livewire:card.waiting-approval>
             </div>
         </div>
