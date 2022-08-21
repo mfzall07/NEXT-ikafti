@@ -13,230 +13,339 @@
             <i class="fa-solid fa-location-dot absolute left-5 top-1.5 text-xl"></i>
         </div>
     </div>
-    <div class="flex flex-col laptop:flex-row items-center justify-between flex-wrap gap-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+    <div class="flex flex-col laptop:grid grid-cols-12 items-center justify-between flex-wrap gap-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
-                </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
-                </div>
-            </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
-                </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
-                </div>
-            </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
-                </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
-                </div>
-            </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
-                </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
-                </div>
-            </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
-                </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
-                </div>
-            </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
-                </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
-                </div>
-            </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
-                </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
-                </div>
-            </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
-        <div class="col-span-3 mx-auto bg-red-600 rounded-3xl shadow-lg border w-[350px] laptop:w-[355px]">
-            <div class="grid grid-cols-12 bg-gradient-to-br from-white to-red-500 rounded-3xl shadow-lg p-5">
-                <div class="col-span-4">
-                    <div style="background-image: url('/../assets/images/profile.jpg')" class="rounded-full h-24 w-24 bg-cover shadow-lg"></div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8 m-auto w-full">
-                    <h1 class="font-bold text-ellipsis text-white">Muhammad Faizal</h1>
-                    <p class="text-gray-200 text-xs font-semibold uppercase">PT. VINPOLLS</p>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <div class="grid grid-cols-12 p-5">
-                <div class="col-span-4">
-                    <h1 class="mb-3 font-bold text-sm text-white">Alamat</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Domisili</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Email</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">No. Telp</h1>
-                    <h1 class="mb-3 font-bold text-sm text-white">Angkatan</h1>
+        </div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+            <div class="h-36 w-36 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-36 w-36 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex items-center">
+                <div class="rounded-lg shadow-xl">
+                    <img src="../../assets/images/profile.jpg" class="w-full h-full rounded-lg  object-cover self-baseline" alt="">
                 </div>
-                <div class="col-span-8">
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Jl. Urip Sumoharjo No.km.5</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">Palu</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">mfzall@gmail.com</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">081245527645</h1>
-                    <h1 class="mb-3 font-semibold text-gray-200 text-sm">2017</h1>
+                <div class="flex flex-col gap-5 px-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <h1 class="font-bold uppercase text-black line-clamp-1 col-span-5">Muh Faizal</h1>
+                        <div class="w-0.5 h-5 bg-gray-400 col-span-1"></div>
+                        <h1 class="font-bold uppercase text-slate-400 line-clamp-1 col-span-6">PT. VIN PROTOCOL</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-map-location-dot"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-house-circle-check"></i>   
+                        <h1 class="text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-envelope"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-square-phone"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-users"></i>  
+                        <h1 class="text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
                 </div>
+                
             </div>
-            <h1 class="py-5 text-center font-bold text-sm text-white">Universitas Muslim Indonesia</h1>
         </div>
     </div>
     <div class="text-xs text-gray-700 bg-white dark:bg-gray-800 dark:text-gray-400 rounded-b-lg px-6 mt-10 flex flex-col laptop:flex-row items-center justify-between gap-4 ">
