@@ -26,15 +26,15 @@
                     <!-- Dropdown menu -->
                     <div id="dropdownAvatar" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                         <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
-                          <div>Super Admin</div>
+                          <div>Admin</div>
                         </div>
                         <ul class="py-1 text-sm text-gray-700" aria-labelledby="profile">
                           <li>
-                            <button type="button" data-modal-toggle="change-password" class="block py-2 px-4 hover:bg-gray-100">Change Password</button>
+                            <button type="button" data-modal-toggle="change-password" class="block py-2 px-4 hover:bg-gray-100 w-full text-left">Change Password</button>
                           </li>
                         </ul>
                         <div class="py-1">
-                          <button type="button" wire:click="logout" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Sign out</button>
+                          <button type="button" wire:click="logout" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Sign out</button>
                         </div>
                     </div>
                 </li>
