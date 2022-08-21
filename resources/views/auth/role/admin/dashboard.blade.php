@@ -62,7 +62,7 @@
     </section>
 
     <section class="pt-10">
-        <livewire:footer.footer>
+        <livewire:footer.footers>
     </section>
 
     {{-- Begin::Modal --}}
