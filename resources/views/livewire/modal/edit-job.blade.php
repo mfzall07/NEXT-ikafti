@@ -30,8 +30,8 @@
                                 @error('company_name') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
-                                <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                                <input type="text" name="phone_number" id="phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
+                                <label for="edit_phone_number" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                                <input type="text" name="edit_phone_number" id="edit_phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
                             </div>
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
@@ -41,8 +41,8 @@
                                 @error('title') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
-                                <label for="job_type" class="block mb-2 text-sm font-medium text-gray-900">Job Type</label>
-                                <select id="job_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <label for="edit_job_type" class="block mb-2 text-sm font-medium text-gray-900">Job Type</label>
+                                <select id="edit_job_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="" selected>Job Type</option>
                                     <option value="Full Time">Full Time</option>
                                     <option value="Part Time">Part Time</option>
@@ -51,12 +51,12 @@
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
-                                <label for="placement" class="block mb-2 text-sm font-medium text-gray-900">Placement</label>
-                                <input type="text" name="placement" id="placement" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Placement" required>
+                                <label for="edit_placement" class="block mb-2 text-sm font-medium text-gray-900">Placement</label>
+                                <input type="text" name="edit_placement" id="edit_placement" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Placement" required>
                             </div>
                             <div class="w-full">
-                                <label for="salary" class="block mb-2 text-sm font-medium text-gray-900">Salary</label>
-                                <input type="text" name="salary" id="salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Salary" required>
+                                <label for="edit_salary" class="block mb-2 text-sm font-medium text-gray-900">Salary</label>
+                                <input type="text" name="edit_salary" id="edit_salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Salary" required>
                             </div>
                         </div>
                         <div>

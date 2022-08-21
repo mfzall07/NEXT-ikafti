@@ -18,7 +18,25 @@
                     <div class="hidden laptop:block py-4 border-r-2 border-gray-400"></div>
                 </li>
                 <li>
-                    <button type="button" wire:click="logout" class="block border w-full border-red-500 text-center text-black px-4 py-1 rounded-full mt-5 laptop:mt-0">Logout</button>
+                    <button id="profile" data-dropdown-toggle="dropdownAvatar" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" type="button">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-8 h-8 rounded-full object-cover" src="../../assets/images/profile.jpg" alt="user photo">
+                    </button>
+                    
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatar" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                        <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
+                          <div>Super Admin</div>
+                        </div>
+                        <ul class="py-1 text-sm text-gray-700" aria-labelledby="profile">
+                          <li>
+                            <button type="button" data-modal-toggle="change-password" class="block py-2 px-4 hover:bg-gray-100">Change Password</button>
+                          </li>
+                        </ul>
+                        <div class="py-1">
+                          <button type="button" wire:click="logout" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Sign out</button>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>

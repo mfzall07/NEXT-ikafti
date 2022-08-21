@@ -17,12 +17,12 @@
     @livewireStyles
 
 </head>
-<body>
+<body class="overflow-x-hidden">
     <section class="sticky w-full z-20 top-0 border">
         <livewire:navbar.navbars>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="flex flex-col items-center laptop:grid grid-flow-col auto-cols-auto gap-5">
             <div class="w-full">
                 <livewire:card.total-admin>
@@ -83,6 +83,7 @@
     <livewire:modal.edit-job>
     <livewire:modal.accept>
     <livewire:modal.delete>
+    <livewire:modal.change-password>
     {{-- End::Modal --}}
 
     {{-- Begin::Livewire --}}
