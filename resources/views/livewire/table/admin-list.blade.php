@@ -80,10 +80,10 @@
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
 
-                                    <button type="button" data-tooltip-target="delete" wire:click="$emit('delete-admin', {{ $admin->id }})" class="w-7 h-7 flex items-center justify-center rounded-xl font-semibold text-white bg-red-500">
+                                    <button type="button" data-tooltip-target="delete_admin" wire:click="$emit('delete-admin', {{ $admin->id }})" class="w-7 h-7 flex items-center justify-center rounded-xl font-semibold text-white bg-red-500">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
-                                    <div id="delete" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                                    <div id="delete_admin" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
                                         Delete
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
