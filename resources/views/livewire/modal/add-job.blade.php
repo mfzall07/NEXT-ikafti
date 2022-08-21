@@ -1,7 +1,7 @@
 <div>
     <!-- Main modal -->
     <div id="add-job" wire:ignore.self tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow">
                 <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="add-job">
@@ -23,15 +23,41 @@
                             </div>
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Company Logo</h1>
                         </div>
-                        <div>
-                            <label for="company_name" class="block mb-2 text-sm font-medium text-gray-900">Company Name</label>
-                            <input type="text" wire:model.defer="company_name" name="company_name" id="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Company Name" required>
-                            @error('company_name') <span class="text-red-500">{{ $message }}</span> @enderror
+                        <div class="flex items-center gap-5">
+                            <div class="w-full">
+                                <label for="company_name" class="block mb-2 text-sm font-medium text-gray-900">Company Name</label>
+                                <input type="text" wire:model.defer="company_name" name="company_name" id="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Company Name" required>
+                                @error('company_name') <span class="text-red-500">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="w-full">
+                                <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                                <input type="text" name="phone_number" id="phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
+                            </div>
                         </div>
-                        <div>
-                            <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title</label>
-                            <input type="text" wire:model.defer="title" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Title" required>
-                            @error('title') <span class="text-red-500">{{ $message }}</span> @enderror
+                        <div class="flex items-center gap-5">
+                            <div class="w-full">
+                                <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Job Position</label>
+                                <input type="text" wire:model.defer="title" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Job Position" required>
+                                @error('title') <span class="text-red-500">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="w-full">
+                                <label for="job_type" class="block mb-2 text-sm font-medium text-gray-900">Job Type</label>
+                                <select id="job_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option value="" selected>Job Type</option>
+                                    <option value="Full Time">Full Time</option>
+                                    <option value="Part Time">Part Time</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <div class="w-full">
+                                <label for="placement" class="block mb-2 text-sm font-medium text-gray-900">Placement</label>
+                                <input type="text" name="placement" id="placement" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Placement" required>
+                            </div>
+                            <div class="w-full">
+                                <label for="salary" class="block mb-2 text-sm font-medium text-gray-900">Salary</label>
+                                <input type="text" name="salary" id="salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Salary" required>
+                            </div>
                         </div>
                         <div>
                             <label for="desc" class="block mb-2 text-sm font-medium text-gray-900">Description</label>

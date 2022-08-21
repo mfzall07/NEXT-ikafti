@@ -24,6 +24,22 @@
 
     <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
+            <div class="col-span-12 laptop:col-span-3">
+                <livewire:card.total-admin>
+            </div>
+            <div class="col-span-12 laptop:col-span-3">
+                <livewire:card.total-alumni>
+            </div>
+            <div class="col-span-12 laptop:col-span-3">
+                <livewire:card.waiting-approval>
+            </div>
+            <div class="col-span-12 laptop:col-span-3">
+            </div>
+        </div>
+    </section>
+
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 laptop:col-span-6">
                 <livewire:table.admin-list>
             </div>
