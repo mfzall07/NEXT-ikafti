@@ -1,4 +1,5 @@
 <div>
+    <button data-modal-toggle="accept" data-tooltip-target="approve" modal-approve-alumni hidden></button>
     <div class="relative bg-white border shadow-lg p-5 rounded-xl overflow-hidden">
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
             <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
@@ -47,14 +48,14 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-4">
-                                    <button type="button" data-modal-toggle="accept" data-tooltip-target="approve" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-green-400">
+                                    <button type="button" wire:click="$emit('approve', {{ $wl->id }})" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-green-400">
                                         <i class="fa-solid fa-check"></i>
                                     </button>
                                     <div id="approve" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
                                         Approve
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
-        
+
                                     <button type="button" data-modal-toggle="delete" data-tooltip-target="decline" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-red-500">
                                         <i class="fa-solid fa-xmark"></i>
                                     </button>
