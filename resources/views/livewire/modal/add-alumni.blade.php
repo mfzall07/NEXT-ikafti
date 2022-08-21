@@ -76,7 +76,7 @@
                             <div class="w-full">
                                 <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900">Program Studi</label>
                                 <select id="program_studi" wire:model.defer="program_studi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option selected>Program Studi</option>
+                                    <option value="" selected>Program Studi</option>
                                     <option value="Teknik Industri">Teknik Industri</option>
                                     <option value="Teknik Kimia">Teknik Kimia</option>
                                     <option value="Teknik Pertambangan">Teknik Pertambangan</option>

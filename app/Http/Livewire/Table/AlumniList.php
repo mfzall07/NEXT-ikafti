@@ -11,7 +11,8 @@ class AlumniList extends Component
     use WithPagination;
     public $search;
     protected $listeners = [
-        'alumniStored' => '$refresh'
+        'alumniStored' => '$refresh',
+        'alumniEdited' => '$refresh',
     ];
     public function render()
     {
