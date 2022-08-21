@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ViewAdmin extends Component
 {
-    public $name, $phone, $email, $username;
+    public $name, $phone, $email, $username, $image;
     protected $listeners = [
         'view-admin' => 'viewAdmin'
     ];
@@ -22,6 +22,7 @@ class ViewAdmin extends Component
         $this->phone = $user->phone;
         $this->email = $user->email;
         $this->username = $user->username;
+        $this->image = $user->image;
         // dd($this->all());
     }
 }

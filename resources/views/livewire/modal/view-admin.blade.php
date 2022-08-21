@@ -16,7 +16,8 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-5 flex items-center gap-5">
-                    <div style="background-image: url('../../assets/images/profile.jpg')" class="w-56 h-56 rounded-lg bg-cover bg-no-repeat shadow-lg"></div>
+                    <div style="background-image: url({{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg')}})" class="w-56 h-56 rounded-lg bg-cover bg-no-repeat shadow-lg"></div>
+                    {{-- <img src="{{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg') }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75"> --}}
                     <div class="self-baseline grid grid-cols-12 gap-5 w-full">
                         <div class="col-span-4 font-bold text-black w-full">
                             <h1 class="mb-2">Fullname</h1>
