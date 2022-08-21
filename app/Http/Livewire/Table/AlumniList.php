@@ -14,6 +14,7 @@ class AlumniList extends Component
         'alumniStored' => '$refresh',
         'alumniDeleted' => '$refresh',
         'alumniEdited' => '$refresh',
+        'alumniApproved' => '$refresh'
     ];
     public function render()
     {

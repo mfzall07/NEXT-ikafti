@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Table;
 
+use App\Models\Alumni;
 use App\Models\WaitingList as ModelsWaitingList;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -9,7 +10,10 @@ use Livewire\WithPagination;
 class WaitingList extends Component
 {
     use WithPagination;
-    public $search;
+    public $search, $approveId;
+    protected $listeners = [
+        'alumniApproved' => '$refresh'
+    ];
     public function render()
     {
         $waiting_lists = $this->search == null ?
