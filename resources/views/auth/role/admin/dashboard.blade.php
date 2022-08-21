@@ -91,6 +91,7 @@
     <script src="../assets/js/table/waitingList.js"></script>
     <script src="../assets/js/table/alumniList.js"></script>
     <script src="../assets/js/table/contentList.js"></script>
+    <script src="../assets/js/table/announcementList.js"></script>
     <script>
         window.livewire.on('add-admin', function(){
             $('[modal-add-admin]').trigger('click');

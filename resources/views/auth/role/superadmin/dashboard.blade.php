@@ -85,9 +85,11 @@
     <livewire:modal.add-admin>
     <livewire:modal.add-alumni>
     <livewire:modal.add-job>
+    <livewire:modal.add-announcement>
     <livewire:modal.edit-admin>
     <livewire:modal.edit-alumni>
     <livewire:modal.edit-job>
+    <livewire:modal.edit-announcement>
     <livewire:modal.accept>
     <livewire:modal.delete>
     <livewire:modal.change-password>
@@ -106,6 +108,7 @@
     <script src="../assets/js/table/waitingList.js"></script>
     <script src="../assets/js/table/alumniList.js"></script>
     <script src="../assets/js/table/contentList.js"></script>
+    <script src="../assets/js/table/announcementList.js"></script>
     <script>
         window.livewire.on('add-admin', function(){
             $('[modal-add-admin]').trigger('click');

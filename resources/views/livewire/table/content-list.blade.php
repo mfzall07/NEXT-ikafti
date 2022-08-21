@@ -49,7 +49,7 @@
                         <h1 class="font-semibold truncate">1</h1>
                     </td>
                     <td class="py-4 px-6">
-                        <h1 class="font-semibold truncate">Content 1</h1>
+                        <h1 class="truncate font-bold text-black">Content 1</h1>
                     </td>
                     <td class="py-4 px-6">
                         <h1 class="font-semibold truncate">22 Dec 2022</h1>

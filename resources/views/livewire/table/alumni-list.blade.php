@@ -64,7 +64,7 @@
                             <td class="py-4 px-6">
                                 <div class="flex flex-row items-center gap-2">
                                     <div style="background-image: url('../../assets/images/profile.jpg')"  class=" w-8 h-8 rounded bg-white shadow-xl border bg-cover"></div>
-                                    <h1 class="font-bold text-black  hover:text-blue-500 truncate">{{ $alumni->name }}</h1>
+                                    <h1 class="font-bold text-black ">{{ $alumni->name }}</h1>
                                 </div>
                             </td>
                             <td class="py-4 px-6">
