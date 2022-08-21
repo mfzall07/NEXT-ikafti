@@ -137,6 +137,12 @@
         window.livewire.on('jobEdited', function(){
             $('[modal-edit-job]').trigger('click');
         });
+        window.livewire.on('delete-job', function(){
+            $('[modal-delete-job]').trigger('click');
+        });
+        window.livewire.on('jobDeleted', function(){
+            $('[modal-delete-job]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {

@@ -12,7 +12,8 @@ class JobList extends Component
     public $search;
     protected $listeners = [
         'jobStored' => '$refresh',
-        'jobEdited' => '$refresh'
+        'jobEdited' => '$refresh',
+        'jobDeleted' => '$refresh'
     ];
     public function render()
     {

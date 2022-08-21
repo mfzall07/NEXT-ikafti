@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Modal;
 
 use App\Models\Alumni;
+use App\Models\Job;
 use App\Models\User;
 use Livewire\Component;
 
@@ -11,7 +12,8 @@ class Delete extends Component
     public $deletedId = '', $entity = '';
     protected $listeners = [
         'delete-admin' => 'deleteAdmin',
-        'delete-alumni' => 'deleteAlumni'
+        'delete-alumni' => 'deleteAlumni',
+        'delete-job' => 'deleteJob'
     ];
     public function render()
     {
@@ -26,6 +28,11 @@ class Delete extends Component
     {
         $this->deletedId = $id;
         $this->entity = 'alumni';
+    }
+    public function deleteJob($id)
+    {
+        $this->deletedId = $id;
+        $this->entity = 'job';
     }
     public function confirm()
     {
@@ -44,6 +51,14 @@ class Delete extends Component
             $this->dispatchBrowserEvent('alert',[
                 'type'=>'success',
                 'message'=>"Alumni deleted successfully"
+            ]);
+        }elseif($this->entity == 'job'){
+            $job = Job::findOrFail($this->deletedId);
+            $job->delete();
+            $this->emit('jobDeleted');
+            $this->dispatchBrowserEvent('alert',[
+                'type'=>'success',
+                'message'=>"Job deleted successfully"
             ]);
         }
     }
