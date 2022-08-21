@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Alumni extends Model
+class WaitingList extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    public function waiting_list()
+    public function alumni()
     {
-        return $this->hasOne(WaitingList::class);
+        return $this->belongsTo(Alumni::class);
     }
 }

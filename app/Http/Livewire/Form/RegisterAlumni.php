@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Form;
 
 use App\Models\Alumni;
+use App\Models\WaitingList;
 use Livewire\Component;
 
 class RegisterAlumni extends Component
@@ -27,7 +28,10 @@ class RegisterAlumni extends Component
     public function submit()
     {
         $validated = $this->validate();
-        Alumni::create($validated);
+        $alumni = Alumni::create($validated);
+        WaitingList::create([
+            'alumni_id' => $alumni->id
+        ]);
         $this->reset();
         $this->emit('alumniRegistered');
         $this->dispatchBrowserEvent('alert',[
