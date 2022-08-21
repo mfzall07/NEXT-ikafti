@@ -18,38 +18,38 @@
         <div class="flex flex-col gap-5">
             <h1 class="font-bold text-white">Overview</h1>
             <div class="flex flex-col gap-5">
-                <a href="" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
+                <a href="/" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
                     <i class="fa-solid fa-house"></i>
                     Beranda
                 </a>
-                <a href="" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
+                <a href="/ikafti/form-register" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
                     <i class="fa-solid fa-file-lines"></i>
-                    Registrasi Alumni
+                    Alumni Registration
                 </a>
-                <a href="" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
+                <a href="/ikafti/list-alumni" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
                     <i class="fa-solid fa-sheet-plastic"></i>
-                    Daftar Alumni
+                    Alumni List
                 </a>
-                <a href="" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
+                <a href="/ikafti/tentang-kami" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
                     <i class="fa-solid fa-user"></i>
-                    Tentang Kami
+                    About
                 </a>
             </div>
         </div>
         <div class="flex flex-col gap-5">
-            <h1 class="font-bold text-white">Informasi</h1>
+            <h1 class="font-bold text-white">Information</h1>
             <div class="flex flex-col gap-5">
-                <a href="" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
-                    <i class="fa-solid fa-user-tie"></i>
-                    Daftar Alumni
+                <a href="/ikafti/information" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
+                    <i class="fa-solid fa-book"></i>
+                    Information
                 </a>
-                <a href="" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
+                <a href="/ikafti/agenda" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
                     <i class="fa-solid fa-calendar-day"></i>
-                    Event
+                    Agenda
                 </a>
-                <a href="" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
+                <a href="/ikafti/karir" class="text-gray-300 flex items-center gap-4 hover:text-blue-500 text-sm">
                     <i class="fa-solid fa-briefcase"></i>
-                    Karir
+                    Career
                 </a>
             </div>
         </div>
