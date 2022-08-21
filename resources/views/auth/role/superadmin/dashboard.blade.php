@@ -31,9 +31,10 @@
                 <livewire:card.total-alumni>
             </div>
             <div class="col-span-12 laptop:col-span-3">
-                <livewire:card.waiting-approval>
+                <livewire:card.total-content>
             </div>
             <div class="col-span-12 laptop:col-span-3">
+                <livewire:card.waiting-approval>
             </div>
         </div>
     </section>

@@ -28,7 +28,7 @@
                             <input type="text" wire:model.defer="edit_fullname" name="edit_fullname" id="edit_fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Fullname" required>
                             @error('edit_fullname') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
                                 <input type="text" wire:model.defer="edit_phone" name="edit_phone" id="edit_phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
@@ -40,7 +40,7 @@
                                 @error('edit_email') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
                                 <input type="text" wire:model.defer="edit_username" name="edit_username" id="edit_username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Username" required>

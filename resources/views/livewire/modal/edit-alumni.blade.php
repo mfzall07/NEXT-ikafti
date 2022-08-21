@@ -23,7 +23,7 @@
                             </div>
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Image</h1>
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_fullname" class="block mb-2 text-sm font-medium text-gray-900">Fullname</label>
                                 <input type="text" wire:model.defer="fullname" name="edit_fullname" id="edit_fullnames" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Fullname" required>
@@ -35,7 +35,7 @@
                                 @error('current_company') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_address" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
                                 <input type="text" wire:model.defer="address" name="edit_address" id="edit_addresss" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Address" required>
@@ -57,7 +57,7 @@
                                 @error('phone') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_birth_place" class="block mb-2 text-sm font-medium text-gray-900">Birth Place</label>
                                 <input type="text" wire:model.defer="birth_place" name="edit_birth_place" id="edit_birth_places" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Birth Place" required>

@@ -23,7 +23,7 @@
                             </div>
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Company Logo</h1>
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="company_name" class="block mb-2 text-sm font-medium text-gray-900">Company Name</label>
                                 <input type="text" wire:model.defer="company_name" name="company_name" id="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Company Name" required>
@@ -34,7 +34,7 @@
                                 <input type="text" name="phone_number" id="phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
                             </div>
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Job Position</label>
                                 <input type="text" wire:model.defer="title" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Job Position" required>
@@ -49,7 +49,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="placement" class="block mb-2 text-sm font-medium text-gray-900">Placement</label>
                                 <input type="text" name="placement" id="placement" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Placement" required>
