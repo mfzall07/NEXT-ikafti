@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Modal;
 use App\Models\Alumni;
 use App\Models\Job;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class Delete extends Component
@@ -38,6 +39,9 @@ class Delete extends Component
     {
         if($this->entity == 'admin'){
             $user = User::findOrFail($this->deletedId);
+            if($user->image){
+                Storage::disk('public')->delete(str_replace('public/', '', $user->image));
+            }
             $user->delete();
             $this->emit('adminDeleted');
             $this->dispatchBrowserEvent('alert',[

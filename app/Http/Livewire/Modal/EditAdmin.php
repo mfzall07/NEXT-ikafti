@@ -4,59 +4,72 @@ namespace App\Http\Livewire\Modal;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditAdmin extends Component
 {
+    use WithFileUploads;
     protected $listeners = [
         'edit-admin' => 'editAdmin'
     ];
-    public $editedId, $edit_fullname, $edit_phone, $edit_email, $edit_username, $edit_password;
+    public $editedId, $fullname, $phone, $email, $username, $password, $image, $image_temp;
 
-    public function rules()
+    protected function rules()
     {
         return [
-            'edit_fullname' => 'required',
-            'edit_phone' => 'required',
-            'edit_email' => 'required|email|'. Rule::unique('users', 'email')->ignore($this->editedId, 'id'),
-            'edit_username' => 'required|'. Rule::unique('users', 'username')->ignore($this->editedId, 'id'),
-            'edit_password' => 'nullable',
+            'fullname' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email|'. Rule::unique('users', 'email')->ignore($this->editedId, 'id'),
+            'username' => 'required|'. Rule::unique('users', 'username')->ignore($this->editedId, 'id'),
+            'password' => 'nullable',
+            'image_temp' => 'image',
         ];
     }
     protected $messages = [
-        'edit_fullname.required' => 'The fullname field is required.',
-        'edit_phone.required' => 'The phone field is required.',
-        'edit_email.required' => 'The email field is required.',
-        'edit_email.email' => 'The email must be a valid email address.',
-        'edit_email.unique' => 'The email has already been taken.',
-        'edit_username.required' => 'The username field is required.',
-        'edit_username.unique' => 'The username has already been taken.'
+        'image_temp.image' => 'The image must be an image.'
     ];
     public function render()
     {
         return view('livewire.modal.edit-admin');
     }
+    public function updated($image_temp)
+    {
+        $this->validateOnly($image_temp);
+    }
     public function editAdmin($id)
     {
+        $this->reset('image_temp');
         $this->editedId = $id;
         $user = User::find($id);
-        $this->edit_fullname = $user->name;
-        $this->edit_phone = $user->phone;
-        $this->edit_email = $user->email;
-        $this->edit_username = $user->username;
+        $this->fullname = $user->name;
+        $this->phone = $user->phone;
+        $this->email = $user->email;
+        $this->username = $user->username;
+        $this->image = $user->image;
     }
     public function update()
     {
         $validated = $this->validate();
         $user = User::find($this->editedId);
-        $user->name = $validated['edit_fullname'];
-        $user->phone = $validated['edit_phone'];
-        $user->email = $validated['edit_email'];
-        $user->username = $validated['edit_username'];
-        if($validated['edit_password'] != null){
-            $user->password = Hash::make($validated['edit_password']);
+        if($this->image_temp){
+            if($user->image){
+                Storage::disk('public')->delete(str_replace('public/', '', $user->image));
+            }
+            $path = $this->image_temp->store('public/image');
+        }else{
+            $path = $user->image;
         }
+        $user->name = $validated['fullname'];
+        $user->phone = $validated['phone'];
+        $user->email = $validated['email'];
+        $user->username = $validated['username'];
+        if($validated['password'] != null){
+            $user->password = Hash::make($validated['password']);
+        }
+        $user->image = $path;
         $user->save();
         $this->emit('adminEdited');
         $this->dispatchBrowserEvent('alert',[

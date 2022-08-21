@@ -15,40 +15,52 @@
                             <div class="bg-gray-200 rounded-full shadow-xl w-fit" x-data="showImage()">
                                 <div class="flex items-center justify-center">
                                     <label class="flex justify-center items-center relative w-32 h-32 rounded-full shadow-lg cursor-pointer hover:text-blue-500">
-                                        <img src="../../assets/images/profile.jpg" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                        @if ($image_temp)
+                                            @if($errors->has('image_temp'))
+                                                <img src="{{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg') }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                            @else
+                                                <img src="{{ $image_temp->temporaryUrl() }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                            @endif
+                                        @else
+                                            <img src="{{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg') }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                        @endif
                                         <div class="absolute bg-white text-blue-500 hover:text-blue-600 w-12 h-12 text-xl rounded-full flex items-center justify-center"><i class="fa-solid fa-user-pen"></i></div>
-                                        <input type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
+                                        <input type="file" wire:model="image_temp" class="opacity-0" accept="image/*" />
                                     </label>
                                 </div>
                             </div>
+                            <div wire:loading wire:target="image_temp">
+                                Loading...
+                            </div>
+                            @error('image_temp') <span class="text-red-500">{{ $message }}</span> @enderror
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Image</h1>
                         </div>
                         <div>
                             <label for="edit_fullname" class="block mb-2 text-sm font-medium text-gray-900">Fullname</label>
-                            <input type="text" wire:model.defer="edit_fullname" name="edit_fullname" id="edit_fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Fullname" required>
-                            @error('edit_fullname') <span class="text-red-500">{{ $message }}</span> @enderror
+                            <input type="text" wire:model.defer="fullname" name="edit_fullname" id="edit_fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Fullname" required>
+                            @error('fullname') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                                <input type="text" wire:model.defer="edit_phone" name="edit_phone" id="edit_phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
-                                @error('edit_phone') <span class="text-red-500">{{ $message }}</span> @enderror
+                                <input type="text" wire:model.defer="phone" name="edit_phone" id="edit_phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
+                                @error('phone') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
                                 <label for="edit_email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                                <input type="email" wire:model.defer="edit_email" name="edit_email" id="edit_email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required>
-                                @error('edit_email') <span class="text-red-500">{{ $message }}</span> @enderror
+                                <input type="email" wire:model.defer="email" name="edit_email" id="edit_email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required>
+                                @error('email') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
-                                <input type="text" wire:model.defer="edit_username" name="edit_username" id="edit_username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Username" required>
-                                @error('edit_username') <span class="text-red-500">{{ $message }}</span> @enderror
+                                <input type="text" wire:model.defer="username" name="edit_username" id="edit_username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Username" required>
+                                @error('username') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
                                 <label for="edit_password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                                <input type="password" wire:model.defer="edit_password" name="edit_password" id="edit_password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <input type="password" wire:model.defer="password" name="edit_password" id="edit_password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             </div>
                         </div>
                         <button type="submit" wire:click.prevent="update" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Edit Admin</button>
