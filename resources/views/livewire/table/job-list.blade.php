@@ -54,7 +54,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex flex-row items-center gap-2">
-                                    <div style="background-image: url('../../assets/images/profile.jpg')"  class=" w-8 h-8 rounded bg-white shadow-xl border bg-cover"></div>
+                                    <img src="../../assets/images/profile.jpg" class=" w-8 h-8 rounded bg-white shadow-xl border object-cover" alt="">
                                     <h1 class="font-bold text-black runcate">{{ $job->company_name }}</h1>
                                 </div>
                             </td>

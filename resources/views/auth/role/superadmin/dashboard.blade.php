@@ -99,6 +99,10 @@
     @livewireScripts
     {{-- End::Livewire --}}
 
+    {{-- Begin::Javascript CDN --}}
+    <script src="//unpkg.com/alpinejs" defer></script>
+    {{-- End::Javascript CDN --}}
+    
     {{-- Begin::Javascript --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../assets/js/flowbite/dist/flowbite.js"></script>
