@@ -2,12 +2,48 @@
 
 namespace App\Http\Livewire\Modal;
 
+use App\Models\Alumni;
 use Livewire\Component;
 
 class AddAlumni extends Component
 {
+    public $fullname, $current_company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi;
+    protected $rules = [
+        'fullname' => 'required',
+        'current_company' =>'required',
+        'address' =>'required',
+        'domicile' =>'required',
+        'email' =>'required|email',
+        'phone' =>'required',
+        'birth_place' =>'required',
+        'birth_date' =>'required',
+        'generation' =>'required',
+        'program_studi' =>'required',
+    ];
     public function render()
     {
         return view('livewire.modal.add-alumni');
+    }
+    public function submit()
+    {
+        $validated = $this->validate();
+        Alumni::create([
+            'name' => $validated['fullname'],
+            'company' => $validated['current_company'],
+            'address' => $validated['address'],
+            'domicile' => $validated['domicile'],
+            'email' => $validated['email'],
+            'phone' =>$validated['phone'],
+            'birth_place' =>$validated['birth_place'],
+            'birth_date' =>$validated['birth_date'],
+            'generation' =>$validated['generation'],
+            'program_studi' =>$validated['program_studi'],
+        ]);
+        $this->reset();
+        $this->emit('alumniStored');
+        $this->dispatchBrowserEvent('alert',[
+            'type'=>'success',
+            'message'=>"Alumni added successfully"
+        ]);
     }
 }

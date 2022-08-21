@@ -12,7 +12,7 @@
                         <i class="fa-solid fa-circle-plus mt-1"></i>
                     </button>
                 </div>
-                <span class="text-gray-400 font-semibold text-sm">{{ $admins->count() }} Admin</span>
+                <span class="text-gray-400 font-semibold text-sm">{{ $admins->total() }} Admin</span>
             </div>
             <div class="flex items-center laptop:w-auto w-full">
                 <label for="searchAdminList" class="sr-only">Search</label>

@@ -102,6 +102,14 @@
         });
     </script>
     <script>
+        window.livewire.on('add-alumni', function(){
+            $('[modal-add-alumni]').trigger('click');
+        });
+        window.livewire.on('alumniStored', function() {
+            $('[modal-add-alumni]').trigger('click');
+        });
+    </script>
+    <script>
         window.addEventListener('alert', event => {
             toastr[event.detail.type](event.detail.message,
             event.detail.title ?? ''), toastr.options = {
