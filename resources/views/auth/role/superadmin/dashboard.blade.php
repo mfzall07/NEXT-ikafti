@@ -91,6 +91,7 @@
     <livewire:modal.edit-job>
     <livewire:modal.edit-announcement>
     <livewire:modal.accept>
+    <livewire:modal.decline>
     <livewire:modal.delete>
     <livewire:modal.change-password>
     {{-- End::Modal --}}
@@ -102,7 +103,7 @@
     {{-- Begin::Javascript CDN --}}
     <script src="//unpkg.com/alpinejs" defer></script>
     {{-- End::Javascript CDN --}}
-    
+
     {{-- Begin::Javascript --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../assets/js/flowbite/dist/flowbite.js"></script>
@@ -185,6 +186,12 @@
         });
         window.livewire.on('alumniApproved', function(){
             $('[modal-approve-alumni]').trigger('click');
+        });
+        window.livewire.on('decline', function(){
+            $('[modal-decline-alumni]').trigger('click');
+        });
+        window.livewire.on('alumniDeclined', function(){
+            $('[modal-decline-alumni]').trigger('click');
         });
     </script>
     <script>

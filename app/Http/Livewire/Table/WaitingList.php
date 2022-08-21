@@ -12,7 +12,8 @@ class WaitingList extends Component
     use WithPagination;
     public $search, $approveId;
     protected $listeners = [
-        'alumniApproved' => '$refresh'
+        'alumniApproved' => '$refresh',
+        'alumniDeclined' => '$refresh',
     ];
     public function render()
     {
