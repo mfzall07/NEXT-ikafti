@@ -61,7 +61,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-4">
-                                    <a href="/ikafti/karirs/id" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</a>
+                                    <a href="/ikafti/karirs/{{ $job->id }}" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</a>
                                     <button type="button" data-modal-toggle="edit-job" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
                                     <button type="button" data-modal-toggle="delete" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
                                 </div>
