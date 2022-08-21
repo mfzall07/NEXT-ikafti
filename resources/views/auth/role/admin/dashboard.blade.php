@@ -74,6 +74,7 @@
     <livewire:modal.edit-alumni>
     <livewire:modal.edit-job>
     <livewire:modal.accept>
+    <livewire:modal.decline>
     <livewire:modal.delete>
     <livewire:modal.change-password>
     {{-- End::Modal --}}
@@ -160,6 +161,20 @@
         });
         window.livewire.on('jobDeleted', function(){
             $('[modal-delete-job]').trigger('click');
+        });
+    </script>
+    <script>
+        window.livewire.on('approve', function(){
+            $('[modal-approve-alumni]').trigger('click');
+        });
+        window.livewire.on('alumniApproved', function(){
+            $('[modal-approve-alumni]').trigger('click');
+        });
+        window.livewire.on('decline', function(){
+            $('[modal-decline-alumni]').trigger('click');
+        });
+        window.livewire.on('alumniDeclined', function(){
+            $('[modal-decline-alumni]').trigger('click');
         });
     </script>
     <script>
