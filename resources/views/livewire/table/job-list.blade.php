@@ -6,7 +6,7 @@
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
             <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
                 <div class="flex items-center gap-4">
-                    <h1 class="font-bold text-xl text-black ">Job List</h1>
+                    <h1 class="font-bold text-xl text-black ">Job</h1>
                     <button type="button" wire:click="$emit('add-job')">
                         <i class="fa-solid fa-circle-plus mt-1"></i>
                     </button>
@@ -63,9 +63,29 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-4">
-                                    <a href="/ikafti/karirs/{{ $job->id }}" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</a>
-                                    <button type="button" wire:click="$emit('edit-job', {{ $job->id }})" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
-                                    <button type="button" wire:click="$emit('delete-job', {{ $job->id }})" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
+                                    <a href="/ikafti/karirs/{{ $job->id }}" data-tooltip-target="view_job" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-green-400">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                    <div id="view_job" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                                        View
+                                        <div class="tooltip-arrow" data-popper-arrow></div>
+                                    </div>
+
+                                    <button type="button" data-tooltip-target="edit_job" wire:click="$emit('edit-job', {{ $job->id }})" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-blue-500">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                    <div id="edit_job" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                                        Edit
+                                        <div class="tooltip-arrow" data-popper-arrow></div>
+                                    </div>
+
+                                    <button type="button" data-tooltip-target="delete_job" wire:click="$emit('delete-job', {{ $job->id }})" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-red-500">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <div id="delete_job" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                                        Delete
+                                        <div class="tooltip-arrow" data-popper-arrow></div>
+                                    </div>
                                 </div>
                             </td>
                         </tr>

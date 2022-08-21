@@ -2,9 +2,12 @@
     <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
         <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
             <div class="flex items-center gap-4">
-                <h1 class="font-bold text-xl text-black">Waiting Approval</h1>
+                <h1 class="font-bold text-xl text-black">Announcement</h1>
+                <button type="button" wire:click="$emit('add-alumni')">
+                    <i class="fa-solid fa-circle-plus mt-1"></i>
+                </button>
             </div>
-            <span class="text-gray-400 font-semibold text-sm">10 List</span>
+            <span class="text-gray-400 font-semibold text-sm">10 Announcement</span>
         </div>
         <div class="flex items-center laptop:w-auto w-full">   
             <label for="searchWaitingList" class="sr-only">Search</label>
@@ -27,7 +30,11 @@
                         <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
                     </th>
                     <th scope="col" class="py-3 px-6 truncate">
-                        Name
+                        Title
+                        <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
+                    </th>
+                    <th scope="col" class="py-3 px-6 truncate">
+                        Description
                         <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
                     </th>
                     <th scope="col" class="py-3 px-6 truncate">
@@ -42,23 +49,26 @@
                         <h1 class="font-semibold truncate">1</h1>
                     </td>
                     <td class="py-4 px-6">
-                        <a href="#" class="font-bold text-black hover:text-blue-500 truncate">Admin 1</a>
+                        <a href="#" class="font-bold text-black hover:text-blue-500 line-clamp-1">Admin 1</a>
+                    </td>
+                    <td class="py-4 px-6">
+                        <a href="#" class="font-bold text-black hover:text-blue-500 line-clamp-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, odit.</a>
                     </td>
                     <td class="py-4 px-6">
                         <div class="flex items-center gap-4">
-                            <button type="button" data-modal-toggle="accept" data-tooltip-target="approve" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-green-400">
-                                <i class="fa-solid fa-check"></i>
+                            <button type="button" data-tooltip-target="edit_announc" data-modal-toggle="accept" class="w-7 h-7 flex items-center justify-center rounded-lg font-semibold text-white bg-green-400">
+                                <i class="fa-solid fa-pen-to-square"></i>
                             </button>
-                            <div id="approve" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
-                                Approve
+                            <div id="edit_announc" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                                Edit
                                 <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
 
-                            <button type="button" data-modal-toggle="delete" data-tooltip-target="decline" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-red-500">
-                                <i class="fa-solid fa-xmark"></i>
+                            <button type="button" data-tooltip-target="delete_announc" data-modal-toggle="delete" class="w-7 h-7 flex items-center justify-center rounded-lg font-semibold text-white bg-red-500">
+                                <i class="fa-solid fa-trash-can"></i>
                             </button>
-                            <div id="decline" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
-                                Decline
+                            <div id="delete_announc" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                                Delete
                                 <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
                         </div>
