@@ -131,6 +131,12 @@
         window.livewire.on('jobStored', function() {
             $('[modal-add-job]').trigger('click');
         });
+        window.livewire.on('edit-job', function(){
+            $('[modal-edit-job]').trigger('click');
+        });
+        window.livewire.on('jobEdited', function(){
+            $('[modal-edit-job]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {

@@ -11,7 +11,8 @@ class JobList extends Component
     use WithPagination;
     public $search;
     protected $listeners = [
-        'jobStored' => '$refresh'
+        'jobStored' => '$refresh',
+        'jobEdited' => '$refresh'
     ];
     public function render()
     {

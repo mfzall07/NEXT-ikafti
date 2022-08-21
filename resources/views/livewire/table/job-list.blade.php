@@ -1,5 +1,6 @@
 <div>
     <button data-modal-toggle="add-job" modal-add-job hidden></button>
+    <button data-modal-toggle="edit-job" modal-edit-job hidden></button>
     <div class="relative bg-white border shadow-lg p-5 rounded-xl overflow-hidden">
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
             <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
@@ -62,7 +63,7 @@
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-4">
                                     <a href="/ikafti/karirs/{{ $job->id }}" class="px-4 py-1 rounded-full font-semibold text-white bg-green-400">View</a>
-                                    <button type="button" data-modal-toggle="edit-job" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
+                                    <button type="button" wire:click="$emit('edit-job', {{ $job->id }})" class="px-4 py-1 rounded-full font-semibold text-white bg-blue-500">Edit</button>
                                     <button type="button" data-modal-toggle="delete" class="px-4 py-1 rounded-full font-semibold text-white bg-red-500">Delete</button>
                                 </div>
                             </td>
