@@ -71,11 +71,11 @@
                             </td>
                         </tr>
                     @empty
-                    <tr class="bg-white border-b">
-                        <td class="py-4 px-6" colspan="4">
-                            <h1 class="font-semibold truncate text-center">No Data Available</h1>
-                        </td>
-                    </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-4 px-6" colspan="4">
+                                <h1 class="font-semibold truncate text-center">No Data Available</h1>
+                            </td>
+                        </tr>
                     @endforelse
 
                 </tbody>

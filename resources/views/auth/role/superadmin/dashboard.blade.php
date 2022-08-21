@@ -125,6 +125,14 @@
         });
     </script>
     <script>
+        window.livewire.on('add-job', function(){
+            $('[modal-add-job]').trigger('click');
+        });
+        window.livewire.on('jobStored', function() {
+            $('[modal-add-job]').trigger('click');
+        });
+    </script>
+    <script>
         window.addEventListener('alert', event => {
             toastr[event.detail.type](event.detail.message,
             event.detail.title ?? ''), toastr.options = {
