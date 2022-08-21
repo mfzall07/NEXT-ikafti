@@ -50,6 +50,9 @@ class Delete extends Component
             ]);
         }elseif($this->entity == 'alumni'){
             $alumni = Alumni::findOrFail($this->deletedId);
+            if($alumni->image){
+                Storage::disk('public')->delete(str_replace('public/', '', $alumni->image));
+            }
             $alumni->delete();
             $this->emit('alumniDeleted');
             $this->dispatchBrowserEvent('alert',[

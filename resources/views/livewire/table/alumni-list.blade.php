@@ -63,7 +63,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex flex-row items-center gap-2">
-                                    <img src="../../assets/images/profile.jpg" class=" w-8 h-8 rounded bg-white shadow-xl border object-cover" alt="">
+                                    <img src="{{ url( $alumni->image != null ? str_replace('public', 'storage',$alumni->image) : 'assets/images/profile.jpg') }}" class=" w-8 h-8 rounded bg-white shadow-xl border object-cover" alt="">
                                     <h1 class="font-bold text-black ">{{ $alumni->name }}</h1>
                                 </div>
                             </td>

@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ViewAlumni extends Component
 {
-    public $alumni;
+    public $alumni, $image;
     protected $listeners = [
         'view-alumni' => 'viewAlumni'
     ];
@@ -19,5 +19,6 @@ class ViewAlumni extends Component
     {
         $alumni = Alumni::find($id);
         $this->alumni = $alumni;
+        $this->image = $alumni->image;
     }
 }

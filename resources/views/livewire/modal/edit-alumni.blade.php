@@ -15,12 +15,24 @@
                             <div class="bg-gray-200 rounded-full shadow-xl w-fit" x-data="showImage()">
                                 <div class="flex items-center justify-center">
                                     <label class="flex justify-center items-center relative w-32 h-32 rounded-full shadow-lg cursor-pointer hover:text-blue-500">
-                                        <img src="../../assets/images/profile.jpg" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                        @if ($image_temp)
+                                            @if($errors->has('image_temp'))
+                                                <img src="{{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg') }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                            @else
+                                                <img src="{{ $image_temp->temporaryUrl() }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                            @endif
+                                        @else
+                                            <img src="{{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg') }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                        @endif
                                         <div class="absolute bg-white text-blue-500 hover:text-blue-600 w-12 h-12 text-xl rounded-full flex items-center justify-center"><i class="fa-solid fa-user-pen"></i></div>
-                                        <input type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
+                                        <input type="file" wire:model="image_temp" class="opacity-0" accept="image/*" />
                                     </label>
                                 </div>
                             </div>
+                            <div wire:loading wire:target="image_temp">
+                                Loading...
+                            </div>
+                            @error('image_temp') <span class="text-red-500">{{ $message }}</span> @enderror
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Image</h1>
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
