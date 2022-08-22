@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire\Card;
 
+use App\Models\Job;
 use Livewire\Component;
 
 class Karir extends Component
 {
     public function render()
     {
-        return view('livewire.card.karir');
+        $jobs = Job::latest()->take(3)->get();
+        return view('livewire.card.karir', compact('jobs'));
     }
 }
