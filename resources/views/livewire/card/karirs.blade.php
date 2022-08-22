@@ -1,259 +1,34 @@
 <div>
     <div class="flex flex-col laptop:grid grid-flow-row-dense grid-cols-4 grid-rows-3 items-center laptop:justify-center gap-5 flex-wrap">
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
+        @forelse ($jobs as $job)
+            <div class="bg-white rounded-lg shadow-md border w-full">
+                <div style="background: url({{ url( $job->image != null ? str_replace('public', 'storage',$job->image) : 'assets/images/exampleContent.jpg')}})" class="h-56 bg-center bg-cover"></div>
+                <div class="p-5">
+                    <a href="{{ route('karirDetail', ['id' => $job->id]) }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">{{ $job->company_name }}</a>
                     <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
+                        <div class="bg-green-400 w-2 h-2 rounded-full"></div>
+                        <span class="text-gray-400 text-xs">{{ date('d M Y', strtotime($job->created_at)) }}</span>
                     </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
+                    <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">{{ $job->description }}</p>
+                    <div class="flex flex-row items-center gap-5 mt-1">
+                        <div class="flex flex-row items-center gap-2 mt-1">
+                            <i class="fa-solid fa-clock"></i>
+                            <span class="text-gray-400 text-sm">{{ $job->job_type }}</span>
+                        </div>
+                        <div class="flex flex-row items-center gap-2 mt-1">
+                            <span class="font-bold">Rp</span>
+                            <span class="text-gray-400 text-sm">{{number_format($job->salary, 0, ',', '.')}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('karirDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="flex flex-row items-center gap-5 mt-1">
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="text-gray-400 text-sm">Full Time</span>
-                    </div>
-                    <div class="flex flex-row items-center gap-2 mt-1">
-                        <span class="font-bold">Rp</span>
-                        <span class="text-gray-400 text-sm">10.000.000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @empty
+
+        @endforelse
+
     </div>
-    <div class="text-xs text-gray-700 bg-white dark:bg-gray-800 dark:text-gray-400 rounded-b-lg px-6 mt-10 flex flex-col laptop:flex-row items-center justify-between gap-4 ">
+    {{ $jobs->onEachSide(1)->links('livewire.custom-pagination-links-view', ['pageName' => $jobs->getPageName()]) }}
+    {{-- <div class="text-xs text-gray-700 bg-white dark:bg-gray-800 dark:text-gray-400 rounded-b-lg px-6 mt-10 flex flex-col laptop:flex-row items-center justify-between gap-4 ">
         <span class="text-sm text-gray-700 dark:text-gray-400">
             Showing <span class="font-semibold text-gray-900 dark:text-white">1</span> to <span class="font-semibold text-gray-900 dark:text-white">8</span> of <span class="font-semibold text-gray-900 dark:text-white">100</span> Entries
         </span>
@@ -288,5 +63,5 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </div> --}}
 </div>
