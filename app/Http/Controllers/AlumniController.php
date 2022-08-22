@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class AlumniController extends Controller
@@ -13,23 +14,24 @@ class AlumniController extends Controller
     public function listAlumni() {
         return view('list-alumni');
     }
-    
+
     public function tentangkami() {
         return view('tentang-kami');
     }
-    
+
     public function karir() {
         return view('karir');
     }
-    
-    public function karirDetail() {
-        return view('karir-detail');
+
+    public function karirDetail($id) {
+        $job = Job::findOrFail($id);
+        return view('karir-detail', compact('job'));
     }
 
     public function information() {
         return view('information');
     }
-    
+
     public function informationDetail() {
         return view('information-datail');
     }
@@ -37,7 +39,7 @@ class AlumniController extends Controller
     public function agenda() {
         return view('agenda');
     }
-    
+
     public function agendaDetail() {
         return view('agenda-detail');
     }

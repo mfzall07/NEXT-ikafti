@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>IKAFTI</title>
-    
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
@@ -21,11 +21,11 @@
     </section>
 
     <section class="px-5 laptop:px-20 pt-10" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-        <livewire:card.detail-karir>
+        <livewire:card.detail-karir :job="$job">
     </section>
 
     <section class="px-5 laptop:px-20 pt-10" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-        <livewire:card.another-karir>
+        <livewire:card.another-karir :job="$job">
     </section>
 
     <section class="pt-10">
