@@ -19,7 +19,11 @@ class JobSeeder extends Seeder
             [
                 'company_name' => 'PT. Yamaha',
                 'title' => 'Engineer',
-                'description' => 'description'
+                'description' => 'description',
+                'phone' => '08935476328',
+                'job_type' => 'Full Time',
+                'placement' => 'Jogja',
+                'salary' => '10000000',
             ]
         ];
         DB::table('jobs')->insert($jobs);

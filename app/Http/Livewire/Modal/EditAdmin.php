@@ -25,7 +25,7 @@ class EditAdmin extends Component
             'email' => 'required|email|'. Rule::unique('users', 'email')->ignore($this->editedId, 'id'),
             'username' => 'required|'. Rule::unique('users', 'username')->ignore($this->editedId, 'id'),
             'password' => 'nullable',
-            'image_temp' => 'image',
+            'image_temp' => 'nullable|image',
         ];
     }
     protected $messages = [

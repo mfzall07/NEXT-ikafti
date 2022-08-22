@@ -61,6 +61,9 @@ class Delete extends Component
             ]);
         }elseif($this->entity == 'job'){
             $job = Job::findOrFail($this->deletedId);
+            if($job->image){
+                Storage::disk('public')->delete(str_replace('public/', '', $job->image));
+            }
             $job->delete();
             $this->emit('jobDeleted');
             $this->dispatchBrowserEvent('alert',[

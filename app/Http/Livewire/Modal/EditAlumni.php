@@ -25,7 +25,7 @@ class EditAlumni extends Component
         'birth_date' =>'required',
         'generation' =>'required',
         'program_studi' =>'required',
-        'image_temp' => 'image',
+        'image_temp' => 'nullable|image',
     ];
     protected $messages = [
         'image_temp.image' => 'The image must be an image.'

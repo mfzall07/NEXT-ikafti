@@ -10,19 +10,19 @@
             </div>
             <div class="flex flex-row items-center gap-2 mt-1">
                 <i class="fa-solid fa-clock"></i>
-                <span class="text-gray-400 text-sm">Full Time</span>
+                <span class="text-gray-400 text-sm">{{ $job->job_type }}</span>
             </div>
             <div class="flex flex-row items-center gap-2 mt-1">
                 <span class="font-bold">Rp</span>
-                <span class="text-gray-400 text-sm">10.000.000</span>
+                <span class="text-gray-400 text-sm">{{ $job->salary }}</span>
             </div>
             <div class="flex flex-row items-center gap-2 mt-1">
                 <i class="fa-solid fa-location-dot"></i>
-                <span class="text-gray-400 text-sm">jakarta</span>
+                <span class="text-gray-400 text-sm">{{ $job->placement }}</span>
             </div>
             <div class="flex flex-row items-center gap-2 mt-1">
                 <i class="fa-solid fa-square-phone"></i>
-                <span class="text-gray-400 text-sm">+62812xxxxxx</span>
+                <span class="text-gray-400 text-sm">{{ $job->phone }}</span>
             </div>
         </div>
         <p class="text-black text-justify mt-5">

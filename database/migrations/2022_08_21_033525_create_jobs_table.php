@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('company_name');
+            $table->string('phone');
+            $table->string('job_type');
+            $table->string('placement');
+            $table->double('salary');
             $table->string('title');
             $table->text('description');
             $table->string('image')->nullable();

@@ -15,12 +15,24 @@
                             <div class="bg-gray-200 rounded-full shadow-xl w-fit" x-data="showImage()">
                                 <div class="flex items-center justify-center">
                                     <label class="flex justify-center items-center relative w-32 h-32 rounded-full shadow-lg cursor-pointer hover:text-blue-500">
-                                        <img src="../../assets/images/profile.jpg" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                        @if ($image_temp)
+                                            @if($errors->has('image_temp'))
+                                                <img src="{{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg') }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                            @else
+                                                <img src="{{ $image_temp->temporaryUrl() }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                            @endif
+                                        @else
+                                            <img src="{{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg') }}" id="preview" class="absolute rounded-full w-32 h-32 object-cover brightness-75">
+                                        @endif
                                         <div class="absolute bg-white text-blue-500 hover:text-blue-600 w-12 h-12 text-xl rounded-full flex items-center justify-center"><i class="fa-solid fa-user-pen"></i></div>
-                                        <input type="file" class="opacity-0" accept="image/*" @change="showPreview(event)" />
+                                        <input type="file" wire:model="image_temp" class="opacity-0" accept="image/*" />
                                     </label>
                                 </div>
                             </div>
+                            <div wire:loading wire:target="image_temp">
+                                Loading...
+                            </div>
+                            @error('image_temp') <span class="text-red-500">{{ $message }}</span> @enderror
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Company Logo</h1>
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
@@ -31,7 +43,8 @@
                             </div>
                             <div class="w-full">
                                 <label for="edit_phone_number" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                                <input type="text" name="edit_phone_number" id="edit_phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
+                                <input type="text" wire:model.defer="phone" name="edit_phone_number" id="edit_phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone Number" required>
+                                @error('phone') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
@@ -42,21 +55,24 @@
                             </div>
                             <div class="w-full">
                                 <label for="edit_job_type" class="block mb-2 text-sm font-medium text-gray-900">Job Type</label>
-                                <select id="edit_job_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <select id="edit_job_type" wire:model.defer="job_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="" selected>Job Type</option>
                                     <option value="Full Time">Full Time</option>
                                     <option value="Part Time">Part Time</option>
                                 </select>
+                                @error('job_type') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="flex flex-col laptop:flex-row items-center gap-5">
                             <div class="w-full">
                                 <label for="edit_placement" class="block mb-2 text-sm font-medium text-gray-900">Placement</label>
-                                <input type="text" name="edit_placement" id="edit_placement" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Placement" required>
+                                <input type="text" wire:model.defer="placement" name="edit_placement" id="edit_placement" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Placement" required>
+                                @error('placement') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
                                 <label for="edit_salary" class="block mb-2 text-sm font-medium text-gray-900">Salary</label>
-                                <input type="text" name="edit_salary" id="edit_salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Salary" required>
+                                <input type="text" wire:model.defer="salary" name="edit_salary" id="edit_salary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Salary" required>
+                                @error('salary') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div>

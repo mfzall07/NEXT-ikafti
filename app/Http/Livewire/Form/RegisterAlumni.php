@@ -22,7 +22,7 @@ class RegisterAlumni extends Component
         'birth_date' =>'required',
         'generation' =>'required',
         'program_studi' =>'required',
-        'image' => 'image',
+        'image' => 'nullable|image',
     ];
     public function render()
     {

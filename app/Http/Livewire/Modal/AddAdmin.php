@@ -17,7 +17,7 @@ class AddAdmin extends Component
         'email' => 'required|email|unique:users,email',
         'username' => 'required|unique:users,username',
         'password' => 'required',
-        'image' => 'image',
+        'image' => 'nullable|image',
     ];
     public function render()
     {
