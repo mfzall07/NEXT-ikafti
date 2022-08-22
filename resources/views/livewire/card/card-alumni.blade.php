@@ -14,7 +14,89 @@
         </div>
     </div>
     <div class="flex flex-col laptop:grid grid-cols-12 items-center justify-between flex-wrap gap-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-4">
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-3">
+            <div class="h-24 w-24 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-24 w-24 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex flex-col">
+                <div class="rounded-lg shadow-xl">
+                    <div style="background-image: url('../../assets/images/profile.jpg')" class="bg-cover bg-center w-full h-36 flex items-center justify-center">
+                        <img src="../../assets/images/profile.jpg" class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-xl" alt="">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-5 p-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-user-tie"></i> 
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">Muh Faizal</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-map-location-dot"></i>   
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-house-circle-check"></i>   
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-envelope"></i>  
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-square-phone"></i>  
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-users"></i>  
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-building"></i>
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">PT. VIN PROTOCOL</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-3">
+            <div class="h-24 w-24 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
+            <div class="h-24 w-24 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <div class="flex flex-col">
+                <div class="rounded-lg shadow-xl">
+                    <div style="background-image: url('../../assets/images/profile.jpg')" class="bg-cover bg-center w-full h-36 flex items-center justify-center">
+                        <img src="../../assets/images/profile.jpg" class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-xl" alt="">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-5 p-5">
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-user-tie"></i> 
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">Muh Faizal</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-map-location-dot"></i>   
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">Jl. Beringin</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-house-circle-check"></i>   
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">Palu</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-envelope"></i>  
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">faizal@gmail.com</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-square-phone"></i>  
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">+6282xxxxxx</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-users"></i>  
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">2017</h1>
+                    </div>
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-building"></i>
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">PT. VIN PROTOCOL</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-3">
             <div class="h-24 w-24 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
             <div class="h-24 w-24 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
             <div class="flex flex-col">
