@@ -184,6 +184,26 @@
         });
     </script>
     <script>
+        window.livewire.on('add-announcement', function(){
+            $('[modal-add-announcement]').trigger('click');
+        });
+        window.livewire.on('announcementStored', function() {
+            $('[modal-add-announcement]').trigger('click');
+        });
+        window.livewire.on('edit-announcement', function(){
+            $('[modal-edit-announcement]').trigger('click');
+        });
+        window.livewire.on('announcementEdited', function(){
+            $('[modal-edit-announcement]').trigger('click');
+        });
+        window.livewire.on('delete-announcement', function(){
+            $('[modal-delete-announcement]').trigger('click');
+        });
+        window.livewire.on('announcementDeleted', function(){
+            $('[modal-delete-announcement]').trigger('click');
+        });
+    </script>
+    <script>
         window.addEventListener('alert', event => {
             toastr[event.detail.type](event.detail.message,
             event.detail.title ?? ''), toastr.options = {
