@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             AlumniSeeder::class,
-            JobSeeder::class
+            JobSeeder::class,
+            AnnouncementSeeder::class
         ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Modal;
 
 use App\Models\Alumni;
+use App\Models\Announcement;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +15,8 @@ class Delete extends Component
     protected $listeners = [
         'delete-admin' => 'deleteAdmin',
         'delete-alumni' => 'deleteAlumni',
-        'delete-job' => 'deleteJob'
+        'delete-job' => 'deleteJob',
+        'delete-announcement' => 'deleteAnnouncement',
     ];
     public function render()
     {
@@ -34,6 +36,11 @@ class Delete extends Component
     {
         $this->deletedId = $id;
         $this->entity = 'job';
+    }
+    public function deleteAnnouncement($id)
+    {
+        $this->deletedId = $id;
+        $this->entity = 'announcement';
     }
     public function confirm()
     {
@@ -69,6 +76,17 @@ class Delete extends Component
             $this->dispatchBrowserEvent('alert',[
                 'type'=>'success',
                 'message'=>"Job deleted successfully"
+            ]);
+        }elseif($this->entity == 'announcement'){
+            $announcement = Announcement::findOrFail($this->deletedId);
+            if($announcement->image){
+                Storage::disk('public')->delete(str_replace('public/', '', $announcement->image));
+            }
+            $announcement->delete();
+            $this->emit('announcementDeleted');
+            $this->dispatchBrowserEvent('alert',[
+                'type'=>'success',
+                'message'=>"Announcement deleted successfully"
             ]);
         }
     }
