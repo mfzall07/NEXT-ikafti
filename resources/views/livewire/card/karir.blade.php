@@ -2,7 +2,7 @@
     @forelse ($jobs as $job)
         <div class="bg-white rounded-lg shadow-md border">
             <div class="flex flex-col laptop:flex-row items-center gap-4">
-                <div style="background: url({{ url( $job->image != null ? str_replace('public', 'storage',$job->image) : 'assets/images/exampleContent.jpg')}})" class="w-full h-56 bg-center bg-cover"></div>
+                <div style="background: url({{ url( $job->image != null ? str_replace('public', 'storage',$job->image) : 'assets/images/exampleContent.jpg')}})" class="w-96 h-56 bg-center bg-cover"></div>
                 <div class="p-5">
                     <div>
                         <a href="{{ route('karirDetail', ['id' =>$job->id]) }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">{{ $job->company_name }}</a>

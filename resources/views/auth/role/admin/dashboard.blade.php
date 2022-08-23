@@ -61,18 +61,24 @@
         </div>
     </section>
 
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <livewire:table.announcement-banner>
+    </section>
+
     <section class="pt-10">
         <livewire:footer.footers>
     </section>
 
     {{-- Begin::Modal --}}
+    <livewire:modal.view-alumni>
     <livewire:modal.add-admin>
     <livewire:modal.add-alumni>
-    <livewire:modal.view-alumni>
     <livewire:modal.add-job>
+    <livewire:modal.add-announcement>
     <livewire:modal.edit-admin>
     <livewire:modal.edit-alumni>
     <livewire:modal.edit-job>
+    <livewire:modal.edit-announcement>
     <livewire:modal.accept>
     <livewire:modal.decline>
     <livewire:modal.delete>
