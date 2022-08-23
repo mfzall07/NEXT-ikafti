@@ -19,13 +19,23 @@
     </section>
     
     <section class="px-5 laptop:px-20 mt-5">
-        <h1 class="mb-6 font-bold text-3xl">Add Content</h1>
-        <textarea id="editor"></textarea>
-        <div class="mt-7 flex items-center justify-end gap-5">
-            <button class="bg-transparent border border-red-500 rounded-full px-4 py-1 text-black font-semibold">Cancel</button>
-            <button class="bg-red-500 rounded-full px-4 py-1 text-white font-semibold">Upload Content</button>
-        </div>
-        {{-- <livewire:form.add-content> --}}
+        <form method="post">
+            <div class="mb-6 space-x-10 flex items-center w-full">
+                <div class="space-x-3 w-full flex items-center">
+                    <label for="title" class="font-semibold">Title</label>
+                    <input type="text" class="rounded-xl bg-gray-200 border-0 w-full" id="title" placeholder="Title">
+                </div>
+                <div class="space-x-3 w-full flex items-center">
+                    <label for="author" class="font-semibold">Author</label>
+                    <input type="text" class="rounded-xl bg-gray-200 border-0 w-full" id="author" placeholder="Author">
+                </div>
+            </div>
+            <textarea id="mytextarea">Put your content here !!!</textarea>
+            <div class="mt-5 flex items-center justify-end gap-5">
+                <button class="rounded-lg bg-red-500 px-4 py-1 text-white font-bold">Cancel</button>
+                <button class="rounded-lg bg-green-400 px-4 py-1 text-white font-bold">Upload</button>
+            </div>
+        </form>
     </section>
 
     <section class="pt-10">
@@ -37,15 +47,20 @@
     {{-- End::Livewire --}}
 
     {{-- Begin::Javascript --}}
-    <script src="../assets/js/ckeditor/ckeditor.js"></script>
     <script src="../assets/js/flowbite/dist/flowbite.js"></script>
+    <script src="https://cdn.tiny.cloud/1/xp2p6y270jp2h4cn3l01prwr1k70g163uko8xf3hm2kl7f4l/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+        tinymce.init({
+          selector: '#mytextarea',
+          plugins: [
+            'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+            'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+            'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+          ],
+          toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+            'alignleft aligncenter alignright alignjustify | ' +
+            'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+        });
     </script>
-    {{-- End::Javascript --}}
 </body>
 </html>
