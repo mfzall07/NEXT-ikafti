@@ -13,7 +13,7 @@ class EditAlumni extends Component
     protected $listeners = [
         'edit-alumni' => 'editAlumni'
     ];
-    public $editedId, $fullname, $current_company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi, $image, $image_temp;
+    public $editedId, $fullname, $current_company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi, $image, $image_temp, $proof, $new_proof;
     protected $rules = [
         'fullname' => 'required',
         'current_company' =>'required',
@@ -26,6 +26,7 @@ class EditAlumni extends Component
         'generation' =>'required',
         'program_studi' =>'required',
         'image_temp' => 'nullable|image',
+        'new_proof' =>'required|mimes:png,jpg,jpeg,pdf'
     ];
     protected $messages = [
         'image_temp.image' => 'The image must be an image.'
@@ -38,6 +39,14 @@ class EditAlumni extends Component
     public function updated($image_temp)
     {
         $this->validateOnly($image_temp);
+    }
+    public function updatedNewProof()
+    {
+        $this->validateOnly('new_proof');
+    }
+    public function download($filename)
+    {
+        return Storage::disk('public')->download('proof/'.$filename);
     }
     public function editAlumni($id)
     {
@@ -55,6 +64,7 @@ class EditAlumni extends Component
         $this->generation = $alumni->generation;
         $this->program_studi = $alumni->program_studi;
         $this->image = $alumni->image;
+        $this->proof = $alumni->proof;
     }
     public function update()
     {
@@ -68,9 +78,18 @@ class EditAlumni extends Component
         }else{
             $path = $alumni->image;
         }
+        if($this->new_proof){
+            if($alumni->proof){
+                Storage::disk('public')->delete(str_replace('public/', '', $alumni->proof));
+            }
+            $proof_path = $this->new_proof->store('public/proof');
+        }else{
+            $proof_path = $alumni->proof;
+        }
         $alumni->name = $validated['fullname'];
         $alumni->company = $validated['current_company'];
         $alumni->image = $path;
+        $alumni->proof = $proof_path;
         $alumni->save();
         $this->emit('alumniEdited');
         $this->dispatchBrowserEvent('alert',[

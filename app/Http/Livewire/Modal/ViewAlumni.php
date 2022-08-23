@@ -3,11 +3,12 @@
 namespace App\Http\Livewire\Modal;
 
 use App\Models\Alumni;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class ViewAlumni extends Component
 {
-    public $alumni, $image;
+    public $alumni, $image, $proof;
     protected $listeners = [
         'view-alumni' => 'viewAlumni'
     ];
@@ -20,5 +21,10 @@ class ViewAlumni extends Component
         $alumni = Alumni::find($id);
         $this->alumni = $alumni;
         $this->image = $alumni->image;
+        $this->proof = $alumni->proof;
+    }
+    public function download($filename)
+    {
+        return Storage::disk('public')->download('proof/'.$filename);
     }
 }

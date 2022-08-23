@@ -42,7 +42,13 @@
                             <h1 class="mb-2">{{ $alumni->birth_date ?? '-' }}</h1>
                             <h1 class="mb-2">{{ $alumni->generation ?? '-' }}</h1>
                             <h1 class="mb-2">{{ $alumni->program_studi ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->proof ?? '-' }}</h1>
+                            @if ($proof)
+                                <a class="mb-2" wire:click="download('{{ str_replace('public/proof/', '', $proof) }}')">{{ str_replace('public/proof/', '', $proof) }}</a>
+
+                            @else
+                                <h1 class="mb-2">-</h1>
+
+                            @endif
                         </div>
                     </div>
                 </div>

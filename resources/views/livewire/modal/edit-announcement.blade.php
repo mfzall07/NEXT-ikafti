@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div wire:loading wire:target="image_temp">
-                                Loading...
+                                Uploading...
                             </div>
                             @error('image_temp') <span class="text-red-500">{{ $message }}</span> @enderror
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Banner</h1>

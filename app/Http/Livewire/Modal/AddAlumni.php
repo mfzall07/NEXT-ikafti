@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 class AddAlumni extends Component
 {
     use WithFileUploads;
-    public $fullname, $image, $current_company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi;
+    public $fullname, $proof, $image, $current_company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi;
     protected $rules = [
         'fullname' => 'required',
         'current_company' =>'required',
@@ -22,6 +22,7 @@ class AddAlumni extends Component
         'generation' =>'required',
         'program_studi' =>'required',
         'image' => 'nullable|image',
+        'proof' =>'required|mimes:png,jpg,jpeg,pdf'
     ];
     public function render()
     {
@@ -31,6 +32,10 @@ class AddAlumni extends Component
     {
         $this->validateOnly($image);
     }
+    public function updatedProof()
+    {
+        $this->validateOnly('proof');
+    }
     public function submit()
     {
         $validated = $this->validate();
@@ -39,6 +44,7 @@ class AddAlumni extends Component
         }else{
             $path = $this->image->store('public/image');
         }
+        $proof_path = $this->proof->store('public/proof');
         Alumni::create([
             'name' => $validated['fullname'],
             'company' => $validated['current_company'],
@@ -50,7 +56,8 @@ class AddAlumni extends Component
             'birth_date' =>$validated['birth_date'],
             'generation' =>$validated['generation'],
             'program_studi' =>$validated['program_studi'],
-            'image' => $path
+            'image' => $path,
+            'proof' => $proof_path
         ]);
         $this->reset();
         $this->emit('alumniStored');

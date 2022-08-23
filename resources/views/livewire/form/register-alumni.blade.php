@@ -45,7 +45,7 @@
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" wire:model.defer="generation" name="angakatan" id="angakatan" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <input type="number" wire:model.defer="generation" name="angakatan" id="angakatan" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                     <label for="angakatan" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Angkatan</label>
                     @error('generation') <span class="text-red-500">{{ $message }}</span> @enderror
               </div>
@@ -72,10 +72,23 @@
                     <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div class="flex flex-col justify-center items-center pt-5 pb-6">
                             <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload the proof</span> or drag and drop</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG & PDF</p>
+                            @if ($proof)
+                                @if($errors->has('proof'))
+                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload the proof</span>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, JPEG & PDF</p>
+                                @else
+                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Your proof has been uploaded</span>
+                                @endif
+                            @else
+                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload the proof</span>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, JPEG & PDF</p>
+                            @endif
                         </div>
-                        <input id="dropzone-file" type="file" class="hidden" />
+                        <input id="dropzone-file" wire:model="proof" type="file" accept=".png,.jpg,.jpeg,.pdf" class="hidden" />
+                        <div wire:loading wire:target="proof">
+                            Uploading...
+                        </div>
+                        @error('proof') <span class="text-red-500">{{ $message }}</span> @enderror
                     </label>
                 </div>
             </div>
@@ -100,7 +113,7 @@
                     </div>
                 </div>
                 <div wire:loading wire:target="image">
-                    Loading...
+                    Uploading...
                 </div>
                 @error('image') <span class="text-red-500">{{ $message }}</span> @enderror
                 <h1 class="font-semibold">Upload Image</h1>

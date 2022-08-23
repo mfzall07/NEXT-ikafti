@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div wire:loading wire:target="image_temp">
-                                Loading...
+                                Uploading...
                             </div>
                             @error('image_temp') <span class="text-red-500">{{ $message }}</span> @enderror
                             <h1 class="mb-2 text-sm font-medium text-gray-900">Upload Image</h1>
@@ -82,7 +82,7 @@
                             </div>
                             <div class="w-full">
                                 <label for="edit_generation" class="block mb-2 text-sm font-medium text-gray-900">Generation</label>
-                                <input type="text" wire:model.defer="generation" name="edit_generation" id="edit_generations" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Generation" required>
+                                <input type="number" wire:model.defer="generation" name="edit_generation" id="edit_generations" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Generation" required>
                                 @error('generation') <span class="text-red-500">{{ $message }}</span> @enderror
                             </div>
                             <div class="w-full">
@@ -98,14 +98,30 @@
                             </div>
                         </div>
                         <div>
+                            @if ($proof)
+                                <a class="mb-2" wire:click="download('{{ str_replace('public/proof/', '', $proof) }}')">{{ str_replace('public/proof/', '', $proof) }}</a>
+                            @endif
                             <div class="flex justify-center items-center w-full">
                                 <label for="dropzone-files" class="flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                     <div class="flex flex-col justify-center items-center pt-5 pb-6">
                                         <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload the proof</span> or drag and drop</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG & PDF</p>
+                                        @if ($new_proof)
+                                            @if($errors->has('new_proof'))
+                                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload the proof</span> or drag and drop</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG & PDF</p>
+                                            @else
+                                                <p class="text-xs text-gray-500 dark:text-gray-400"><span class="font-semibold">Your proof has been uploaded</span>
+                                            @endif
+                                        @else
+                                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload the proof</span> or drag and drop</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG & PDF</p>
+                                        @endif
                                     </div>
-                                    <input id="dropzone-files" type="file" class="hidden" />
+                                    <input id="dropzone-files" wire:model="new_proof" type="file" accept=".png,.jpg,.jpeg,.pdf" class="hidden" />
+                                    <div wire:loading wire:target="new_proof">
+                                        Uploading...
+                                    </div>
+                                    @error('new_proof') <span class="text-red-500">{{ $message }}</span> @enderror
                                 </label>
                             </div>
                         </div>

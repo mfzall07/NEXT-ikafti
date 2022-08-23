@@ -10,7 +10,7 @@ use Livewire\WithFileUploads;
 class RegisterAlumni extends Component
 {
     use WithFileUploads;
-    public $name, $image, $company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi;
+    public $name, $image, $proof, $company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi;
     protected $rules = [
         'name' => 'required',
         'company' =>'required',
@@ -23,6 +23,7 @@ class RegisterAlumni extends Component
         'generation' =>'required',
         'program_studi' =>'required',
         'image' => 'nullable|image',
+        'proof' =>'required|mimes:png,jpg,jpeg,pdf'
     ];
     public function render()
     {
@@ -32,6 +33,10 @@ class RegisterAlumni extends Component
     {
         $this->validateOnly($image);
     }
+    public function updatedProof()
+    {
+        $this->validateOnly('proof');
+    }
     public function submit()
     {
         $validated = $this->validate();
@@ -40,6 +45,8 @@ class RegisterAlumni extends Component
         }else{
             $path = $this->image->store('public/image');
         }
+        $proof_path = $this->proof->store('public/proof');
+        $validated['proof'] = $proof_path;
         $validated['image'] = $path;
         $alumni = Alumni::create($validated);
         WaitingList::create([
