@@ -9,7 +9,7 @@ class Header extends Component
 {
     public function render()
     {
-        $announcements = Announcement::latest()->get();
+        $announcements = Announcement::latest()->take(3)->get();
         return view('livewire.carousel.header', compact('announcements'));
     }
 }
