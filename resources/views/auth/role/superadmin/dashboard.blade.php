@@ -193,6 +193,12 @@
         window.livewire.on('alumniDeclined', function(){
             $('[modal-decline-alumni]').trigger('click');
         });
+        window.livewire.on('delete-content', function(){
+            $('[modal-delete-content]').trigger('click');
+        });
+        window.livewire.on('contentDeleted', function(){
+            $('[modal-delete-content]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {

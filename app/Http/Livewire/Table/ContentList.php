@@ -10,6 +10,9 @@ class ContentList extends Component
 {
     use WithPagination;
     public $search;
+    protected $listeners = [
+        'contentDeleted' => '$refresh'
+    ];
     public function render()
     {
         $contents = $this->search == null ?

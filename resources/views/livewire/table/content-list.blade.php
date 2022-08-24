@@ -1,4 +1,5 @@
 <div>
+    <button data-modal-toggle="delete" modal-delete-content hidden></button>
     <div class="relative bg-white border shadow-lg p-5 rounded-xl overflow-hidden">
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
             <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
@@ -65,7 +66,7 @@
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
 
-                                    <a href="{{ route('editContent') }}" data-tooltip-target="edit_content" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-blue-500">
+                                    <a href="{{ route('editContent', ['id' => $content->id]) }}" data-tooltip-target="edit_content" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-blue-500">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
                                     <div id="edit_content" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
@@ -73,7 +74,7 @@
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
 
-                                    <button type="button" data-tooltip-target="delete_content" data-modal-toggle="delete" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-red-500">
+                                    <button type="button" data-tooltip-target="delete_content" wire:click="$emit('delete-content', {{ $content->id }})" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-red-500">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                     <div id="delete_content" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
