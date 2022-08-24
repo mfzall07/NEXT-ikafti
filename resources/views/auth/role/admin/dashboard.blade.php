@@ -208,6 +208,12 @@
         window.livewire.on('contentDeleted', function(){
             $('[modal-delete-content]').trigger('click');
         });
+        window.livewire.on('change-password', function(){
+            $('[modal-change-password]').trigger('click');
+        });
+        window.livewire.on('resultChangePassword', function(){
+            $('[modal-change-password]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {
