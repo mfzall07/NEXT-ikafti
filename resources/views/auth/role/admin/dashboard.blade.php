@@ -202,6 +202,12 @@
         window.livewire.on('announcementDeleted', function(){
             $('[modal-delete-announcement]').trigger('click');
         });
+        window.livewire.on('delete-content', function(){
+            $('[modal-delete-content]').trigger('click');
+        });
+        window.livewire.on('contentDeleted', function(){
+            $('[modal-delete-content]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {
