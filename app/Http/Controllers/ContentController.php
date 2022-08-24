@@ -20,8 +20,9 @@ class ContentController extends Controller
         $job = Job::findOrFail($id);
         return view('auth.karir-details', compact('job'));
     }
-    public function informationDetails() {
-        return view('auth.information-datails');
+    public function informationDetails($id) {
+        $content = Content::findOrFail($id);
+        return view('auth.information-datails', compact('content'));
     }
     public function uploadImage(Request $request)
     {
@@ -30,7 +31,7 @@ class ContentController extends Controller
         // // Image::make($mainImage)->save(public_path('public/image/'.$filename));
         // return json_encode(['location' => asset('public/image/'.$filename)]);
         $img = Storage::disk('public')->put("content", $request->file);
-            echo json_encode(array('location' => asset('storage/'.$img)));
+            echo json_encode(array('location' => url('storage/'.$img)));
     }
     public function store(Request $request)
     {
@@ -39,6 +40,12 @@ class ContentController extends Controller
             'author' => $request->author,
             'body' => $request->body
         ]);
-        return back();
+        if (auth()->user()->role_id == 1) {
+            return redirect()->route('DashboardSA');
+        }elseif(auth()->user()->role_id == 2){
+            return redirect()->route('DashboardAdmin');
+        }else{
+            abort(404);
+        }
     }
 }

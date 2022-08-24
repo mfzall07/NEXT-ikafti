@@ -29,11 +29,11 @@
             <div class="mb-6 space-x-10 flex items-center w-full">
                 <div class="space-x-3 w-full flex items-center">
                     <label for="title" class="font-semibold">Title</label>
-                    <input type="text" name="title" class="rounded-xl bg-gray-200 border-0 w-full" id="title" placeholder="Title">
+                    <input type="text" name="title" class="rounded-xl bg-gray-200 border-0 w-full" id="title" placeholder="Title" required>
                 </div>
                 <div class="space-x-3 w-full flex items-center">
                     <label for="author" class="font-semibold">Author</label>
-                    <input type="text" name="author" class="rounded-xl bg-gray-200 border-0 w-full" id="author" placeholder="Author">
+                    <input type="text" name="author" class="rounded-xl bg-gray-200 border-0 w-full" id="author" placeholder="Author" required>
                 </div>
             </div>
             <textarea name="body" id="mytextarea">Put your content here !!!</textarea>
@@ -57,6 +57,7 @@
     <script src="https://cdn.tiny.cloud/1/xp2p6y270jp2h4cn3l01prwr1k70g163uko8xf3hm2kl7f4l/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
+            relative_urls: false,
             selector: '#mytextarea',
             plugins: [
                 'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
