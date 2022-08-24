@@ -37,6 +37,7 @@ Route::get('/ikafti/agenda/id', [AlumniController::class, 'agendaDetail'])->name
 
 // Content
 Route::get('/ikafti/add-content', [ContentController::class, 'addContent'])->name('addContent');
+Route::post('/ikafti/add-content', [ContentController::class, 'store'])->name('addContent.store');
 Route::get('/ikafti/edit-content/id', [ContentController::class, 'editContent'])->name('editContent');
 Route::get('/ikafti/informations/id', [ContentController::class, 'informationDetails'])->name('informationDetails');
 Route::get('/ikafti/karirs/{id}', [ContentController::class, 'karirDetails'])->name('karirDetails');
@@ -45,3 +46,5 @@ Route::get('/ikafti/karirs/{id}', [ContentController::class, 'karirDetails'])->n
 Route::get('/ikafti/Dashboard-SA', [SuperAdminController::class, 'Dashboard'])->name('DashboardSA');
 // Admin
 Route::get('/ikafti/Dashboard-Admin', [AdminController::class, 'Dashboard'])->name('DashboardAdmin');
+
+Route::post('/image_upload', [ContentController::class, 'uploadImage'])->name('image_upload');
