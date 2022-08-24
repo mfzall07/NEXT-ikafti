@@ -23,9 +23,13 @@ class AddAdmin extends Component
     {
         return view('livewire.modal.add-admin');
     }
-    public function updated($image)
+    public function updatedImage()
     {
-        $this->validateOnly($image);
+        $this->validateOnly('image');
+    }
+    public function updated($fields)
+    {
+        $this->validateOnly($fields);
     }
     public function submit()
     {
