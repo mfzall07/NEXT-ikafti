@@ -12,8 +12,9 @@ class ContentController extends Controller
     public function addContent() {
         return view('auth.addContent');
     }
-    public function editContent() {
-        return view('auth.editContent');
+    public function editContent($id) {
+        $content = Content::findOrFail($id);
+        return view('auth.editContent', compact('content'));
     }
     public function karirDetails($id) {
         // return $id;
@@ -36,6 +37,22 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         Content::create([
+            'title' => $request->title,
+            'author' => $request->author,
+            'body' => $request->body
+        ]);
+        if (auth()->user()->role_id == 1) {
+            return redirect()->route('DashboardSA');
+        }elseif(auth()->user()->role_id == 2){
+            return redirect()->route('DashboardAdmin');
+        }else{
+            abort(404);
+        }
+    }
+    public function updateContent(Request $request, $id)
+    {
+        $content = Content::find($id);
+        $content->update([
             'title' => $request->title,
             'author' => $request->author,
             'body' => $request->body
