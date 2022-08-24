@@ -100,6 +100,12 @@ class Delete extends Component
             // if($announcement->image){
             //     Storage::disk('public')->delete(str_replace('public/', '', $announcement->image));
             // }
+            preg_match_all('/src="([^"]+)"/', $content->body, $matches);
+            $assets = $matches[1];
+            foreach($assets as $asset){
+                // dd($asset);
+                Storage::disk('public')->delete(str_replace('/storage', '', $asset));
+            }
             $content->delete();
             $this->emit('contentDeleted');
             $this->dispatchBrowserEvent('alert',[
