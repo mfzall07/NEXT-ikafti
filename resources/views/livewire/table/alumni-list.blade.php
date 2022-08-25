@@ -59,7 +59,7 @@
                     @forelse ($alumnis as $alumni)
                         <tr class="bg-white border-b">
                             <td class="py-4 px-6">
-                                <h1 class="font-semibold truncate">{{ $loop->iteration }}</h1>
+                                <h1 class="font-semibold truncate">{{ $loop->iteration + $alumnis->firstItem() - 1}}</h1>
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex flex-row items-center gap-2">

@@ -50,7 +50,7 @@
                     @forelse ($announcements as $ann)
                         <tr class="bg-white border-b">
                             <td class="py-4 px-6">
-                                <h1 class="font-semibold truncate">{{ $loop->iteration }}</h1>
+                                <h1 class="font-semibold truncate">{{ $loop->iteration + $announcements->firstItem() - 1}}</h1>
                             </td>
                             <td class="py-4 px-6">
                                 <a href="#" class="font-bold text-black line-clamp-1">{{ $ann->title }}</a>
