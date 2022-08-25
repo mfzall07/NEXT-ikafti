@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class DetailAgenda extends Component
 {
+    public $agenda;
     public function render()
     {
         return view('livewire.card.detail-agenda');

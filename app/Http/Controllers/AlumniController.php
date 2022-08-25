@@ -42,7 +42,8 @@ class AlumniController extends Controller
         return view('agenda');
     }
 
-    public function agendaDetail() {
-        return view('agenda-detail');
+    public function agendaDetail($id) {
+        $agenda = Content::findOrFail($id);
+        return view('agenda-detail', compact('agenda'));
     }
 }

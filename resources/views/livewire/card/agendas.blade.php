@@ -1,6 +1,22 @@
 <div>
     <div class="flex flex-col laptop:grid grid-flow-row-dense grid-cols-4 grid-rows-3 items-center laptop:justify-center gap-5 flex-wrap">
+        @forelse ($agendas as $agenda)
         <div class="bg-white rounded-lg shadow-md border w-full">
+            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
+            <div class="p-5">
+                <a href="{{ route('agendaDetail', ['id' => $agenda->id]) }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">{{ $agenda->title }}</a>
+                <div class="flex flex-row items-center gap-2 mt-1">
+                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
+                    <span class="text-gray-400 text-xs">{{ date('d M Y', strtotime($agenda->created_at)) }}</span>
+                </div>
+                {{-- <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p> --}}
+            </div>
+        </div>
+
+        @empty
+
+        @endforelse
+        {{-- <div class="bg-white rounded-lg shadow-md border w-full">
             <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
             <div class="p-5">
                 <a href="{{ route('agendaDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
@@ -120,20 +136,10 @@
                 </div>
                 <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
             </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-md border w-full">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
-            <div class="p-5">
-                <a href="{{ route('agendaDetail') }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero quam </a>
-                <div class="flex flex-row items-center gap-2 mt-1">
-                    <div class="bg-green-400 w-2 h-2 rounded-full"></div>
-                    <span class="text-gray-400 text-xs">22 Aug 2022</span>
-                </div>
-                <p id="desc" class="text-gray-400 text-sm break-words mt-4 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-            </div>
-        </div>
+        </div> --}}
     </div>
-    <div class="text-xs text-gray-700 bg-white dark:bg-gray-800 dark:text-gray-400 rounded-b-lg px-6 mt-10 flex flex-col laptop:flex-row items-center justify-between gap-4 ">
+    {{ $agendas->onEachSide(1)->links('livewire.custom-pagination-links-view', ['pageName' => $agendas->getPageName()]) }}
+    {{-- <div class="text-xs text-gray-700 bg-white dark:bg-gray-800 dark:text-gray-400 rounded-b-lg px-6 mt-10 flex flex-col laptop:flex-row items-center justify-between gap-4 ">
         <span class="text-sm text-gray-700 dark:text-gray-400">
             Showing <span class="font-semibold text-gray-900 dark:text-white">1</span> to <span class="font-semibold text-gray-900 dark:text-white">8</span> of <span class="font-semibold text-gray-900 dark:text-white">100</span> Entries
         </span>
@@ -168,5 +174,5 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </div> --}}
 </div>

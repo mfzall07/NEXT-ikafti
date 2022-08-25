@@ -29,7 +29,7 @@
     </section>
 
     <section class="px-5 laptop:px-20">
-        <livewire:section.karir-dan-agenda>
+        {{-- <livewire:section.karir-dan-agenda> --}}
     </section>
 
     <section class="pt-10">

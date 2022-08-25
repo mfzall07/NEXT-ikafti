@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>IKAFTI</title>
-    
+
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
 
@@ -20,11 +20,11 @@
     </section>
 
     <section class="px-5 laptop:px-20 pt-10">
-        <livewire:card.detail-agenda>
+        <livewire:card.detail-agenda :agenda="$agenda">
     </section>
 
     <section class="px-5 laptop:px-20 pt-10">
-        <livewire:card.another-agenda>
+        <livewire:card.another-agenda :agenda="$agenda">
     </section>
 
     <section class="pt-10">
