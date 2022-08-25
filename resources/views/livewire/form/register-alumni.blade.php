@@ -1,6 +1,6 @@
 <div wire:ignore.self>
     <div class="flex flex-col laptop:grid grid-cols-12 gap-5">
-        <div class="col-span-8 order-2 laptop:order-1" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <div class="col-span-8 order-2 laptop:order-1">
             <div class="relative z-0 mb-6 w-full group">
                 <input type="text" wire:model.defer="name" name="nama-lengkap" id="nama-lengkap" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                 <label for="nama-lengkap" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nama Lengkap</label>
@@ -93,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-4 m-auto order-1 laptop:order-2" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <div class="col-span-4 m-auto order-1 laptop:order-2">
             <div class="flex flex-col gap-4 mb-6 col-span-4 items-center justify-center">
                 <div class="bg-gray-200 dark:bg-white rounded-full shadow-xl w-fit" x-data="showImage()">
                     <div class="flex items-center justify-center">
@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    <div class="flex items-center justify-center gap-5 mt-10" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+    <div class="flex items-center justify-center gap-5 mt-10"   >
         <button class="bg-transparent rounded-full border border-red-500 px-4 py-1">kembali Ke Beranda</button>
         <button wire:click.prevent="submit" class="bg-transparent rounded-full border border-red-500 px-4 py-1">Submit</button>
     </div>
