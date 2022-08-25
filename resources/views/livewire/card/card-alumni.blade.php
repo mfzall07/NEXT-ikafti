@@ -1,15 +1,15 @@
 <div>
     <div class="flex flex-col laptop:grid grid-cols-12 gap-5 mb-10">
         <div class="col-span-4 relative">
-            <input type="text" class="rounded-full w-full border border-gray-400 pl-14" placeholder="Nama Lengkap">
+            <input type="text" wire:model.debounce.500ms='filter_name' class="rounded-full w-full border border-gray-400 pl-14" placeholder="Nama Lengkap">
             <i class="fa-solid fa-user-tie absolute left-5 top-1.5 text-xl"></i>
         </div>
         <div class="col-span-4 relative">
-            <input type="text" class="rounded-full w-full border border-gray-400 pl-14" placeholder="Angkatan">
+            <input type="text" wire:model.debounce.500ms='filter_generation' class="rounded-full w-full border border-gray-400 pl-14" placeholder="Angkatan">
             <i class="fa-solid fa-calendar-days absolute left-5 top-1.5 text-xl"></i>
         </div>
         <div class="col-span-4 relative">
-            <input type="text" class="rounded-full w-full border border-gray-400 pl-14" placeholder="Domisili">
+            <input type="text" wire:model.debounce.500ms='filter_domicile' class="rounded-full w-full border border-gray-400 pl-14" placeholder="Domisili">
             <i class="fa-solid fa-location-dot absolute left-5 top-1.5 text-xl"></i>
         </div>
     </div>

@@ -7,7 +7,7 @@
 
             <div class="col-span-3">
                 <img src="../../assets/images/header/banner1.jpg" class="w-full h-56 object-cover" alt="">
-                <p class="text-black text-sm line-clamp-2 text-center">{{ $info->title }}</p>
+                <a href="{{ route('informationDetail', ['id' => $info->id]) }}" class="text-black text-sm line-clamp-2 text-center">{{ $info->title }}</a>
             </div>
         @empty
 
