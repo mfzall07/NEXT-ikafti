@@ -50,7 +50,7 @@
             </div>
             <textarea name="body" id="mytextarea">Put your content here !!!</textarea>
             <div class="mt-5 flex items-center justify-end gap-5">
-                <button class="rounded-lg bg-red-500 px-4 py-1 text-white font-bold">Cancel</button>
+                <a href="{{ url()->previous() }}" type="button" class="rounded-lg bg-red-500 px-4 py-1 text-white font-bold">Cancel</a>
                 <button type="submit" class="rounded-lg bg-green-400 px-4 py-1 text-white font-bold">Upload</button>
             </div>
         </form>
