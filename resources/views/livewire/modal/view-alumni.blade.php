@@ -19,36 +19,37 @@
                     <div style="background-image: url({{ url( $image != null ? str_replace('public', 'storage',$image) : 'assets/images/profile.jpg')}})" class="w-56 h-56 rounded-lg bg-cover bg-no-repeat shadow-lg"></div>
                     <div class="self-baseline grid grid-cols-12 gap-5 w-full">
                         <div class="col-span-4 font-bold text-black w-full">
-                            <h1 class="mb-2">Fullname</h1>
-                            <h1 class="mb-2">Current Company</h1>
-                            <h1 class="mb-2">Address</h1>
-                            <h1 class="mb-2">Domicile</h1>
-                            <h1 class="mb-2">Email</h1>
-                            <h1 class="mb-2">Phone Number</h1>
-                            <h1 class="mb-2">Birth Place</h1>
-                            <h1 class="mb-2">Birth Date</h1>
-                            <h1 class="mb-2">Generation</h1>
-                            <h1 class="mb-2">Program Study</h1>
-                            <h1 class="mb-2">Alumni Proof</h1>
+                            <h1 class="mb-4">Fullname</h1>
+                            <h1 class="mb-4">Current Company</h1>
+                            <h1 class="mb-4">Address</h1>
+                            <h1 class="mb-4">Domicile</h1>
+                            <h1 class="mb-4">Email</h1>
+                            <h1 class="mb-4">Phone Number</h1>
+                            <h1 class="mb-4">Birth Place</h1>
+                            <h1 class="mb-4">Birth Date</h1>
+                            <h1 class="mb-4">Generation</h1>
+                            <h1 class="mb-4">Program Study</h1>
+                            <h1 class="mb-4">Alumni Proof</h1>
                         </div>
                         <div class="col-span-8 w-full">
-                            <h1 class="mb-2">{{ $alumni->name ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->company ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->address ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->domicile ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->email ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->phone ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->birth_place ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->birth_date ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->generation ?? '-' }}</h1>
-                            <h1 class="mb-2">{{ $alumni->program_studi ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->name ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->company ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->address ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->domicile ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->email ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->phone ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->birth_place ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->birth_date ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->generation ?? '-' }}</h1>
+                            <h1 class="mb-4">{{ $alumni->program_studi ?? '-' }}</h1>
                             @if ($proof)
-                                <a class="mb-2" wire:click="download('{{ str_replace('public/proof/', '', $proof) }}')">{{ str_replace('public/proof/', '', $proof) }}</a>
+                                <a class="mb-4" wire:click="download('{{ str_replace('public/proof/', '', $proof) }}')">{{ str_replace('public/proof/', '', $proof) }}</a>
 
                             @else
-                                <h1 class="mb-2">-</h1>
+                                <h1 class="mb-4">-</h1>
 
                             @endif
+                            
                         </div>
                     </div>
                 </div>
