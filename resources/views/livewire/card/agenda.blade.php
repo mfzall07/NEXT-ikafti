@@ -9,7 +9,6 @@
                 </div>
                 <div class="flex flex-col laptop:flex-row laptop:items-center gap-4 mt-4">
                     <div class="flex flex-row items-center gap-2">
-                        <div style="background: url('../assets/images/exampleContent.jpg')" class="laptop:w-8 laptop:h-8 h-2 w-2 rounded-full bg-center bg-cover"></div>
                         <h1 class="font-bold text-xs laptop:text-base truncate">{{ $agenda->author }}</h1>
                     </div>
                     <div class="flex flex-row items-center gap-2">
