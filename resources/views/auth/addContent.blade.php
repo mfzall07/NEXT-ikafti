@@ -43,6 +43,10 @@
                         <option value="Agenda">Agenda</option>
                     </Select>
                 </div>
+                <div class="space-x-3 w-full flex items-center">
+                    <label for="thumbnail" class="font-semibold">Thumbnail</label>
+                    <input type="file" name="thumbnail" class="rounded-xl bg-gray-200 border-0 w-full" id="thumbnail" placeholder="Thumbnail" required>
+                </div>
             </div>
             <textarea name="body" id="mytextarea">Put your content here !!!</textarea>
             <div class="mt-5 flex items-center justify-end gap-5">

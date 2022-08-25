@@ -44,6 +44,10 @@
                         <option value="Agenda" @selected($content->category == 'Agenda')>Agenda</option>
                     </Select>
                 </div>
+                <div class="space-x-3 w-full flex items-center">
+                    <label for="thumbnail" class="font-semibold">Thumbnail</label>
+                    <input type="file" name="thumbnail" class="rounded-xl bg-gray-200 border-0 w-full" id="thumbnail" placeholder="Thumbnail" required>
+                </div>
             </div>
             <textarea name="body" id="mytextarea">{{ $content->body }}</textarea>
             <div class="mt-5 flex items-center justify-end gap-5">
@@ -62,7 +66,7 @@
     {{-- End::Livewire --}}
 
     {{-- Begin::Javascript --}}
-    <script src="../assets/js/flowbite/dist/flowbite.js"></script>
+    <script src="../../assets/js/flowbite/dist/flowbite.js"></script>
     <script src="https://cdn.tiny.cloud/1/xp2p6y270jp2h4cn3l01prwr1k70g163uko8xf3hm2kl7f4l/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
