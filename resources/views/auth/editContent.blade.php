@@ -38,10 +38,10 @@
                 </div>
                 <div class="space-x-3 w-full flex items-center">
                     <label for="category" class="font-semibold">Category</label>
-                    <Select class="rounded-xl bg-gray-200 border-0 w-full">
+                    <Select class="rounded-xl bg-gray-200 border-0 w-full" name="category" required>
                         <option selected disabled>Category</option>
-                        <option value="Information">Information</option>
-                        <option value="Agenda">Agenda</option>
+                        <option value="Information" @selected($content->category == 'Information')>Information</option>
+                        <option value="Agenda" @selected($content->category == 'Agenda')>Agenda</option>
                     </Select>
                 </div>
             </div>

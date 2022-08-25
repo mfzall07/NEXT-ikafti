@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
+            $table->enum('category', ['Information', 'Agenda']);
             $table->text('body');
             $table->timestamps();
         });

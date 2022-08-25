@@ -39,7 +39,8 @@ class ContentController extends Controller
         Content::create([
             'title' => $request->title,
             'author' => $request->author,
-            'body' => $request->body
+            'body' => $request->body,
+            'category' => $request->category
         ]);
         if (auth()->user()->role_id == 1) {
             return redirect()->route('DashboardSA');
@@ -55,7 +56,8 @@ class ContentController extends Controller
         $content->update([
             'title' => $request->title,
             'author' => $request->author,
-            'body' => $request->body
+            'body' => $request->body,
+            'category' => $request->category
         ]);
         if (auth()->user()->role_id == 1) {
             return redirect()->route('DashboardSA');
