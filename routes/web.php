@@ -5,6 +5,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContentController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::patch('/ikafti/edit-content/{id}', [ContentController::class, 'updateContent'])->name('editContent.update');
     Route::get('/ikafti/informations/{id}', [ContentController::class, 'informationDetails'])->name('informationDetails');
     Route::get('/ikafti/karirs/{id}', [ContentController::class, 'karirDetails'])->name('karirDetails');
+});
+Route::get('/ikafti-storage-link', function () {
+    Artisan::call('storage:link');
 });
 
 
