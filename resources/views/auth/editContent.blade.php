@@ -46,7 +46,7 @@
                 </div>
                 <div class="space-x-3 w-full flex items-center">
                     <label for="thumbnail" class="font-semibold">Thumbnail</label>
-                    <input type="file" name="thumbnail" class="rounded-xl bg-gray-200 border-0 w-full" id="thumbnail" placeholder="Thumbnail" required>
+                    <input type="file" name="thumbnail" class="rounded-xl bg-gray-200 border-0 w-full" id="thumbnail" placeholder="Thumbnail">
                 </div>
             </div>
             <textarea name="body" id="mytextarea">{{ $content->body }}</textarea>
