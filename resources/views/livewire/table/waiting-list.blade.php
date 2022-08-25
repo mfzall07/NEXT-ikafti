@@ -49,7 +49,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-4">
-                                    <button type="button" data-tooltip-target="tooltp-view-alumni" data-modal-toggle="view-alumni" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-blue-500">
+                                    <button type="button" data-tooltip-target="tooltp-view-alumni" wire:click="$emit('view-alumni', {{ $wl->alumni->id }})" class="w-7 h-7 flex items-center justify-center rounded-full font-semibold text-white bg-blue-500">
                                         <i class="fa-solid fa-eye"></i>
                                     </button>
                                     <div id="tooltp-view-alumni" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
