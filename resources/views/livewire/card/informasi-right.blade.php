@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-4">
     @forelse ($infos as $info)
     <div class="bg-white rounded-lg shadow-md border flex items-center gap-4">
-        <div style="background: url({{ url( $info->thumbnail != null ? str_replace('public', 'storage',$info->thumbnail) : 'assets/images/exampleContent.jpg')}});" class="w-96 laptop:h-[142px] h-56 rounded-l-lg bg-center bg-cover"></div>
+        <div style="background: url({{ url( $info->thumbnail != null ? str_replace('public', 'storage',$info->thumbnail) : 'assets/images/exampleContent.jpg')}});" class="w-96 laptop:h-[139px] h-56 rounded-l-lg bg-center bg-cover"></div>
         <div class="p-1">
             <div>
                 <a href="{{ route('informationDetail', ['id' => $info->id]) }}" id="title" class="font-bold text-xl hover:text-blue-500 break-words line-clamp-1">{{ $info->title }}</a>
