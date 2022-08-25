@@ -11,7 +11,7 @@ class Karirs extends Component
     use WithPagination;
     public function render()
     {
-        $jobs = Job::latest()->paginate(8, ['*'], 'jobPage') ;
+        $jobs = Job::latest()->paginate(8, ['*'], 'jobPage');
         return view('livewire.card.karirs', compact('jobs'));
     }
 }

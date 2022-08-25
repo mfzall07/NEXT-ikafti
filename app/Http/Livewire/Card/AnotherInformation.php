@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire\Card;
 
+use App\Models\Content;
 use Livewire\Component;
 
 class AnotherInformation extends Component
 {
+    public $info;
     public function render()
     {
-        return view('livewire.card.another-information');
+        $infos = Content::where('category', 'information')->whereNot('id', $this->info->id)->latest()->get();
+        return view('livewire.card.another-information', compact('infos'));
     }
 }

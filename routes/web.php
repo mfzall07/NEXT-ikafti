@@ -30,7 +30,7 @@ Route::group(['middleware' => 'guest'], function(){
     Route::get('/ikafti/karir/{id}', [AlumniController::class, 'karirDetail'])->name('karirDetail');
 
     Route::get('/ikafti/information', [AlumniController::class, 'information'])->name('information');
-    Route::get('/ikafti/information/id', [AlumniController::class, 'informationDetail'])->name('informationDetail');
+    Route::get('/ikafti/information/{id}', [AlumniController::class, 'informationDetail'])->name('informationDetail');
 
     Route::get('/ikafti/agenda', [AlumniController::class, 'agenda'])->name('agenda');
     Route::get('/ikafti/agenda/id', [AlumniController::class, 'agendaDetail'])->name('agendaDetail');

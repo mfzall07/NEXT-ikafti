@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
@@ -32,8 +33,9 @@ class AlumniController extends Controller
         return view('information');
     }
 
-    public function informationDetail() {
-        return view('information-datail');
+    public function informationDetail($id) {
+        $info = Content::findOrFail($id);
+        return view('information-datail', compact('info'));
     }
 
     public function agenda() {

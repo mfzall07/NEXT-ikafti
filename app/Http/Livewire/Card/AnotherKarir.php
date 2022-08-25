@@ -10,7 +10,7 @@ class AnotherKarir extends Component
     public $job;
     public function render()
     {
-        $jobs = Job::whereNot('id', $this->job)->latest()->get();
+        $jobs = Job::whereNot('id', $this->job->id)->latest()->get();
         return view('livewire.card.another-karir', compact('jobs'));
     }
 }
