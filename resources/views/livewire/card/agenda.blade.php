@@ -2,7 +2,7 @@
     @forelse ($agendas as $agenda)
     <div class="bg-white rounded-lg shadow-md border">
         <div class="flex flex-row items-center gap-4">
-            <div style="background: url('../assets/images/exampleContent.jpg')" class="w-96 laptop:h-[142px] h-56 bg-center bg-cover"></div>
+            <div style="background: url({{ url( $agenda->thumbnail != null ? str_replace('public', 'storage',$agenda->thumbnail) : 'assets/images/exampleContent.jpg')}})" class="w-96 laptop:h-[142px] h-56 bg-center bg-cover"></div>
             <div class="p-1">
                 <div>
                     <a href="{{ route('agendaDetail', ['id' => $agenda->id]) }}" id="title" class="font-bold hover:text-blue-500 text-base laptop:text-xl break-words line-clamp-2">{{ $agenda->title }}</a>
