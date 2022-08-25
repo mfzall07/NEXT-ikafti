@@ -2,7 +2,7 @@
     <div class="flex flex-col laptop:grid grid-flow-row-dense grid-cols-4 grid-rows-3 items-center laptop:justify-center gap-5 flex-wrap">
         @forelse ($infos as $info)
             <div class="bg-white rounded-lg shadow-md border w-full">
-                <div style="background: url('../assets/images/exampleContent.jpg')" class="h-56 bg-center bg-cover"></div>
+                <div style="background: url({{ url( $info->thumbnail != null ? str_replace('public', 'storage',$info->thumbnail) : 'assets/images/exampleContent.jpg')}})" class="h-56 bg-center bg-cover"></div>
                 <div class="p-5">
                     <a href="{{ route('informationDetail', ['id' => $info->id]) }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">{{ $info->title }}</a>
                     <div class="flex flex-row items-center gap-2 mt-1">
