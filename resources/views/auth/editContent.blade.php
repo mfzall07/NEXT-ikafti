@@ -9,7 +9,7 @@
 
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../../resources/css/app.css">
+    @vite('resources/css/app.css')
     @livewireStyles
 
 </head>
