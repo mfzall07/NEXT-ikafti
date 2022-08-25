@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="overflow-auto h-[34vh] laptop:h-[45vh]">
+        <div class="overflow-auto h-[34vh] laptop:h-[35vh]">
             <table class="w-full text-sm text-left text-gray-500" id="ContentList">
                 <thead class="text-xs text-gray-700 uppercase bg-white">
                     <tr>
@@ -33,6 +33,10 @@
                         </th>
                         <th scope="col" class="py-3 px-6 truncate">
                             Title
+                            <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
+                        </th>
+                        <th scope="col" class="py-3 px-6 truncate">
+                            Category
                             <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
                         </th>
                         <th scope="col" class="py-3 px-6 truncate">

@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="overflow-auto h-[34vh] laptop:h-[45vh]">
+        <div class="overflow-auto h-[34vh] laptop:h-[35vh]">
             <table class="w-full text-sm text-left text-gray-500" id="JobList">
                 <thead class="text-xs text-gray-700 uppercase bg-white">
                     <tr>
