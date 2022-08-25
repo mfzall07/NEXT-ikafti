@@ -22,7 +22,7 @@
                     <li>
                         <button id="profile" data-dropdown-toggle="dropdownAvatar" class="hidden laptop:flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" type="button">
                             <span class="sr-only">Open user menu</span>
-                            <img class="w-8 h-8 rounded-full object-cover" src="../../assets/images/profile.jpg" alt="user photo">
+                            <img class="w-8 h-8 rounded-full object-cover" src="{{ url( auth()->user()->image != null ? str_replace('public', 'storage',auth()->user()->image) : 'assets/images/profile.jpg') }}" alt="user photo">
                         </button>
                         <button id="profile" data-dropdown-toggle="dropdownAvatar" class="flex laptop:hidden text-sm border mt-5 laptop:mt-0 border-red-500 hover:border-red-600 text-red-500 px-4 py-1 w-full rounded-full" type="button">
                             <span class="sr-only">Open user menu</span>
