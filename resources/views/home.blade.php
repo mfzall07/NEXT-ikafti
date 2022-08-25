@@ -25,7 +25,7 @@
     </section>
 
     <section class="px-5 laptop:px-20 py-10">
-        {{-- <livewire:section.informasi-terkini> --}}
+        <livewire:section.informasi-terkini>
     </section>
 
     <section class="px-5 laptop:px-20">
