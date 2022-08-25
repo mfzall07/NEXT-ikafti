@@ -59,11 +59,18 @@ class ContentController extends Controller
     public function updateContent(Request $request, $id)
     {
         $content = Content::find($id);
+        if(!$request->has('thumbnail')){
+            $path = $content->thumbnail;
+        }else{
+            Storage::disk('public')->delete(str_replace('public/', '', $content->thumbnail));
+            $path = $request->thumbnail->store('public/image');
+        }
         $content->update([
             'title' => $request->title,
             'author' => $request->author,
             'body' => $request->body,
-            'category' => $request->category
+            'category' => $request->category,
+            'thumbnail' => $path
         ]);
         if (auth()->user()->role_id == 1) {
             return redirect()->route('DashboardSA');
