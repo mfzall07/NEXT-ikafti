@@ -36,11 +36,17 @@ class ContentController extends Controller
     }
     public function store(Request $request)
     {
+        if(!$request->has('thumbnail')){
+            $path = null;
+        }else{
+            $path = $request->thumbnail->store('public/image');
+        }
         Content::create([
             'title' => $request->title,
             'author' => $request->author,
             'body' => $request->body,
-            'category' => $request->category
+            'category' => $request->category,
+            'thumbnail' => $path
         ]);
         if (auth()->user()->role_id == 1) {
             return redirect()->route('DashboardSA');
