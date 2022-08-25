@@ -58,6 +58,9 @@
                                 <h1 class="truncate font-bold text-black">{{ $content->title }}</h1>
                             </td>
                             <td class="py-4 px-6">
+                                <h1 class="truncate font-semibol">{{ $content->category }}</h1>
+                            </td>
+                            <td class="py-4 px-6">
                                 <h1 class="font-semibold truncate">{{ date('d M Y', strtotime($content->created_at)) }}</h1>
                             </td>
                             <td class="py-4 px-6">
