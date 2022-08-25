@@ -25,14 +25,14 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('12341234'),
                 'phone' => '62891215865841'
             ],
-            [
-                'role_id' => 2,
-                'name' => 'Admin',
-                'username' => 'admin',
-                'email' => 'admin@ikafti.com',
-                'password' => Hash::make('12341234'),
-                'phone' => '628912156641'
-            ],
+            // [
+            //     'role_id' => 2,
+            //     'name' => 'Admin',
+            //     'username' => 'admin',
+            //     'email' => 'admin@ikafti.com',
+            //     'password' => Hash::make('12341234'),
+            //     'phone' => '628912156641'
+            // ],
 
         ];
         DB::table('users')->insert($users);
