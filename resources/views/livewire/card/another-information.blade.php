@@ -6,7 +6,7 @@
         @forelse ($infos as $info)
 
             <div class="col-span-3">
-                <img src="../../assets/images/header/banner1.jpg" class="w-full h-56 object-cover" alt="">
+                <img src="{{ url( $info->thumbnail != null ? str_replace('public', 'storage',$info->thumbnail) : 'assets/images/exampleContent.jpg')}}" class="w-full h-56 object-cover" alt="">
                 <a href="{{ route('informationDetail', ['id' => $info->id]) }}" class="text-black text-sm line-clamp-2 text-center">{{ $info->title }}</a>
             </div>
         @empty
