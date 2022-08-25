@@ -36,6 +36,14 @@
                     <label for="author" class="font-semibold">Author</label>
                     <input type="text" name="author" value="{{ $content->author }}" class="rounded-xl bg-gray-200 border-0 w-full" id="author" placeholder="Author" required>
                 </div>
+                <div class="space-x-3 w-full flex items-center">
+                    <label for="category" class="font-semibold">Category</label>
+                    <Select class="rounded-xl bg-gray-200 border-0 w-full">
+                        <option selected disabled>Category</option>
+                        <option value="Information">Information</option>
+                        <option value="Agenda">Agenda</option>
+                    </Select>
+                </div>
             </div>
             <textarea name="body" id="mytextarea">{{ $content->body }}</textarea>
             <div class="mt-5 flex items-center justify-end gap-5">
