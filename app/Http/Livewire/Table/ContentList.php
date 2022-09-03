@@ -16,9 +16,9 @@ class ContentList extends Component
     public function render()
     {
         $contents = $this->search == null ?
-            Content::latest()->paginate(5, ['*'], 'contentPage') :
+            Content::latest()->paginate(4, ['*'], 'contentPage') :
             Content::where('title', 'like', '%'.$this->search.'%')
-                ->latest()->paginate(5, ['*'], 'contentPage');
+                ->latest()->paginate(4, ['*'], 'contentPage');
         return view('livewire.table.content-list', compact('contents'));
     }
 }

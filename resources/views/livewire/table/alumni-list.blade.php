@@ -32,23 +32,23 @@
                     <tr>
                         <th scope="col" class="py-3 px-6 truncate rounded-tl-lg">
                             No
-                            <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
+                            {{-- <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i> --}}
                         </th>
                         <th scope="col" class="py-3 px-6 truncate">
                             Name
-                            <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
+                            {{-- <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i> --}}
                         </th>
                         <th scope="col" class="py-3 px-6 truncate">
                             Domisili
-                            <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
+                            {{-- <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i> --}}
                         </th>
                         <th scope="col" class="py-3 px-6 truncate">
                             Phone
-                            <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
+                            {{-- <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i> --}}
                         </th>
                         <th scope="col" class="py-3 px-6 truncate">
                             Angkatan
-                            <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i>
+                            {{-- <i class="fa-solid fa-sort hover:text-blue-500 ml-4 hover:cursor-pointer hidden laptop:inline-block"></i> --}}
                         </th>
                         <th scope="col" class="py-3 px-6 truncate">
                             Action

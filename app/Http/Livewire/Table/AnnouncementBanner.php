@@ -16,9 +16,9 @@ class AnnouncementBanner extends Component
     public function render()
     {
         $announcements = $this->search == null ?
-            Announcement::latest()->paginate(5, ['*'], 'annPage') :
+            Announcement::latest()->paginate(4, ['*'], 'annPage') :
             Announcement::where('title', 'like', '%'.$this->search.'%')
-                ->latest()->paginate(5, ['*'], 'annPage');
+                ->latest()->paginate(4, ['*'], 'annPage');
         return view('livewire.table.announcement-banner', compact('announcements'));
     }
 }

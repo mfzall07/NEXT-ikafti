@@ -18,11 +18,11 @@ class JobList extends Component
     public function render()
     {
         $jobs = $this->search == null ?
-            Job::latest()->paginate(5, ['*'], 'jobPage') :
+            Job::latest()->paginate(4, ['*'], 'jobPage') :
             Job::where('role_id', 2)
                 ->where('company_name', 'like', '%'.$this->search.'%')
                 ->orwhere('title', 'like', '%'.$this->search.'%')
-                ->latest()->paginate(5, ['*'], 'jobPage');
+                ->latest()->paginate(4, ['*'], 'jobPage');
         return view('livewire.table.job-list', compact('jobs'));
     }
 }

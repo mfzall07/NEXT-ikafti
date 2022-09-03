@@ -18,10 +18,10 @@ class WaitingList extends Component
     public function render()
     {
         $waiting_lists = $this->search == null ?
-            ModelsWaitingList::has('alumni')->latest()->paginate(5, ['*'], 'waitingPage') :
+            ModelsWaitingList::has('alumni')->latest()->paginate(4, ['*'], 'waitingPage') :
             ModelsWaitingList::whereHas('alumni', function($q){
                 $q->where('name', 'like', '%'.$this->search.'%');
-            })->latest()->paginate(5, ['*'], 'waitingPage');
+            })->latest()->paginate(4, ['*'], 'waitingPage');
         return view('livewire.table.waiting-list', compact('waiting_lists'));
     }
 }

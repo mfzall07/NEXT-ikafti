@@ -19,13 +19,13 @@ class AlumniList extends Component
     public function render()
     {
         $alumnis = $this->search == null ?
-            Alumni::doesntHave('waiting_list')->latest()->paginate(5, ['*'], 'alumniPage') :
+            Alumni::doesntHave('waiting_list')->latest()->paginate(4, ['*'], 'alumniPage') :
             Alumni::doesntHave('waiting_list')
                 ->where('name', 'like', '%'.$this->search.'%')
                 ->orwhere('domicile', 'like', '%'.$this->search.'%')
                 ->orwhere('phone', 'like', '%'.$this->search.'%')
                 ->orwhere('generation', 'like', '%'.$this->search.'%')
-                ->latest()->paginate(5, ['*'], 'alumniPage');
+                ->latest()->paginate(4, ['*'], 'alumniPage');
         return view('livewire.table.alumni-list', compact('alumnis'));
     }
 }
