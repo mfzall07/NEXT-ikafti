@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Announcement;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -39,5 +40,23 @@ class AnnouncementController extends Controller
             'message' => 'Announcement has been added',
             'data' => $ann
         ], 201);
+    }
+    public function show($announcement)
+    {
+        try{
+            $ann = Announcement::findOrFail($announcement);
+            return response()->json([
+                'success' => true,
+                'message' => 'Announcement found',
+                'data' => $ann
+            ]);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Annoucement not found',
+            ]);
+        }
+
+
     }
 }
