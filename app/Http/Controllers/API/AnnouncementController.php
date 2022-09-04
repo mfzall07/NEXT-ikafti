@@ -56,7 +56,35 @@ class AnnouncementController extends Controller
                 'message' => 'Annoucement not found',
             ]);
         }
-
-
+    }
+    public function update($announcement, Request $request)
+    {
+        try{
+            $ann = Announcement::findOrFail($announcement);
+            $validator = Validator::make($request->all(), [
+                'title' => 'required',
+                'description' => 'required',
+                'image' => 'nullable|image'
+            ]);
+            if($validator->fails()){
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Validation Error',
+                    'errors' => $validator->errors()
+                ]);
+            }
+            $validated = $validator->validate();
+            $ann->update($validated);
+            return response()->json([
+                'success' => true,
+                'message' => 'Announcement has been updated',
+                'data' => $ann
+            ], 201);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Annoucement not found',
+            ]);
+        }
     }
 }
