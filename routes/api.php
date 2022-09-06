@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AdminController;
 use App\Http\Controllers\API\AnnouncementController;
 use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
@@ -25,5 +26,6 @@ Route::prefix('v1')->group(function(){
     Route::middleware('auth:sanctum')->group(function(){
         Route::post('logout', [AuthController::class, 'logout']);
         Route::apiResource('announcement', AnnouncementController::class);
+        Route::apiResource('admin', AdminController::class);
     });
 });
