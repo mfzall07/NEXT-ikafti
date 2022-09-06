@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Job;
+use Exception;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -42,7 +43,19 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            $job = Job::findOrFail($id);
+            return response()->json([
+                'success' => true,
+                'message' => 'Job found',
+                'data' => $job
+            ]);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Job not found',
+            ]);
+        }
     }
 
     /**

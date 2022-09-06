@@ -53,7 +53,7 @@ class AnnouncementController extends Controller
         }catch(Exception){
             return response()->json([
                 'success' => false,
-                'message' => 'Annoucement not found',
+                'message' => 'Announcement not found',
             ]);
         }
     }
@@ -83,7 +83,7 @@ class AnnouncementController extends Controller
         }catch(Exception){
             return response()->json([
                 'success' => false,
-                'message' => 'Annoucement not found',
+                'message' => 'Announcement not found',
             ]);
         }
     }
@@ -99,7 +99,7 @@ class AnnouncementController extends Controller
         }catch(Exception){
             return response()->json([
                 'success' => false,
-                'message' => 'Annoucement not found',
+                'message' => 'Announcement not found',
             ]);
         }
     }
