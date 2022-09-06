@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
@@ -105,7 +106,51 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(Auth::user()->role_id != 1){
+            return response()->json([
+                'success' => false,
+                'message' => 'Not Allowed'
+            ]);
+        }
+        try{
+            $admin = User::findOrFail($id);
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'phone' => 'required',
+                'email' => 'required|email|'. Rule::unique('users', 'email')->ignore($id, 'id'),
+                'username' => 'required|'. Rule::unique('users', 'username')->ignore($id, 'id'),
+                'password' => 'nullable',
+                'image' => 'nullable|image',
+            ]);
+            // return 'ok';
+            if($validator->fails()){
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Validation Error',
+                    'errors' => $validator->errors()
+                ]);
+            }
+            $validated = $validator->validate();
+            $admin->name = $validated['name'];
+            $admin->phone = $validated['phone'];
+            $admin->email = $validated['email'];
+            $admin->username = $validated['username'];
+            if($validated['password'] != null){
+                $admin->password = Hash::make($validated['password']);
+            }
+            // $admin->image = $path;
+            $admin->save();
+            return response()->json([
+                'success' => true,
+                'message' => 'Admin has been updated',
+                'data' => $admin
+            ], 201);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Admin not found',
+            ]);
+        }
     }
 
     /**
