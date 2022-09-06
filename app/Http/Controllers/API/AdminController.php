@@ -161,6 +161,24 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::user()->role_id != 1){
+            return response()->json([
+                'success' => false,
+                'message' => 'Not Allowed'
+            ]);
+        }
+        try{
+            $admin = User::findOrFail($id);
+            $admin->delete();
+            return response()->json([
+                'success' => true,
+                'message' => 'Admin has been deleted',
+            ]);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Admin not found',
+            ]);
+        }
     }
 }
