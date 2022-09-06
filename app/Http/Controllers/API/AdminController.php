@@ -4,7 +4,11 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -31,7 +35,42 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::user()->role_id != 1){
+            return response()->json([
+                'success' => false,
+                'message' => 'Not Allowed'
+            ]);
+        }
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'username' => 'required|unique:users,username',
+            'password' => 'required',
+            'image' => 'nullable|image',
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation Error',
+                'errors' => $validator->errors()
+            ]);
+        }
+        $validated = $validator->validate();
+        $admin = User::create([
+            'role_id' => 2,
+            'name' => $validated['name'],
+            'phone' => $validated['phone'],
+            'email' => $validated['email'],
+            'username' => $validated['username'],
+            'password' => Hash::make($validated['password']),
+            // 'image' => $path
+        ]);
+        return response()->json([
+            'success' => true,
+            'message' => 'Admin has been added',
+            'data' => $admin
+        ], 201);
     }
 
     /**
@@ -42,7 +81,19 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            $admin = User::findOrFail($id);
+            return response()->json([
+                'success' => true,
+                'message' => 'Admin found',
+                'data' => $admin
+            ]);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Admin not found',
+            ]);
+        }
     }
 
     /**
