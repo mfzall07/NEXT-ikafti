@@ -87,4 +87,20 @@ class AnnouncementController extends Controller
             ]);
         }
     }
+    public function destroy($announcement)
+    {
+        try{
+            $ann = Announcement::findOrFail($announcement);
+            $ann->delete();
+            return response()->json([
+                'success' => true,
+                'message' => 'Announcement has been deleted',
+            ]);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Annoucement not found',
+            ]);
+        }
+    }
 }
