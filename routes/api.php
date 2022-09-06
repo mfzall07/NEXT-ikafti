@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AdminController;
 use App\Http\Controllers\API\AnnouncementController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\JobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,6 @@ Route::prefix('v1')->group(function(){
         Route::post('logout', [AuthController::class, 'logout']);
         Route::apiResource('announcement', AnnouncementController::class);
         Route::apiResource('admin', AdminController::class);
+        Route::apiResource('job', JobController::class);
     });
 });
