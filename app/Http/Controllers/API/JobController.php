@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Job;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class JobController extends Controller
 {
@@ -32,7 +33,30 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'company_name' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'phone' => 'required',
+            'job_type' => 'required',
+            'placement' => 'required',
+            'salary' => 'required',
+            'image' => 'nullable|image'
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation Error',
+                'errors' => $validator->errors()
+            ]);
+        }
+        $validated = $validator->validate();
+        $job = Job::create($validated);
+        return response()->json([
+            'success' => true,
+            'message' => 'Job has been added',
+            'data' => $job
+        ], 201);
     }
 
     /**
@@ -67,7 +91,38 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try{
+            $job = Job::findOrFail($id);
+            $validator = Validator::make($request->all(), [
+                'company_name' => 'required',
+                'title' => 'required',
+                'description' => 'required',
+                'phone' => 'required',
+                'job_type' => 'required',
+                'placement' => 'required',
+                'salary' => 'required',
+                'image' => 'nullable|image'
+            ]);
+            if($validator->fails()){
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Validation Error',
+                    'errors' => $validator->errors()
+                ]);
+            }
+            $validated = $validator->validate();
+            $job->update($validated);
+            return response()->json([
+                'success' => true,
+                'message' => 'Job has been updated',
+                'data' => $job
+            ], 201);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Job not found',
+            ]);
+        }
     }
 
     /**
@@ -78,6 +133,18 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            $ann = Job::findOrFail($id);
+            $ann->delete();
+            return response()->json([
+                'success' => true,
+                'message' => 'Job has been deleted',
+            ]);
+        }catch(Exception){
+            return response()->json([
+                'success' => false,
+                'message' => 'Job not found',
+            ]);
+        }
     }
 }
