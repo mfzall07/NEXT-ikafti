@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AdminController;
+use App\Http\Controllers\API\AlumniController;
 use App\Http\Controllers\API\AnnouncementController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\JobController;
@@ -29,5 +30,6 @@ Route::prefix('v1')->group(function(){
         Route::apiResource('announcement', AnnouncementController::class);
         Route::apiResource('admin', AdminController::class);
         Route::apiResource('job', JobController::class);
+        Route::apiResource('alumni', AlumniController::class);
     });
 });
