@@ -31,5 +31,6 @@ Route::prefix('v1')->group(function(){
         Route::apiResource('admin', AdminController::class);
         Route::apiResource('job', JobController::class);
         Route::apiResource('alumni', AlumniController::class);
+        Route::post('alumni-register', [AlumniController::class, 'alumniRegister']);
     });
 });
