@@ -18,7 +18,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        $alumni = Alumni::all();
+        $alumni = Alumni::latest()->take(4)->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Alumni',

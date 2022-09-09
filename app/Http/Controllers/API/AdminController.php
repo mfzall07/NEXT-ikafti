@@ -20,7 +20,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admin = User::where('role_id', 2)->get();
+        $admin = User::where('role_id', 2)->latest()->take(4)->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Admin',
