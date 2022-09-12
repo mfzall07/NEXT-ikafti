@@ -1,6 +1,6 @@
 <div>
     <div class="py-3 border-t-2 w-full">
-        <h1 class="text-xl font-bold">Another Information</h1>
+        <h1 class="text-xl font-bold text-black">Another Information</h1>
     </div>
     <div class="grid grid-cols-12 gap-5 mt-5">
         @forelse ($infos as $info)

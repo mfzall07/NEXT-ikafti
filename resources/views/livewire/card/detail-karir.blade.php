@@ -1,6 +1,6 @@
 <div>
     <div class="py-3 border-b-2 ">
-        <h1 class="text-2xl font-bold uppercase">{{ $job->company_name ?? '-' }}</h1>
+        <h1 class="text-2xl font-bold uppercase text-black">{{ $job->company_name ?? '-' }}</h1>
     </div>
     <div class="p-5">
         <div class="flex flex-row items-center gap-5 mt-1">

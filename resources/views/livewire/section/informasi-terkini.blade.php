@@ -1,6 +1,6 @@
 <div  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
     <div class="flex items-center justify-between pb-5">
-        <h1 class="font-bold tracking-wider text-xl laptop:text-3xl uppercase">Information</h1>
+        <h1 class="font-bold tracking-wider text-xl laptop:text-3xl uppercase text-black">Information</h1>
         <a href="{{ route('information') }}" class="text-red-500 hover:text-red-600 truncate">See all</a>
     </div>
 

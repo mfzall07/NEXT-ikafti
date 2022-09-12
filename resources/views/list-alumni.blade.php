@@ -21,7 +21,7 @@
     </section>
 
     <section class="px-5 laptop:px-20 pt-5">
-        <h1 class="text-4xl font-bold uppercase">Alumni List</h1>
+        <h1 class="text-4xl font-bold uppercase text-black">Alumni List</h1>
         <div class="border-b-2 border-b-black w-full"></div>
     </section>
 

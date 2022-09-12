@@ -1,6 +1,6 @@
 <div>
     <div class="py-3 border-b-2 ">
-        <h1 class="text-2xl font-bold uppercase">{{ $content->title ?? '-'}}</h1>
+        <h1 class="text-2xl font-bold uppercase text-black">{{ $content->title ?? '-'}}</h1>
     </div>
     <div class="flex items-center gap-5 mt-5">
         <div class="flex items-center gap-3">
