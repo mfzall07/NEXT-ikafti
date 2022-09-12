@@ -15,7 +15,7 @@
     @livewireStyles
 
 </head>
-<body>
+<body class="bg-white">
     <section class="sticky w-full z-20 top-0 border">
         <livewire:navbar.navbar>
     </section>

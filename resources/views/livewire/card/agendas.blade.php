@@ -3,7 +3,7 @@
         @forelse ($agendas as $agenda)
         <div class="bg-white rounded-lg shadow-md border w-full">
             {{-- <div style="background: url({{ url( $agenda->thumbnail != null ? str_replace('public', 'storage',$agenda->thumbnail) : 'assets/images/exampleContent.jpg')}})" class="h-56 bg-center bg-cover object-cover"></div> --}}
-            <img src={{ url( $agenda->thumbnail != null ? str_replace('public', 'storage',$agenda->thumbnail) : 'assets/images/exampleContent.jpg')}} class="h-56 bg-center bg-cover object-cover rounded-t-lg" alt="">
+            <img src={{ url( $agenda->thumbnail != null ? str_replace('public', 'storage',$agenda->thumbnail) : 'assets/images/exampleContent.jpg')}} class="h-56 bg-center bg-cover object-cover w-full rounded-t-lg" alt="">
             <div class="p-5">
                 <a href="{{ route('agendaDetail', ['id' => $agenda->id]) }}" id="title" class="font-bold hover:text-blue-500 text-xl break-words line-clamp-1">{{ $agenda->title }}</a>
                 <div class="flex flex-row items-center gap-2 mt-1">

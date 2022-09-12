@@ -17,7 +17,7 @@
     @livewireStyles
 
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden bg-white">
     <section class="sticky w-full z-20 top-0">
         <livewire:navbar.navbars>
     </section>

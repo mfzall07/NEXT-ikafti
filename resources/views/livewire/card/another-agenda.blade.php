@@ -6,7 +6,7 @@
         @forelse ($agendas as $agenda)
 
         <div class="col-span-3">
-            <img src="{{ url( $agenda->thumbnail != null ? str_replace('public', 'storage',$agenda->thumbnail) : 'assets/images/exampleContent.jpg')}}" class="w-full h-56 object-cover" alt="">
+            <img src="{{ url( $agenda->thumbnail != null ? str_replace('public', 'storage',$agenda->thumbnail) : 'assets/images/exampleContent.jpg')}}" class="w-full h-56 object-cover rounded-lg" alt="">
             <a href="{{ route('agendaDetail', ['id' => $agenda->id]) }}" class="text-black text-sm line-clamp-2 text-center">{{ $agenda->title }}</a>
         </div>
         @empty

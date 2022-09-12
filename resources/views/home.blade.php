@@ -9,14 +9,13 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="/assets/css/circularProgress.css">
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
 
     @vite('resources/css/app.css')
     @livewireStyles
 
 </head>
-<body>
+<body class="bg-white">
     <section class="sticky w-full z-20 top-0 border">
         <livewire:navbar.navbar>
     </section>
@@ -25,7 +24,7 @@
         <livewire:carousel.header>
     </section>
 
-    <section class="px-5 laptop:px-20 pb-5">
+    <section class="px-5 laptop:px-20 py-5">
         <livewire:section.informasi-terkini>
     </section>
     
@@ -60,14 +59,6 @@
     <script src="../assets/js/carousel/index.js"></script>
     <script>
         AOS.init();
-    </script>
-    <script>
-        const number = document.getElementById('number');
-        const counter = 0;
-        setInterval(() => {
-            counter += 1 ; 
-            number.inn
-        });
     </script>
     {{-- End::Javascript --}}
 </body>
