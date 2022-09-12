@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alumni;
+use App\Models\WaitingList;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -17,7 +18,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        $alumni = Alumni::all();
+        $alumni = Alumni::latest()->take(4)->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Alumni',
@@ -72,6 +73,53 @@ class AlumniController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Alumni has been added',
+            'data' => $alumni
+        ], 201);
+    }
+    public function alumniRegister(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'company' =>'required',
+            'address' =>'required',
+            'domicile' =>'required',
+            'email' =>'required|email',
+            'phone' =>'required',
+            'birth_place' =>'required',
+            'birth_date' =>'required',
+            'generation' =>'required',
+            'program_studi' =>'required',
+            'image' => 'nullable|image',
+            'proof' =>'nullable|mimes:png,jpg,jpeg,pdf'
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation Error',
+                'errors' => $validator->errors()
+            ]);
+        }
+        $validated = $validator->validate();
+        $alumni = Alumni::create([
+            'name' => $validated['name'],
+            'company' => $validated['company'],
+            'address' => $validated['address'],
+            'domicile' => $validated['domicile'],
+            'email' => $validated['email'],
+            'phone' =>$validated['phone'],
+            'birth_place' =>$validated['birth_place'],
+            'birth_date' =>$validated['birth_date'],
+            'generation' =>$validated['generation'],
+            'program_studi' =>$validated['program_studi'],
+            // 'image' => $path,
+            // 'proof' => $proof_path
+        ]);
+        WaitingList::create([
+            'alumni_id' => $alumni->id
+        ]);
+        return response()->json([
+            'success' => true,
+            'message' => 'Register alumni success',
             'data' => $alumni
         ], 201);
     }

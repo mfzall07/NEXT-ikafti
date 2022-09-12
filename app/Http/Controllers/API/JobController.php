@@ -17,7 +17,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $job = Job::all();
+        $job = Job::latest()->take(4)->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Job',

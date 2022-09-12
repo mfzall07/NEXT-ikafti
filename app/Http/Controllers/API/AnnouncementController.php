@@ -12,7 +12,7 @@ class AnnouncementController extends Controller
 {
     public function index()
     {
-        $ann = Announcement::all();
+        $ann = Announcement::latest()->take(4)->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Announcement',
