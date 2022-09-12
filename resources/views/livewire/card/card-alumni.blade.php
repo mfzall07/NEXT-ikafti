@@ -20,7 +20,7 @@
             <div class="h-24 w-24 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
             <div class="flex flex-col">
                 <div class="rounded-lg shadow-xl">
-                    <div style="background-image: url({{ url( $alumni->image != null ? str_replace('public', 'storage',$alumni->image) : 'assets/images/profile.jpg')}})" class="bg-cover bg-center w-full h-36 flex items-center justify-center">
+                    <div style="background-image: url({{ url( $alumni->image != null ? str_replace('public', 'storage',$alumni->image) : 'assets/images/profile.jpg')}})" class="bg-cover bg-center w-full h-36 flex items-center justify-center object-cover">
                         <img src="{{ url( $alumni->image != null ? str_replace('public', 'storage',$alumni->image) : 'assets/images/profile.jpg')}}" class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-xl" alt="">
                     </div>
                 </div>

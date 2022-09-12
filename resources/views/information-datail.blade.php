@@ -24,7 +24,7 @@
         <livewire:card.detail-information :content="$info">
     </section>
 
-    <section class="px-5 laptop:px-20 pt-10" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+    <section class="px-5 laptop:px-20 pt-10" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <livewire:card.another-information :info="$info">
     </section>
 
