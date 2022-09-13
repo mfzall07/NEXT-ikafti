@@ -23,13 +23,13 @@
     <section>
         <livewire:carousel.header>
     </section>
-
-    <section class="px-5 laptop:px-20 py-5">
-        <livewire:section.informasi-terkini>
-    </section>
     
     <section class="">
         <livewire:section.percentage-alumni>
+    </section>
+
+    <section class="px-5 laptop:px-20 py-5">
+        <livewire:section.informasi-terkini>
     </section>
 
     <section class="px-5 laptop:px-20 pt-5">
