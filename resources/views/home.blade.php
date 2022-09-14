@@ -15,7 +15,7 @@
     @livewireStyles
 
 </head>
-<body>
+<body class="bg-white">
     <section class="sticky w-full z-20 top-0 border">
         <livewire:navbar.navbar>
     </section>
@@ -23,12 +23,16 @@
     <section>
         <livewire:carousel.header>
     </section>
+    
+    <section class="">
+        <livewire:section.percentage-alumni>
+    </section>
 
-    <section class="px-5 laptop:px-20 py-10">
+    <section class="px-5 laptop:px-20 py-5">
         <livewire:section.informasi-terkini>
     </section>
 
-    <section class="px-5 laptop:px-20">
+    <section class="px-5 laptop:px-20 pt-5">
         <livewire:section.karir-dan-agenda>
     </section>
 

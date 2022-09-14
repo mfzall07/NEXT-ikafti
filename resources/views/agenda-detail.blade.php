@@ -7,6 +7,7 @@
 
     <title>IKAFTI</title>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
 
@@ -14,16 +15,16 @@
     @livewireStyles
 
 </head>
-<body>
+<body class="bg-white">
     <section class="sticky w-full z-20 top-0 border">
         <livewire:navbar.navbar>
     </section>
 
-    <section class="px-5 laptop:px-20 pt-10">
+    <section class="px-5 laptop:px-20 pt-10"  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <livewire:card.detail-agenda :agenda="$agenda">
     </section>
 
-    <section class="px-5 laptop:px-20 pt-10">
+    <section class="px-5 laptop:px-20 pt-10"  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <livewire:card.another-agenda :agenda="$agenda">
     </section>
 
@@ -43,6 +44,7 @@
     {{-- Begin::CDN --}}
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     {{-- End::CDN --}}
 
     {{-- Begin::Javascript --}}
@@ -50,6 +52,9 @@
     <script src="../../assets/js/flowbite/dist/flowbite.js"></script>
     <script src="../../assets/js/flowbite/dist/datepicker.js"></script>
     <script src="../../assets/js/carousel/index.js"></script>
+    <script>
+        AOS.init();
+    </script>
     {{-- End::Javascript --}}
 </body>
 </html>
