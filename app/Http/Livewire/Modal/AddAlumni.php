@@ -22,7 +22,7 @@ class AddAlumni extends Component
         'generation' =>'required',
         'program_studi' =>'required',
         'image' => 'nullable|image',
-        'proof' =>'required|mimes:png,jpg,jpeg,pdf'
+        'proof' =>'nullable|mimes:png,jpg,jpeg,pdf'
     ];
     public function render()
     {

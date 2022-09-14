@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Job;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class JobController extends Controller
@@ -51,6 +52,17 @@ class JobController extends Controller
             ]);
         }
         $validated = $validator->validate();
+        if($request->has('image')){
+            $image_parts = explode(";base64,", $request->image);
+                $image_type_aux = explode("image/", $image_parts[0]);
+                $extention = $image_type_aux[1];
+                $namaFile = 'user-'.time().".".$extention;
+                $image = base64_decode($image_parts[1]);
+            $path = Storage::put('public/image/staff', $image);
+        }else{
+            $path = null;
+        }
+        $validated['image'] = $path;
         $job = Job::create($validated);
         return response()->json([
             'success' => true,
@@ -111,6 +123,20 @@ class JobController extends Controller
                 ]);
             }
             $validated = $validator->validate();
+            if($request->has('image')){
+                $image_parts = explode(";base64,", $request->image);
+                    $image_type_aux = explode("image/", $image_parts[0]);
+                    $extention = $image_type_aux[1];
+                    $namaFile = 'user-'.time().".".$extention;
+                    $image = base64_decode($image_parts[1]);
+                if($job->image){
+                    Storage::disk('public')->delete(str_replace('public/', '', $job->image));
+                }
+                $path = Storage::put('public/image', $image);
+            }else{
+                $path = $job->image;
+            }
+            $validated['image'] = $path;
             $job->update($validated);
             return response()->json([
                 'success' => true,
@@ -134,8 +160,9 @@ class JobController extends Controller
     public function destroy($id)
     {
         try{
-            $ann = Job::findOrFail($id);
-            $ann->delete();
+            $job = Job::findOrFail($id);
+            Storage::disk('public')->delete(str_replace('public/', '', $job->image));
+            $job->delete();
             return response()->json([
                 'success' => true,
                 'message' => 'Job has been deleted',

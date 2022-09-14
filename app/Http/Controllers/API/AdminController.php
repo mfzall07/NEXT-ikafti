@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -58,6 +59,16 @@ class AdminController extends Controller
             ]);
         }
         $validated = $validator->validate();
+        if($request->has('image')){
+            $image_parts = explode(";base64,", $request->image);
+                $image_type_aux = explode("image/", $image_parts[0]);
+                $extention = $image_type_aux[1];
+                $namaFile = 'user-'.time().".".$extention;
+                $image = base64_decode($image_parts[1]);
+            $path = Storage::put('public/image/staff', $image);
+        }else{
+            $path = null;
+        }
         $admin = User::create([
             'role_id' => 2,
             'name' => $validated['name'],
@@ -65,7 +76,7 @@ class AdminController extends Controller
             'email' => $validated['email'],
             'username' => $validated['username'],
             'password' => Hash::make($validated['password']),
-            // 'image' => $path
+            'image' => $path
         ]);
         return response()->json([
             'success' => true,
@@ -131,6 +142,19 @@ class AdminController extends Controller
                 ]);
             }
             $validated = $validator->validate();
+            if($request->has('image')){
+                $image_parts = explode(";base64,", $request->image);
+                    $image_type_aux = explode("image/", $image_parts[0]);
+                    $extention = $image_type_aux[1];
+                    $namaFile = 'user-'.time().".".$extention;
+                    $image = base64_decode($image_parts[1]);
+                if($admin->image){
+                    Storage::disk('public')->delete(str_replace('public/', '', $admin->image));
+                }
+                $path = Storage::put('public/image', $image);
+            }else{
+                $path = $admin->image;
+            }
             $admin->name = $validated['name'];
             $admin->phone = $validated['phone'];
             $admin->email = $validated['email'];
@@ -138,7 +162,7 @@ class AdminController extends Controller
             if($validated['password'] != null){
                 $admin->password = Hash::make($validated['password']);
             }
-            // $admin->image = $path;
+            $admin->image = $path;
             $admin->save();
             return response()->json([
                 'success' => true,
@@ -169,6 +193,7 @@ class AdminController extends Controller
         }
         try{
             $admin = User::findOrFail($id);
+            Storage::disk('public')->delete(str_replace('public/', '', $admin->image));
             $admin->delete();
             return response()->json([
                 'success' => true,

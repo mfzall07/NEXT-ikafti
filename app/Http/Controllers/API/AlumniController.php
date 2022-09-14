@@ -7,6 +7,7 @@ use App\Models\Alumni;
 use App\Models\WaitingList;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class AlumniController extends Controller
@@ -56,6 +57,16 @@ class AlumniController extends Controller
             ]);
         }
         $validated = $validator->validate();
+        if($request->has('image')){
+            $image_parts = explode(";base64,", $request->image);
+                $image_type_aux = explode("image/", $image_parts[0]);
+                $extention = $image_type_aux[1];
+                $namaFile = 'user-'.time().".".$extention;
+                $image = base64_decode($image_parts[1]);
+            $path = Storage::put('public/image', $image);
+        }else{
+            $path = null;
+        }
         $alumni = Alumni::create([
             'name' => $validated['name'],
             'company' => $validated['company'],
@@ -67,7 +78,7 @@ class AlumniController extends Controller
             'birth_date' =>$validated['birth_date'],
             'generation' =>$validated['generation'],
             'program_studi' =>$validated['program_studi'],
-            // 'image' => $path,
+            'image' => $path,
             // 'proof' => $proof_path
         ]);
         return response()->json([
@@ -100,6 +111,16 @@ class AlumniController extends Controller
             ]);
         }
         $validated = $validator->validate();
+        if($request->has('image')){
+            $image_parts = explode(";base64,", $request->image);
+                $image_type_aux = explode("image/", $image_parts[0]);
+                $extention = $image_type_aux[1];
+                $namaFile = 'user-'.time().".".$extention;
+                $image = base64_decode($image_parts[1]);
+            $path = Storage::put('public/image', $image);
+        }else{
+            $path = null;
+        }
         $alumni = Alumni::create([
             'name' => $validated['name'],
             'company' => $validated['company'],
@@ -111,7 +132,7 @@ class AlumniController extends Controller
             'birth_date' =>$validated['birth_date'],
             'generation' =>$validated['generation'],
             'program_studi' =>$validated['program_studi'],
-            // 'image' => $path,
+            'image' => $path,
             // 'proof' => $proof_path
         ]);
         WaitingList::create([
@@ -180,6 +201,19 @@ class AlumniController extends Controller
                 ]);
             }
             $validated = $validator->validate();
+            if($request->has('image')){
+                $image_parts = explode(";base64,", $request->image);
+                    $image_type_aux = explode("image/", $image_parts[0]);
+                    $extention = $image_type_aux[1];
+                    $namaFile = 'user-'.time().".".$extention;
+                    $image = base64_decode($image_parts[1]);
+                if($alumni->image){
+                    Storage::disk('public')->delete(str_replace('public/', '', $alumni->image));
+                }
+                $path = Storage::put('public/image', $image);
+            }else{
+                $path = $alumni->image;
+            }
             $alumni->update([
                 'name' => $validated['name'],
                 'company' => $validated['company'],
@@ -191,7 +225,7 @@ class AlumniController extends Controller
                 'birth_date' =>$validated['birth_date'],
                 'generation' =>$validated['generation'],
                 'program_studi' =>$validated['program_studi'],
-                // 'image' => $path,
+                'image' => $path,
                 // 'proof' => $proof_path
             ]);
             return response()->json([
@@ -217,6 +251,7 @@ class AlumniController extends Controller
     {
         try{
             $alumni = Alumni::findOrFail($id);
+            Storage::disk('public')->delete(str_replace('public/', '', $alumni->image));
             $alumni->delete();
             return response()->json([
                 'success' => true,

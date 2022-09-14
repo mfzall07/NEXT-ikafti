@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Announcement;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class AnnouncementController extends Controller
@@ -34,6 +35,17 @@ class AnnouncementController extends Controller
             ]);
         }
         $validated = $validator->validate();
+        if($request->has('image')){
+            $image_parts = explode(";base64,", $request->image);
+                $image_type_aux = explode("image/", $image_parts[0]);
+                $extention = $image_type_aux[1];
+                $namaFile = 'user-'.time().".".$extention;
+                $image = base64_decode($image_parts[1]);
+            $path = Storage::put('public/image/staff', $image);
+        }else{
+            $path = null;
+        }
+        $validated['image'] = $path;
         $ann = Announcement::create($validated);
         return response()->json([
             'success' => true,
@@ -74,6 +86,20 @@ class AnnouncementController extends Controller
                 ]);
             }
             $validated = $validator->validate();
+            if($request->has('image')){
+                $image_parts = explode(";base64,", $request->image);
+                    $image_type_aux = explode("image/", $image_parts[0]);
+                    $extention = $image_type_aux[1];
+                    $namaFile = 'user-'.time().".".$extention;
+                    $image = base64_decode($image_parts[1]);
+                if($ann->image){
+                    Storage::disk('public')->delete(str_replace('public/', '', $ann->image));
+                }
+                $path = Storage::put('public/image', $image);
+            }else{
+                $path = $ann->image;
+            }
+            $validated['image'] = $path;
             $ann->update($validated);
             return response()->json([
                 'success' => true,
@@ -91,6 +117,7 @@ class AnnouncementController extends Controller
     {
         try{
             $ann = Announcement::findOrFail($announcement);
+            Storage::disk('public')->delete(str_replace('public/', '', $ann->image));
             $ann->delete();
             return response()->json([
                 'success' => true,
