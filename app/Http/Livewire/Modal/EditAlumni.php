@@ -26,7 +26,7 @@ class EditAlumni extends Component
         'generation' =>'required',
         'program_studi' =>'required',
         'image_temp' => 'nullable|image',
-        'new_proof' =>'required|mimes:png,jpg,jpeg,pdf'
+        'new_proof' =>'nullable|mimes:png,jpg,jpeg,pdf'
     ];
     protected $messages = [
         'image_temp.image' => 'The image must be an image.'
@@ -86,11 +86,11 @@ class EditAlumni extends Component
         }else{
             $proof_path = $alumni->proof;
         }
-        $alumni->name = $validated['fullname'];
-        $alumni->company = $validated['current_company'];
-        $alumni->image = $path;
-        $alumni->proof = $proof_path;
-        $alumni->save();
+        $validated['name'] = $validated['fullname'];
+        $validated['company'] = $validated['current_company'];
+        $validated['image'] = $path;
+        $validated['proof'] = $proof_path;
+        $alumni->update($validated);
         $this->emit('alumniEdited');
         $this->dispatchBrowserEvent('alert',[
             'type'=>'success',

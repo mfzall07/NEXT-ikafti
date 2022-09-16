@@ -2,20 +2,20 @@
     <div data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <h1 class="font-bold text-3xl text-center text-black">Percentage Total Alumni</h1>
         <div class="w-full flex flex-col laptop:flex-row gap-20 items-center justify-center mt-20">
-            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:70; --size:12rem; --thickness: 2rem;">
-                <h1 class="text-xl text-center">70%</h1>
+            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:{{ ($chart1 / $total) * 100}}; --size:12rem; --thickness: 2rem;">
+                <h1 class="text-xl text-center">{{ ($chart1 / $total) * 100}}%</h1>
                 <p class="text-base text-center">1987-1996</p>
             </div>
-            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:70; --size:12rem; --thickness: 2rem;">
-                <h1 class="text-xl text-center">70%</h1>
+            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:{{ ($chart2 / $total) * 100}}; --size:12rem; --thickness: 2rem;">
+                <h1 class="text-xl text-center">{{ ($chart2 / $total) * 100}}%</h1>
                 <p class="text-base text-center">1997-2006</p>
             </div>
-            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:70; --size:12rem; --thickness: 2rem;">
-                <h1 class="text-xl text-center">70%</h1>
+            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:{{ ($chart3 / $total) * 100}}; --size:12rem; --thickness: 2rem;">
+                <h1 class="text-xl text-center">{{ ($chart3 / $total) * 100}}%</h1>
                 <p class="text-base text-center">2007-2016</p>
             </div>
-            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:70; --size:12rem; --thickness: 2rem;">
-                <h1 class="text-xl text-center">70%</h1>
+            <div class="radial-progress bg-gradient-to-tr from-red-500 to-pink-500 text-white font-bold text-xl" style="--value:{{ ($chart4 / $total) * 100}}; --size:12rem; --thickness: 2rem;">
+                <h1 class="text-xl text-center">{{ ($chart4 / $total) * 100}}%</h1>
                 <p class="text-base text-center">2017-2018</p>
             </div>
         </div>
