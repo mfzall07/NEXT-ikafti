@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Nette\Utils\Random;
 
 class JobController extends Controller
 {
@@ -42,7 +43,7 @@ class JobController extends Controller
             'job_type' => 'required',
             'placement' => 'required',
             'salary' => 'required',
-            'image' => 'nullable|image'
+            // 'image' => 'nullable|image'
         ]);
         if($validator->fails()){
             return response()->json([
@@ -56,9 +57,11 @@ class JobController extends Controller
             $image_parts = explode(";base64,", $request->image);
                 $image_type_aux = explode("image/", $image_parts[0]);
                 $extention = $image_type_aux[1];
-                $namaFile = 'user-'.time().".".$extention;
+                $rand = Random::generate(40, '0-9a-zA-Z');
+                $namaFile = $rand.".".$extention;
                 $image = base64_decode($image_parts[1]);
-            $path = Storage::put('public/image/staff', $image);
+                Storage::put('public/image/'.$namaFile, $image);
+                $path = 'public/image/'.$namaFile;
         }else{
             $path = null;
         }
@@ -113,7 +116,7 @@ class JobController extends Controller
                 'job_type' => 'required',
                 'placement' => 'required',
                 'salary' => 'required',
-                'image' => 'nullable|image'
+                // 'image' => 'nullable|image'
             ]);
             if($validator->fails()){
                 return response()->json([
@@ -127,12 +130,14 @@ class JobController extends Controller
                 $image_parts = explode(";base64,", $request->image);
                     $image_type_aux = explode("image/", $image_parts[0]);
                     $extention = $image_type_aux[1];
-                    $namaFile = 'user-'.time().".".$extention;
+                    $rand = Random::generate(40, '0-9a-zA-Z');
+                    $namaFile = $rand.".".$extention;
                     $image = base64_decode($image_parts[1]);
                 if($job->image){
                     Storage::disk('public')->delete(str_replace('public/', '', $job->image));
                 }
-                $path = Storage::put('public/image', $image);
+                Storage::put('public/image/'.$namaFile, $image);
+                $path = 'public/image/'.$namaFile;
             }else{
                 $path = $job->image;
             }

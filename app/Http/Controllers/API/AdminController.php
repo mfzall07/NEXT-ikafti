@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Nette\Utils\Random;
 
 class AdminController extends Controller
 {
@@ -49,7 +50,7 @@ class AdminController extends Controller
             'email' => 'required|email|unique:users,email',
             'username' => 'required|unique:users,username',
             'password' => 'required',
-            'image' => 'nullable|image',
+            // 'image' => 'nullable|image',
         ]);
         if($validator->fails()){
             return response()->json([
@@ -63,9 +64,11 @@ class AdminController extends Controller
             $image_parts = explode(";base64,", $request->image);
                 $image_type_aux = explode("image/", $image_parts[0]);
                 $extention = $image_type_aux[1];
-                $namaFile = 'user-'.time().".".$extention;
+                $rand = Random::generate(40, '0-9a-zA-Z');
+                $namaFile = $rand.".".$extention;
                 $image = base64_decode($image_parts[1]);
-            $path = Storage::put('public/image/staff', $image);
+                Storage::put('public/image/'.$namaFile, $image);
+                $path = 'public/image/'.$namaFile;
         }else{
             $path = null;
         }
@@ -131,7 +134,7 @@ class AdminController extends Controller
                 'email' => 'required|email|'. Rule::unique('users', 'email')->ignore($id, 'id'),
                 'username' => 'required|'. Rule::unique('users', 'username')->ignore($id, 'id'),
                 'password' => 'nullable',
-                'image' => 'nullable|image',
+                // 'image' => 'nullable|image',
             ]);
             // return 'ok';
             if($validator->fails()){
@@ -146,12 +149,14 @@ class AdminController extends Controller
                 $image_parts = explode(";base64,", $request->image);
                     $image_type_aux = explode("image/", $image_parts[0]);
                     $extention = $image_type_aux[1];
-                    $namaFile = 'user-'.time().".".$extention;
+                    $rand = Random::generate(40, '0-9a-zA-Z');
+                    $namaFile = $rand.".".$extention;
                     $image = base64_decode($image_parts[1]);
                 if($admin->image){
                     Storage::disk('public')->delete(str_replace('public/', '', $admin->image));
                 }
-                $path = Storage::put('public/image', $image);
+                Storage::put('public/image/'.$namaFile, $image);
+                $path = 'public/image/'.$namaFile;
             }else{
                 $path = $admin->image;
             }

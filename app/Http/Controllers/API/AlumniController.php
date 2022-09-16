@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Nette\Utils\Random;
 
 class AlumniController extends Controller
 {
@@ -46,7 +47,7 @@ class AlumniController extends Controller
             'birth_date' =>'required',
             'generation' =>'required',
             'program_studi' =>'required',
-            'image' => 'nullable|image',
+            // 'image' => 'nullable|image',
             'proof' =>'nullable|mimes:png,jpg,jpeg,pdf'
         ]);
         if($validator->fails()){
@@ -61,9 +62,11 @@ class AlumniController extends Controller
             $image_parts = explode(";base64,", $request->image);
                 $image_type_aux = explode("image/", $image_parts[0]);
                 $extention = $image_type_aux[1];
-                $namaFile = 'user-'.time().".".$extention;
+                $rand = Random::generate(40, '0-9a-zA-Z');
+                $namaFile = $rand.".".$extention;
                 $image = base64_decode($image_parts[1]);
-            $path = Storage::put('public/image', $image);
+                Storage::put('public/image/'.$namaFile, $image);
+                $path = 'public/image/'.$namaFile;
         }else{
             $path = null;
         }
@@ -100,7 +103,7 @@ class AlumniController extends Controller
             'birth_date' =>'required',
             'generation' =>'required',
             'program_studi' =>'required',
-            'image' => 'nullable|image',
+            // 'image' => 'nullable|image',
             'proof' =>'nullable|mimes:png,jpg,jpeg,pdf'
         ]);
         if($validator->fails()){
@@ -115,9 +118,11 @@ class AlumniController extends Controller
             $image_parts = explode(";base64,", $request->image);
                 $image_type_aux = explode("image/", $image_parts[0]);
                 $extention = $image_type_aux[1];
-                $namaFile = 'user-'.time().".".$extention;
+                $rand = Random::generate(40, '0-9a-zA-Z');
+                $namaFile = $rand.".".$extention;
                 $image = base64_decode($image_parts[1]);
-            $path = Storage::put('public/image', $image);
+                Storage::put('public/image/'.$namaFile, $image);
+                $path = 'public/image/'.$namaFile;
         }else{
             $path = null;
         }
@@ -190,7 +195,7 @@ class AlumniController extends Controller
                 'birth_date' =>'required',
                 'generation' =>'required',
                 'program_studi' =>'required',
-                'image' => 'nullable|image',
+                // 'image' => 'nullable|image',
                 'proof' =>'nullable|mimes:png,jpg,jpeg,pdf'
             ]);
             if($validator->fails()){
@@ -205,12 +210,14 @@ class AlumniController extends Controller
                 $image_parts = explode(";base64,", $request->image);
                     $image_type_aux = explode("image/", $image_parts[0]);
                     $extention = $image_type_aux[1];
-                    $namaFile = 'user-'.time().".".$extention;
+                    $rand = Random::generate(40, '0-9a-zA-Z');
+                    $namaFile = $rand.".".$extention;
                     $image = base64_decode($image_parts[1]);
                 if($alumni->image){
                     Storage::disk('public')->delete(str_replace('public/', '', $alumni->image));
                 }
-                $path = Storage::put('public/image', $image);
+                Storage::put('public/image/'.$namaFile, $image);
+                $path = 'public/image/'.$namaFile;
             }else{
                 $path = $alumni->image;
             }
