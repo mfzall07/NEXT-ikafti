@@ -1,5 +1,5 @@
-<nav class="bg-white px-2 py-2.5 left-0 border-b border-gray-200">
-    <div class="px-5 laptop:px-20 flex flex-wrap justify-between items-center mx-auto">
+<nav class="bg-white px-2 px-0 py-2.5 left-0 border-b border-gray-200">
+    <div class="laptop:px-20 flex flex-wrap justify-between items-center mx-auto">
         <a href="/" class="flex items-center">
             <img src="../../assets/images/logo/IkaftiBlack.png" class="mr-3 h-10" alt="Flowbite Logo">
         </a>
@@ -11,27 +11,27 @@
             </button>
         </div>
         <div class="hidden justify-between items-center w-full laptop:flex laptop:w-auto laptop:order-1" id="navbar-sticky">
-            <ul class="flex flex-col mt-4 bg-gray-50 rounded-lg border border-gray-100 laptop:flex-row laptop:space-x-8 laptop:mt-0 laptop:text-sm laptop:font-medium laptop:border-0 laptop:bg-white">
+            <ul class="flex flex-col laptop:px-4 py-1 w-full mt-4 bg-gray-50 rounded-lg border border-gray-100 laptop:flex-row laptop:space-x-8 laptop:mt-0 laptop:text-sm laptop:font-medium laptop:border-0 laptop:bg-white">
                 <li>
-                    <a href="/" id="beranda" class="block mt-1">Home</a>
+                    <a href="/" id="beranda" class="block laptop:mt-1 mb-4 laptop:mb-0 px-4">Home</a>
                 </li>
                 <li>
-                    <a href="{{ route('information') }}" id="information" class="block mt-1 ">Information</a>
+                    <a href="{{ route('information') }}" id="information" class="block laptop:mt-1 mb-4 laptop:mb-0 px-4 ">Information</a>
                 </li>
                 <li>
-                    <a href="{{ route('agenda') }}" id="agenda" class="block mt-1 ">Agenda</a>
+                    <a href="{{ route('agenda') }}" id="agenda" class="block laptop:mt-1 mb-4 laptop:mb-0 px-4 ">Agenda</a>
                 </li>
                 <li>
-                    <a href="{{ route('karir') }}" id="karir" class="block mt-1 ">Career</a>
+                    <a href="{{ route('karir') }}" id="karir" class="block laptop:mt-1 mb-4 laptop:mb-0 px-4 ">Career</a>
                 </li>
                 <li>
-                    <a href="{{ route('alumniRegister') }}" id="registrasi" class="block mt-1">Alumni Registration</a>
+                    <a href="{{ route('alumniRegister') }}" id="registrasi" class="block laptop:mt-1 mb-4 laptop:mb-0 px-4">Alumni Registration</a>
                 </li>
                 <li>
-                    <a href="{{ route('listAlumni') }}" id="alumni" class="block mt-1">Alumni List</a>
+                    <a href="{{ route('listAlumni') }}" id="alumni" class="block laptop:mt-1 mb-4 laptop:mb-0 px-4">Alumni List</a>
                 </li>
                 <li>
-                    <a href="{{ route('tentangkami') }}" id="tentang" class="block mt-1">About</a>
+                    <a href="{{ route('tentangkami') }}" id="tentang" class="block laptop:mt-1 mb-4 laptop:mb-0 px-4">About</a>
                 </li>
             </ul>
         </div>

@@ -5,9 +5,9 @@
             @forelse ($announcements as $ann)
                 <div class="swiper-slide relative">
                     <div class="bg-cover w-full laptop:h-96 h-60 brightness-90 bg-center" style="background-image: url({{ url( $ann->image != null ? str_replace('public', 'storage',$ann->image) : 'assets/images/header/banner1.jpg')}})">
-                        <div class="absolute bottom-20 laptop:bottom-1/4 left-14 laptop:left-44 w-full">
+                        <div class="absolute bottom-5 laptop:bottom-1/4 left-5 laptop:left-44 w-full">
                             <h1 class="laptop:text-3xl text-base text-black font-bold tracking-wider w-fit rounded-lg bg-white bg-opacity-90 p-2" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">{{ $ann->title }}</h1>
-                            <p class="text-xs laptop:text-sm text-zinc-600 tracking-wider font-medium w-fit bg-white rounded-lg laptop:w-1/4 mt-2 p-2" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">{{ $ann->description }}</p>
+                            <p class="text-xs laptop:text-sm text-zinc-600 tracking-wider font-medium w-3/4 bg-white rounded-lg laptop:w-1/4 mt-2 p-2" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">{{ $ann->description }}</p>
                         </div>
                     </div>
                 </div>
