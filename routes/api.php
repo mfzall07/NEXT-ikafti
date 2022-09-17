@@ -30,7 +30,8 @@ Route::prefix('v1')->group(function(){
     Route::post('alumni-register', [AlumniController::class, 'alumniRegister']);
     Route::apiResource('job', JobController::class)->only('index', 'show');
     Route::apiResource('alumni', AlumniController::class)->only('index', 'show');
-    Route::get('waiting-list', [AlumniController::class, 'alumniList']);
+    Route::get('waiting-list', [AlumniController::class, 'waitingList']);
+    Route::post('approve-alumni/{id}', [AlumniController::class, 'approve']);
     Route::apiResource('information', InformationController::class)->only('index', 'show');
     Route::middleware('auth:sanctum')->group(function(){
         Route::post('logout', [AuthController::class, 'logout']);

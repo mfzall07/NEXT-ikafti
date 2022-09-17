@@ -29,7 +29,7 @@ class AlumniController extends Controller
         ],200);
     }
 
-    public function alumniList()
+    public function waitingList()
     {
         $wl = Alumni::has('waiting_list')->latest()->take(4)->get();
         return response()->json([
@@ -280,5 +280,13 @@ class AlumniController extends Controller
                 'message' => 'Alumni not found',
             ]);
         }
+    }
+    public function approve($id)
+    {
+        WaitingList::where('alumni_id', $id)->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Alumni has been approved',
+        ]);
     }
 }
