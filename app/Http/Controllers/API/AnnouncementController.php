@@ -54,7 +54,7 @@ class AnnouncementController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Announcement has been added',
-            'data' => $ann
+            'data' => new AnnouncementResource($ann)
         ], 201);
     }
     public function show($announcement)

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AdminResource;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class AdminController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Data Admin',
-            'data' => $admin
+            'data' => AdminResource::collection($admin)
         ],200);
     }
 
@@ -84,7 +85,7 @@ class AdminController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Admin has been added',
-            'data' => $admin
+            'data' => new AdminResource($admin)
         ], 201);
     }
 
@@ -101,7 +102,7 @@ class AdminController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Admin found',
-                'data' => $admin
+                'data' => new AdminResource($admin)
             ]);
         }catch(Exception){
             return response()->json([
@@ -172,7 +173,7 @@ class AdminController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Admin has been updated',
-                'data' => $admin
+                'data' => new AdminResource($admin)
             ], 201);
         }catch(Exception){
             return response()->json([
