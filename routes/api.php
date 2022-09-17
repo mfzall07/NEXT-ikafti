@@ -32,6 +32,7 @@ Route::prefix('v1')->group(function(){
     Route::apiResource('alumni', AlumniController::class)->only('index', 'show');
     Route::get('waiting-list', [AlumniController::class, 'waitingList']);
     Route::post('approve-alumni/{id}', [AlumniController::class, 'approve']);
+    Route::post('decline-alumni/{id}', [AlumniController::class, 'decline']);
     Route::apiResource('information', InformationController::class)->only('index', 'show');
     Route::middleware('auth:sanctum')->group(function(){
         Route::post('logout', [AuthController::class, 'logout']);

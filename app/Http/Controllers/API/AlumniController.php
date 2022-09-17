@@ -19,9 +19,9 @@ class AlumniController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $alumni = Alumni::doesntHave('waiting_list')->latest()->take(4)->get();
+        $alumni = Alumni::doesntHave('waiting_list')->latest()->take($request->limit ?? 0)->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Alumni',
@@ -287,6 +287,15 @@ class AlumniController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Alumni has been approved',
+        ]);
+    }
+    public function decline($id)
+    {
+        WaitingList::where('alumni_id', $id)->delete();
+        Alumni::find($id)->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Alumni has been declined',
         ]);
     }
 }
