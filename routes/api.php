@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AdminController;
+use App\Http\Controllers\API\AgendaController;
 use App\Http\Controllers\API\AlumniController;
 use App\Http\Controllers\API\AnnouncementController;
 use App\Http\Controllers\API\AuthController;
@@ -31,6 +32,7 @@ Route::prefix('v1')->group(function(){
     Route::apiResource('job', JobController::class)->only('index', 'show');
     Route::apiResource('alumni', AlumniController::class)->only('index', 'show');
     Route::apiResource('information', InformationController::class)->only('index', 'show');
+    Route::apiResource('agenda', AgendaController::class)->only('index', 'show');
     Route::middleware('auth:sanctum')->group(function(){
         Route::get('waiting-list', [AlumniController::class, 'waitingList']);
         Route::post('approve-alumni/{id}', [AlumniController::class, 'approve']);
