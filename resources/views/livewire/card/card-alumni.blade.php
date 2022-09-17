@@ -29,10 +29,10 @@
                         <i class="col-span-2 mx-auto fa-solid fa-user-tie"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->name ?? '-' }}</h1>
                     </div>
-                    <div class="grid grid-cols-12 gap-5">
+                    {{-- <div class="grid grid-cols-12 gap-5">
                         <i class="col-span-2 mx-auto fa-solid fa-map-location-dot"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->address ?? '-' }}</h1>
-                    </div>
+                    </div> --}}
                     <div class="grid grid-cols-12 gap-5">
                         <i class="col-span-2 mx-auto fa-solid fa-house-circle-check"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->domicile ?? '-' }}</h1>
@@ -41,18 +41,18 @@
                         <i class="col-span-2 mx-auto fa-solid fa-envelope"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->email ?? '-' }}</h1>
                     </div>
-                    <div class="grid grid-cols-12 gap-5">
+                    {{-- <div class="grid grid-cols-12 gap-5">
                         <i class="col-span-2 mx-auto fa-solid fa-square-phone"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->phone ?? '-' }}</h1>
-                    </div>
+                    </div> --}}
                     <div class="grid grid-cols-12 gap-5">
                         <i class="col-span-2 mx-auto fa-solid fa-users"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->generation ?? '-' }}</h1>
                     </div>
-                    <div class="grid grid-cols-12 gap-5">
+                    {{-- <div class="grid grid-cols-12 gap-5">
                         <i class="col-span-2 mx-auto fa-solid fa-building"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->company ?? '-' }}</h1>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
