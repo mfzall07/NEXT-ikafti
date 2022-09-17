@@ -29,6 +29,15 @@ class AlumniController extends Controller
         ],200);
     }
 
+    public function alumniList()
+    {
+        $wl = Alumni::has('waiting_list')->latest()->take(4)->get();
+        return response()->json([
+            'success' => true,
+            'message' => 'Data Waiting List',
+            'data' => AlumniResource::collection($wl)
+        ],200);
+    }
     /**
      * Store a newly created resource in storage.
      *
