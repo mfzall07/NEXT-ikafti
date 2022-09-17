@@ -64,7 +64,7 @@ class AnnouncementController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Announcement found',
-                'data' => $ann
+                'data' => new AnnouncementResource($ann)
             ]);
         }catch(Exception){
             return response()->json([
@@ -110,7 +110,7 @@ class AnnouncementController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Announcement has been updated',
-                'data' => $ann
+                'data' => new AnnouncementResource($ann)
             ], 201);
         }catch(Exception){
             return response()->json([
