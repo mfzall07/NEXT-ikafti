@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AnnouncementResource;
 use App\Models\Announcement;
 use Exception;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class AnnouncementController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Data Announcement',
-            'data' => $ann
+            'data' => AnnouncementResource::collection($ann)
         ],200);
     }
     public function store(Request $request)

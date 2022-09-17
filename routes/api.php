@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AdminController;
 use App\Http\Controllers\API\AlumniController;
 use App\Http\Controllers\API\AnnouncementController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\InformationController;
 use App\Http\Controllers\API\JobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,15 +27,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function(){
     Route::post('login', [AuthController::class, 'login']);
     Route::apiResource('announcement', AnnouncementController::class)->only('index', 'show');
-    Route::apiResource('admin', AdminController::class)->only('index', 'show');
+    Route::post('alumni-register', [AlumniController::class, 'alumniRegister']);
     Route::apiResource('job', JobController::class)->only('index', 'show');
     Route::apiResource('alumni', AlumniController::class)->only('index', 'show');
+    Route::apiResource('information', InformationController::class)->only('index', 'show');
     Route::middleware('auth:sanctum')->group(function(){
         Route::post('logout', [AuthController::class, 'logout']);
         Route::apiResource('announcement', AnnouncementController::class)->except('index', 'show');
-        Route::apiResource('admin', AdminController::class)->except('index', 'show');
+        Route::apiResource('admin', AdminController::class);
         Route::apiResource('job', JobController::class)->except('index', 'show');
         Route::apiResource('alumni', AlumniController::class)->except('index', 'show');
-        Route::post('alumni-register', [AlumniController::class, 'alumniRegister']);
     });
 });
