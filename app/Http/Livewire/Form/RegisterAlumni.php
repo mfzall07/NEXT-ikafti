@@ -11,9 +11,10 @@ class RegisterAlumni extends Component
 {
     use WithFileUploads;
     public $name, $image, $proof, $company, $address, $domicile, $email, $phone, $birth_place, $birth_date, $generation, $program_studi;
+    public $hasJob = false;
     protected $rules = [
         'name' => 'required',
-        'company' =>'required',
+        'company' =>'required_if:hasJob,==,true',
         'address' =>'required',
         'domicile' =>'required',
         'email' =>'required|email',
@@ -23,7 +24,10 @@ class RegisterAlumni extends Component
         'generation' =>'required',
         'program_studi' =>'required',
         'image' => 'nullable|image',
-        'proof' =>'required|mimes:png,jpg,jpeg,pdf'
+        'proof' =>'nullable|mimes:png,jpg,jpeg,pdf'
+    ];
+    protected $messages = [
+        'company.required_if' => 'The company field is required when checkbox checked.'
     ];
     public function render()
     {
@@ -45,7 +49,11 @@ class RegisterAlumni extends Component
         }else{
             $path = $this->image->store('public/image');
         }
-        $proof_path = $this->proof->store('public/proof');
+        if(!$this->proof){
+            $proof_path = null;
+        }else{
+            $proof_path = $this->proof->store('public/proof');
+        }
         $validated['proof'] = $proof_path;
         $validated['image'] = $path;
         $alumni = Alumni::create($validated);
