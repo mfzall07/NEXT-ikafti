@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AlumniResource;
 use App\Models\Alumni;
 use App\Models\WaitingList;
 use Exception;
@@ -20,11 +21,11 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        $alumni = Alumni::latest()->take(4)->get();
+        $alumni = Alumni::doesntHave('waiting_list')->latest()->take(4)->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Alumni',
-            'data' => $alumni
+            'data' => AlumniResource::collection($alumni)
         ],200);
     }
 
@@ -87,7 +88,7 @@ class AlumniController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Alumni has been added',
-            'data' => $alumni
+            'data' => new AlumniResource($alumni)
         ], 201);
     }
     public function alumniRegister(Request $request)
@@ -146,7 +147,7 @@ class AlumniController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Register alumni success',
-            'data' => $alumni
+            'data' => new AlumniResource($alumni)
         ], 201);
     }
 
@@ -163,7 +164,7 @@ class AlumniController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Alumni found',
-                'data' => $alumni
+                'data' => new AlumniResource($alumni)
             ]);
         }catch(Exception){
             return response()->json([
@@ -238,7 +239,7 @@ class AlumniController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Alumni has been updated',
-                'data' => $alumni
+                'data' => new AlumniResource($alumni)
             ], 201);
         }catch(Exception){
             return response()->json([
