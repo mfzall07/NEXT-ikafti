@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\JobResource;
 use App\Models\Job;
 use Exception;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class JobController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Data Job',
-            'data' => $job
+            'data' => JobResource::collection($job)
         ],200);
     }
 
@@ -70,7 +71,7 @@ class JobController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Job has been added',
-            'data' => $job
+            'data' => new JobResource($job)
         ], 201);
     }
 
@@ -87,7 +88,7 @@ class JobController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Job found',
-                'data' => $job
+                'data' => new JobResource($job)
             ]);
         }catch(Exception){
             return response()->json([
@@ -146,7 +147,7 @@ class JobController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Job has been updated',
-                'data' => $job
+                'data' => new JobResource($job)
             ], 201);
         }catch(Exception){
             return response()->json([
