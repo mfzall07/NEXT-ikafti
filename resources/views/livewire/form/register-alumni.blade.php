@@ -60,7 +60,7 @@
                 @error('phone') <span class="text-red-500">{{ $message }}</span> @enderror
             </div>
             </div>
-            <div class="md:gap-6">
+            <div class="md:gap-6 mb-6">
                 <div class="flex items-center gap-4">
                     <input type="checkbox" name="" id="hasJob" wire:model="hasJob">
                     <label for="hasJob">List Your Company</label>

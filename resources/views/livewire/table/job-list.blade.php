@@ -55,7 +55,7 @@
                             <td class="py-4 px-6">
                                 <div class="flex flex-row items-center gap-2">
                                     <img src="{{ url( $job->image != null ? str_replace('public', 'storage',$job->image) : 'assets/images/profile.jpg') }}" class=" w-8 h-8 rounded bg-white shadow-xl border object-cover" alt="">
-                                    <h1 class="font-bold text-black runcate">{{ $job->company_name }}</h1>
+                                    <h1 class="font-bold text-black truncate">{{ $job->company_name }}</h1>
                                 </div>
                             </td>
                             <td class="py-4 px-6">

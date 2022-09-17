@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-5">
     @forelse ($jobs as $job)
         <div class="bg-white rounded-lg shadow-md border">
-            <div class="flex flex-col laptop:flex-row items-center gap-4">
+            <div class="flex flex-col laptop:flex-row laptop:items-center laptop:gap-4">
                 {{-- <div style="background: url({{ url( $job->image != null ? str_replace('public', 'storage',$job->image) : 'assets/images/exampleContent.jpg')}})" class="w-96 h-56 bg-center bg-cover object-cover"></div> --}}
                 <img src={{ url( $job->image != null ? str_replace('public', 'storage',$job->image) : 'assets/images/exampleContent.jpg')}} class="w-96 h-56 bg-center bg-cover object-cover rounded-l-lg">
                 <div class="p-5">
