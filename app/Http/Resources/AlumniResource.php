@@ -28,6 +28,8 @@ class AlumniResource extends JsonResource
             "program_studi"=> $this->program_studi,
             "image"=> $this->image == null ? url('/assets/images/exampleContent.jpg') : url(str_replace('public', 'storage',$this->image)),
             "proof"=> $this->proof == null ? url('/assets/images/exampleContent.jpg') : url(str_replace('public', 'storage',$this->proof)),
+            "created_at" => $this->created_at,
+            "updated_at" => $this->updated_at
         ];
     }
 }

@@ -21,6 +21,8 @@ class AgendaResource extends JsonResource
             "category"=> $this->category,
             "thumbnail"=> $this->thumbnail == null ? url('/assets/images/exampleContent.jpg') : url(str_replace('public', 'storage',$this->thumbnail)),
             "body"=> $this->body,
+            "created_at" => $this->created_at,
+            "updated_at" => $this->updated_at
         ];
     }
 }

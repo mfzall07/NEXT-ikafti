@@ -24,6 +24,8 @@ class JobResource extends JsonResource
             "title"=> $this->title,
             "description"=> $this->description,
             "image"=> $this->image == null ? url('/assets/images/exampleContent.jpg') : url(str_replace('public', 'storage',$this->image)),
+            "created_at" => $this->created_at,
+            "updated_at" => $this->updated_at
         ];
     }
 }

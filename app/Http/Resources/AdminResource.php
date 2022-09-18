@@ -21,7 +21,9 @@ class AdminResource extends JsonResource
             "username"=> $this->username,
             "email"=> $this->email,
             "image"=> $this->image == null ? url('/assets/images/exampleContent.jpg') : url(str_replace('public', 'storage',$this->image)),
-            "phone"=> $this->phone
+            "phone"=> $this->phone,
+            "created_at" => $this->created_at,
+            "updated_at" => $this->updated_at
         ];
     }
 }
