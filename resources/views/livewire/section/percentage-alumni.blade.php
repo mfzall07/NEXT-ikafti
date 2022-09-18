@@ -22,26 +22,26 @@
         <div class="mt-5 block laptop:hidden">
             <div class="mb-5">
                 <div class="text-base font-medium dark:text-white mb-2">1987-1996</div>
-                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-                    <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: {{ round($total ? ($chart1 / 2900) * 100 : 0, 2)}}%"></div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4">
+                    <div class="bg-blue-600 h-1.5 rounded-full" style="width: {{ round($total ? ($chart1 / 2900) * 100 : 0, 2)}}%"></div>
                 </div>
             </div>
             <div class="mb-5">
                 <div class="text-base font-medium dark:text-white mb-2">1997-2006</div>
-                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-                    <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: {{ round($total ? ($chart2 / 1900) * 100 : 0, 2)}}%"></div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4">
+                    <div class="bg-blue-600 h-1.5 rounded-full" style="width: {{ round($total ? ($chart2 / 1900) * 100 : 0, 2)}}%"></div>
                 </div>
             </div>
             <div class="mb-5">
                 <div class="text-base font-medium dark:text-white mb-2">2007-2016</div>
-                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-                    <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: {{ round($total ? ($chart3 / 3250) * 100 : 0, 2)}}%"></div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4">
+                    <div class="bg-blue-600 h-1.5 rounded-full" style="width: {{ round($total ? ($chart3 / 3250) * 100 : 0, 2)}}%"></div>
                 </div>
             </div>
             <div class="mb-5">
                 <div class="text-base font-medium dark:text-white mb-2">2017-2018</div>
-                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-                    <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: {{ round($total ? ($chart4 / 1000) * 100 : 0, 2)}}%"></div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4">
+                    <div class="bg-blue-600 h-1.5 rounded-full" style="width: {{ round($total ? ($chart4 / 1000) * 100 : 0, 2)}}%"></div>
                 </div>
             </div>
         </div>
