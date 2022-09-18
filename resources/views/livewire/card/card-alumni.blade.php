@@ -37,9 +37,13 @@
                         <i class="col-span-2 mx-auto fa-solid fa-house-circle-check"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->domicile ?? '-' }}</h1>
                     </div>
-                    <div class="grid grid-cols-12 gap-5">
+                    {{-- <div class="grid grid-cols-12 gap-5">
                         <i class="col-span-2 mx-auto fa-solid fa-envelope"></i>
                         <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->email ?? '-' }}</h1>
+                    </div> --}}
+                    <div class="grid grid-cols-12 gap-5">
+                        <i class="col-span-2 mx-auto fa-solid fa-book"></i>
+                        <h1 class="col-span-10 text-sm font-semibold text-gray-400">{{ $alumni->program_studi ?? '-' }}</h1>
                     </div>
                     {{-- <div class="grid grid-cols-12 gap-5">
                         <i class="col-span-2 mx-auto fa-solid fa-square-phone"></i>
