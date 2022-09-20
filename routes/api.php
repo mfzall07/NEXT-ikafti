@@ -33,6 +33,7 @@ Route::prefix('v1')->group(function(){
     Route::apiResource('alumni', AlumniController::class)->only('index', 'show');
     Route::apiResource('information', InformationController::class)->only('index', 'show');
     Route::apiResource('agenda', AgendaController::class)->only('index', 'show');
+    Route::get('percentage-alumni', [AlumniController::class, 'percentage']);
     Route::middleware('auth:sanctum')->group(function(){
         Route::get('waiting-list', [AlumniController::class, 'waitingList']);
         Route::post('approve-alumni/{id}', [AlumniController::class, 'approve']);
