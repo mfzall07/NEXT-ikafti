@@ -15,7 +15,9 @@ class AnnouncementController extends Controller
 {
     public function index()
     {
-        $ann = Announcement::latest()->take(4)->get();
+        $ann = Announcement::latest()->when(request('limit'),function ($q){
+            $q->take(request('limit'));
+        })->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Announcement',

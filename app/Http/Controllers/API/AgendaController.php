@@ -9,9 +9,12 @@ use Illuminate\Http\Request;
 
 class AgendaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $agenda = Content::where('category', 'Agenda')->latest()->take(4)->get();;
+        $agenda = Content::where('category', 'Agenda')->latest()
+            ->when(request('limit'),function ($q){
+                $q->take(request('limit'));
+            })->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Agenda',

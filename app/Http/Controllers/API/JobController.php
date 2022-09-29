@@ -20,7 +20,9 @@ class JobController extends Controller
      */
     public function index()
     {
-        $job = Job::latest()->take(4)->get();
+        $job = Job::latest()->when(request('limit'),function ($q){
+            $q->take(request('limit'));
+        })->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Job',
