@@ -20,7 +20,7 @@ class AgendaResource extends JsonResource
             "author"=> $this->author,
             "category"=> $this->category,
             "thumbnail"=> $this->thumbnail == null ? url('/assets/images/exampleContent.jpg') : url(str_replace('public', 'storage',$this->thumbnail)),
-            "body"=> $this->body,
+            "body"=> str_replace('/storage', url('storage'), $this->body),
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at
         ];
