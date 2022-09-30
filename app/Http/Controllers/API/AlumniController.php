@@ -305,10 +305,22 @@ class AlumniController extends Controller
         $chart3 = Alumni::whereBetween('generation', ['2007', '2016'])->count();
         $chart4 = Alumni::whereBetween('generation', ['2017', '2018'])->count();
 
-        $percentage1 = round(($chart1 / 2900) * 100, 2);
-        $percentage2 = round(($chart2 / 1900) * 100, 2);
-        $percentage3 = round(($chart3 / 3250) * 100, 2);
-        $percentage4 = round(($chart4 / 1000) * 100, 2);
+        $percentage1 = [
+            'bar1' => round(($chart1 / 2900) * 100, 2),
+            'bar2' => round(($chart1 / 2900), 4)
+        ];
+        $percentage2 = [
+            'bar1' => round(($chart2 / 2900) * 100, 2),
+            'bar2' => round(($chart2 / 2900), 4)
+        ];
+        $percentage3 = [
+            'bar1' => round(($chart3 / 2900) * 100, 2),
+            'bar2' => round(($chart3 / 2900), 4)
+        ];
+        $percentage4 = [
+            'bar1' => round(($chart4 / 2900) * 100, 2),
+            'bar2' => round(($chart4 / 2900), 4)
+        ];
         return response()->json([
             'success' => true,
             'message' => 'Percentage Alumni',
