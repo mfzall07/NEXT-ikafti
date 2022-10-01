@@ -21,7 +21,7 @@ class AlumniController extends Controller
      */
     public function index(Request $request)
     {
-        $alumni = Alumni::doesntHave('waiting_list')->latest()->take($request->limit ?? 0)->get();
+        $alumni = Alumni::doesntHave('waiting_list')->latest()->get();
         return response()->json([
             'success' => true,
             'message' => 'Data Alumni',
