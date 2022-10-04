@@ -1,4 +1,4 @@
-<div>
+<div class="hidden laptop:block">
     <div class="py-3 border-t-2 w-full">
         <h1 class="text-xl font-bold text-black">Another Career</h1>
     </div>
