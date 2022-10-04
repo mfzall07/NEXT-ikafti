@@ -13,11 +13,11 @@
             <i class="fa-solid fa-location-dot absolute left-5 top-1.5 text-xl"></i>
         </div>
     </div>
-    <div class="flex flex-col laptop:grid grid-cols-12 items-center justify-between flex-wrap gap-5">
+    <div class="flex flex-col pb-5 laptop:grid grid-cols-12 items-center justify-between flex-wrap gap-5">
         @forelse ($alumnis as $alumni)
         <div class="bg-white rounded-xl border shadow-lg relative overflow-hidden w-full col-span-3">
-            <div class="h-24 w-24 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>
-            <div class="h-24 w-24 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>
+            <!--<div class="h-24 w-24 bg-red-300 absolute -bottom-12 -right-12 rounded-tr-full rounded-br-full rounded-bl-full z-20"></div>-->
+            <!--<div class="h-24 w-24 bg-red-400 absolute -bottom-10 -right-10 rounded-tr-full rounded-br-full rounded-bl-full z-10"></div>-->
             <div class="flex flex-col">
                 <div class="rounded-lg shadow-xl">
                     <div style="background-image: url({{ url( $alumni->image != null ? str_replace('public', 'storage',$alumni->image) : 'assets/images/profile.jpg')}})" class="bg-cover bg-center w-full h-36 flex items-center justify-center object-cover">

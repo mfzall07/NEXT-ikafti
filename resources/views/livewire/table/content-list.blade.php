@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="overflow-auto h-[34vh] laptop:h-[35vh]">
+        <div class="overflow-auto pb-5">
             <table class="w-full text-sm text-left text-gray-500" id="ContentList">
                 <thead class="text-xs text-gray-700 uppercase bg-white">
                     <tr>
@@ -55,7 +55,7 @@
                                 <h1 class="font-semibold truncate">{{ $loop->iteration + $contents->firstItem() - 1 }}</h1>
                             </td>
                             <td class="py-4 px-6">
-                                <h1 class="truncate font-bold text-black">{{ $content->title }}</h1>
+                                <h1 class="truncate font-bold text-black" style="width: 180px;">{{ $content->title }}</h1>
                             </td>
                             <td class="py-4 px-6">
                                 <h1 class="truncate font-semibol">{{ $content->category }}</h1>

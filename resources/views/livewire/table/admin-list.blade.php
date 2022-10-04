@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="overflow-auto h-[34vh] laptop:h-[45vh]">
+        <div class="overflow-auto pb-5">
             <table class="w-full text-sm text-left text-gray-500" id="AdminList">
                 <thead class="text-xs text-gray-700 uppercase bg-white">
                     <tr>

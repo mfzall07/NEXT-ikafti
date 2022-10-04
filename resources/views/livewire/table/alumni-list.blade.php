@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="overflow-auto h-[34vh] laptop:h-[45vh]">
+        <div class="overflow-auto pb-5">
             <table class="w-full text-sm text-left text-gray-500" id="AlumniList">
                 <thead class="text-xs text-gray-700 uppercase bg-white">
                     <tr>
@@ -64,7 +64,7 @@
                             <td class="py-4 px-6">
                                 <div class="flex flex-row items-center gap-2">
                                     <img src="{{ url( $alumni->image != null ? str_replace('public', 'storage',$alumni->image) : 'assets/images/profile.jpg') }}" class=" w-8 h-8 rounded bg-white shadow-xl border object-cover" alt="">
-                                    <h1 class="font-bold text-black ">{{ $alumni->name }}</h1>
+                                    <h1 class="font-bold text-black truncate" style="width: 80px;">{{ $alumni->name }}</h1>
                                 </div>
                             </td>
                             <td class="py-4 px-6">
