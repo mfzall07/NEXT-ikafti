@@ -13,7 +13,7 @@
                 </div>
                 <span class="text-gray-400 font-semibold text-sm">{{ $announcements->total() }} Announcement</span>
             </div>
-            <div class="flex items-center laptop:w-auto w-full">
+            {{-- <div class="flex items-center laptop:w-auto w-full">
                 <label for="searchAnnouncementList" class="sr-only">Search</label>
                 <div class="flex items-center gap-5">
                     <div class="relative w-full">
@@ -23,7 +23,7 @@
                         <input type="text" id="searchAnnouncementList" wire:model.debounce.500ms="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 " placeholder="Search" required>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="overflow-auto pb-5">
             <table class="w-full text-sm text-left text-gray-500" id="AnnouncementList">

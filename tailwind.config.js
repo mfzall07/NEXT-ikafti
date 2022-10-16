@@ -66,5 +66,6 @@ module.exports = {
     require('flowbite/plugin'),
     require('@tailwindcss/line-clamp'),
     require("daisyui"),
+    require('tailwind-scrollbar-hide'),
   ],
 }

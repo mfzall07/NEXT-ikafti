@@ -19,6 +19,7 @@
         "ckeditor4": "^4.19.1",
         "daisyui": "^2.27.0",
         "flowbite": "^1.5.2",
-        "tailwind-editor": "^0.1.62"
+        "tailwind-editor": "^0.1.62",
+        "tailwind-scrollbar-hide": "^1.1.7"
     }
 }

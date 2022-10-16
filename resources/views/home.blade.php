@@ -36,6 +36,24 @@
         <livewire:section.karir-dan-agenda>
     </section>
 
+    <section class="px-5 laptop:px-20 pt-10 pb-5">
+        <h1 class="font-bold text-3xl text-center text-black py-5">Our Partnership</h1>
+        <div class="grid grid-cols-12 gap-5">
+            <div class="w-full col-span-3">
+                <livewire:card.partnership>
+            </div>
+            <div class="w-full col-span-3">
+                <livewire:card.partnership>
+            </div>
+            <div class="w-full col-span-3">
+                <livewire:card.partnership>
+            </div>
+            <div class="w-full col-span-3">
+                <livewire:card.partnership>
+            </div>
+        </div>
+    </section>
+
     <section class="pt-10">
         <livewire:footer.footer>
     </section>

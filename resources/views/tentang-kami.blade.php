@@ -29,45 +29,31 @@
     <section class="px-5 laptop:px-20 pt-5">
         <div class="grid grid-cols-12">
             <div class="col-span-12 laptop:col-span-8 gap-5 order-2 laptop:order-1" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-                <h1 class="text-base laptop:text-2xl font-bold">IKAFTI (Ikatan Alumni Fakultas Teknik Industri)</h1>
-                <p class="text-justify text-sm laptop:text-base">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit numquam quae aspernatur adipisci ab? Ab, dolores! Blanditiis aut labore 
-                    perspiciatis sit vero mollitia aperiam facere! Aspernatur accusantium itaque sed dicta suscipit, eligendi fugiat incidunt dolores dignissimos 
-                    similique. Ipsa suscipit sunt nobis exercitationem doloremque voluptas molestiae quia ducimus repudiandae nostrum blanditiis tempore omnis, 
-                    commodi voluptatem debitis labore error mollitia iste sint quasi? Quae quasi atque sint ad numquam quidem voluptate distinctio illum, explicabo 
-                    cupiditate, unde dolore, deserunt harum consequuntur sapiente aliquam animi excepturi tempora omnis voluptatibus labore accusamus reprehenderit 
-                    culpa? Voluptatum quia recusandae accusantium explicabo officiis expedita nisi? Hic, quam sapiente rem assumenda culpa voluptate nobis nihil? 
-                    Molestias voluptatem aliquam, quos accusantium exercitationem at a possimus maxime minus aperiam. Voluptates minus a alias possimus deleniti 
-                    corrupti dolore aliquid quidem error repudiandae, velit excepturi atque et, quod molestias quam molestiae odit ipsa tenetur assumenda, esse 
-                    numquam animi ullam. Hic impedit quod similique delectus rerum rem? Eius unde autem dolore numquam! Vitae architecto nemo ullam? Et, delectus? 
-                    Corporis tempora blanditiis voluptatum veniam perferendis error sunt pariatur exercitationem debitis veritatis. Iste itaque vel rem suscipit eum 
-                    numquam, necessitatibus error deserunt! Possimus asperiores ducimus labore sequi nemo! Unde officia eaque earum magni nisi harum velit similique 
-                    sapiente quis, voluptas voluptatibus, odit delectus voluptate hic, maxime atque asperiores fugiat! Nisi accusamus aspernatur voluptatum, 
-                    necessitatibus excepturi magni labore, ducimus omnis, nostrum reprehenderit saepe. Numquam blanditiis neque sequi doloremque facilis provident 
-                    omnis molestiae rerum cumque fugiat enim vitae eos repellat, maxime temporibus eveniet harum aliquid iste molestias? Saepe modi deleniti nisi 
-                    adipisci quod nihil provident itaque, amet nobis quaerat velit incidunt, numquam odio temporibus voluptate rerum delectus? Eveniet corporis sit 
-                    placeat voluptas alias, consectetur unde illo architecto temporibus a odit wire natus quos id pariatur accusantium earum dignissimos voluptatem, 
-                    optio magni nemo sequi ducimus. Laborum autem repellat nostrum deserunt?
-                </p>
+                <h1 class="text-base laptop:text-3xl font-bold text-black">IKAFTI (Ikatan Alumni Fakultas Teknik Industri)</h1>
+                <div class="py-5 space-y-5">
+                    <p class="text-justify text-sm laptop:text-base text-black">
+                        Sejarah terbentuknya IKA FTI UMI, berdasar dari keingin bersama untuk menghimpun para alumni-alumni yang telah menyelesaikan Studi di fakultas Teknologi Industri Universitas Muslim Indonesia. 
+                    </p>
+                    <p class="text-justify text-sm laptop:text-base text-black">
+                        Pada tahun 1994 terbentuk lah IKA FTI UMI, yang dimana telah dselengarakan dengan cara Musyawarah mufakat & terpilihlah Ir. Larisang selaku ketua umum pertama ika fti umi dengan masa kepengurusan 1994-1996. lalu dilanjutkan kembali oleh Ir. Wiyono sebagai ketua umum dengan masa kepengurusan Pada tahun 1996-1998, seiring berjalannya waktu kepengurusan ika fti umi sempat vakum sementara, lalu diangkat lah Ir. Suradi sebagai pejabat sementara ketua umum ika fti umi untuk kurung waktu yang tidak ditentukan. Lalu pada tahun 2017 bersamaan dengan diselengarakannya Silatnas IKA FTI UMI, digelar lah Musyawarah ke 2 IKA FTI UMI. Yg mn mendaulat Ir. Fahrudin Wahid sebagai ketua umum ika fti umi dengan masa periode 2017-2021. Lalu pada tahun 2022 terselengarahlah Musyawarah yg ke III dimana terpilihlah Ir Amran Wahid sbg ketua umum ika fti umi periode 2022-2026.
+                    </p>
+                </div>
             </div>
             <div class="col-span-12 laptop:col-span-4 m-auto order-1 laptop:order-2 py-10 laptop:py-0" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-                <img src="../assets/images/logo/IkaftiBlack.png" class="w-56 self-center" alt="">
+                <img src="../assets/images/logo/IkaftiBlack.png" class="w-96 self-center" alt="">
             </div>
         </div>
     </section>
     
     <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
-            <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
-            <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
-            <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
-            <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
-            <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
-            <img src="../assets/images/header/banner1.jpg" class="w-full rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-2" alt="">
+            <img src="../assets/images/about/about1.jpeg" class="rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-4 w-full h-full" alt="">
+            <img src="../assets/images/about/about2.jpeg" class="rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-4 w-full h-full" alt="">
+            <img src="../assets/images/about/about3.jpeg" class="rounded-xl shadow-lg object-cover col-span-12 laptop:col-span-4 w-full h-full" alt="">
         </div>
     </section>
 
-    <section class="pt-10">
+    <section class="pt-10 fixed-bottom">
         <livewire:footer.footer>
     </section>
 

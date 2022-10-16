@@ -60,9 +60,16 @@
             </div>
         </div>
     </section>
-
-    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
-        <livewire:table.announcement-banner>
+    
+    <section class="px-5 laptop:px-20 pt-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <div class="grid grid-cols-12 gap-5">
+            <div class="col-span-12 laptop:col-span-6">
+                <livewire:table.announcement-banner>
+            </div>
+            <div class="col-span-12 laptop:col-span-6">
+                <livewire:table.partnership>
+            </div>
+        </div>
     </section>
 
     <section class="pt-10">
@@ -75,10 +82,12 @@
     <livewire:modal.add-alumni>
     <livewire:modal.add-job>
     <livewire:modal.add-announcement>
+    <livewire:modal.add-partnership>
     <livewire:modal.edit-admin>
     <livewire:modal.edit-alumni>
     <livewire:modal.edit-job>
     <livewire:modal.edit-announcement>
+    <livewire:modal.edit-partnership>
     <livewire:modal.accept>
     <livewire:modal.decline>
     <livewire:modal.delete>
