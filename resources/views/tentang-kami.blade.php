@@ -7,6 +7,7 @@
     
     <title>IKAFTI</title>
     
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="../../../assets/images/logo/favicon.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>

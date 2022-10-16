@@ -7,6 +7,7 @@
 
     <title>IKAFTI</title>
 
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="../../assets/images/logo/favicon.png">
     <script src="https://kit.fontawesome.com/4096ccc916.js" crossorigin="anonymous"></script>
 
     @vite('resources/css/app.css')
