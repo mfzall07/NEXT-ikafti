@@ -1,14 +1,15 @@
 <div>
+    <button data-modal-toggle="add-partnership" modal-add-partnership hidden></button>
     <div class="relative bg-white border shadow-lg p-5 rounded-xl overflow-hidden">
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
             <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
                 <div class="flex items-center gap-4">
                     <h1 class="font-bold text-xl text-black">Partnership</h1>
-                    <button type="button" data-modal-toggle='add-partnership'>
+                    <button type="button" wire:click="$emit('add-partnership')">
                         <i class="fa-solid fa-circle-plus mt-1"></i>
                     </button>
                 </div>
-                <span class="text-gray-400 font-semibold text-sm">10 Partnerhip</span>
+                <span class="text-gray-400 font-semibold text-sm">{{ $partnerships->total() }} Partnerhip</span>
             </div>
         </div>
         <div class="overflow-auto pb-5">
@@ -29,12 +30,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse($partnerships as $p)
                     <tr class="bg-white border-b">
                         <td class="py-4 px-6">
-                            <h1 class="font-semibold truncate">1</h1>
+                            <h1 class="font-semibold truncate">{{ $loop->iteration + $partnerships->firstItem() - 1}}</h1>
                         </td>
                         <td class="py-4 px-6">
-                            <a href="#" class="font-bold text-black line-clamp-1">Title</a>
+                            <a href="#" class="font-bold text-black line-clamp-1">{{ $p->title }}</a>
                         </td>
                         <td class="py-4 px-6">
                             <div class="flex items-center gap-4">
@@ -56,12 +58,13 @@
                             </div>
                         </td>
                     </tr>
-                    {{-- @empty
+                    @empty
                     <tr class="bg-white border-b">
-                        <td class="py-4 px-6" colspan="4">
+                        <td class="py-4 px-6" colspan="3">
                             <h1 class="font-semibold truncate text-center">No Data Available</h1>
                         </td>
-                    </tr> --}}
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

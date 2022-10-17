@@ -61,7 +61,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="px-5 laptop:px-20 pt-5" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 laptop:col-span-6">
@@ -223,6 +223,14 @@
         });
         window.livewire.on('resultChangePassword', function(){
             $('[modal-change-password]').trigger('click');
+        });
+    </script>
+    <script>
+        window.livewire.on('add-partnership', function(){
+            $('[modal-add-partnership]').trigger('click');
+        });
+        window.livewire.on('partnershipStored', function() {
+            $('[modal-add-partnership]').trigger('click');
         });
     </script>
     <script>

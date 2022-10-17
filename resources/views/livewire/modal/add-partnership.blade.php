@@ -15,15 +15,15 @@
                             <div class="bg-gray-200 rounded-full shadow-xl w-full" x-data="showImage()">
                                 <div class="flex items-center justify-center w-full ">
                                     <label class="flex justify-center items-center relative w-full h-32 shadow-lg cursor-pointer hover:text-blue-500">
-                                        {{-- @if ($image)
-                                            @if($errors->has('image')) --}}
+                                        @if ($image)
+                                            @if($errors->has('image'))
                                                 <img src="{{ url('assets/images/profile.jpg') }}" id="preview" class="absolute w-full h-32 object-cover brightness-75">
-                                            {{-- @else
+                                            @else
                                             <img src="{{ $image->temporaryUrl() }}" id="preview" class="absolute w-full h-32 object-cover brightness-75">
                                             @endif
-                                        @else --}}
+                                        @else
                                             <img src="{{ url('assets/images/profile.jpg') }}" id="preview" class="absolute w-full h-32 object-cover brightness-75">
-                                        {{-- @endif --}}
+                                        @endif
                                         <div class="absolute bg-white text-blue-500 hover:text-blue-600 w-12 h-12 text-xl rounded-full flex items-center justify-center"><i class="fa-solid fa-user-pen"></i></div>
                                         <input type="file" wire:model="image" class="opacity-0" accept="image/*" />
                                     </label>

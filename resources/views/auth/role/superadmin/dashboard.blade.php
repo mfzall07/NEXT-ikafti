@@ -233,6 +233,14 @@
         });
     </script>
     <script>
+        window.livewire.on('add-partnership', function(){
+            $('[modal-add-partnership]').trigger('click');
+        });
+        window.livewire.on('partnershipStored', function() {
+            $('[modal-add-partnership]').trigger('click');
+        });
+    </script>
+    <script>
         window.addEventListener('alert', event => {
             toastr[event.detail.type](event.detail.message,
             event.detail.title ?? ''), toastr.options = {
