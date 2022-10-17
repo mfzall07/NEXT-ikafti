@@ -245,6 +245,12 @@
         window.livewire.on('partnershipEdited', function(){
             $('[modal-edit-partnership]').trigger('click');
         });
+        window.livewire.on('delete-partnership', function(){
+            $('[modal-delete-partnership]').trigger('click');
+        });
+        window.livewire.on('partnershipDeleted', function(){
+            $('[modal-delete-partnership]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {

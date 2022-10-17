@@ -6,6 +6,7 @@ use App\Models\Alumni;
 use App\Models\Announcement;
 use App\Models\Content;
 use App\Models\Job;
+use App\Models\Partnership;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -18,7 +19,8 @@ class Delete extends Component
         'delete-alumni' => 'deleteAlumni',
         'delete-job' => 'deleteJob',
         'delete-announcement' => 'deleteAnnouncement',
-        'delete-content' => 'deleteContent'
+        'delete-content' => 'deleteContent',
+        'delete-partnership' => 'deletePartnership'
     ];
     public function render()
     {
@@ -49,8 +51,14 @@ class Delete extends Component
         $this->deletedId = $id;
         $this->entity = 'content';
     }
+    public function deletePartnership($id)
+    {
+        $this->deletedId = $id;
+        $this->entity = 'partnership';
+    }
     public function confirm()
     {
+        // dd($this->all());
         if($this->entity == 'admin'){
             $user = User::findOrFail($this->deletedId);
             if($user->image){
@@ -111,6 +119,17 @@ class Delete extends Component
             $this->dispatchBrowserEvent('alert',[
                 'type'=>'success',
                 'message'=>"Content deleted successfully"
+            ]);
+        }elseif($this->entity == 'partnership'){
+            $partnership = Partnership::findOrFail($this->deletedId);
+            if($partnership->image){
+                Storage::disk('public')->delete(str_replace('public/', '', $partnership->image));
+            }
+            $partnership->delete();
+            $this->emit('partnershipDeleted');
+            $this->dispatchBrowserEvent('alert',[
+                'type'=>'success',
+                'message'=>"Partnership deleted successfully"
             ]);
         }
     }

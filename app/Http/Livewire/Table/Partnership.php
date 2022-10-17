@@ -11,6 +11,7 @@ class Partnership extends Component
     protected $listeners = [
         'partnershipStored' => '$refresh',
         'partnershipEdited' => '$refresh',
+        'partnershipDeleted' => '$refresh',
     ];
     public function render()
     {
