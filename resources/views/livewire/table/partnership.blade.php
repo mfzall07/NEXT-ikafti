@@ -1,5 +1,6 @@
 <div>
     <button data-modal-toggle="add-partnership" modal-add-partnership hidden></button>
+    <button data-tooltip-target="edit_partner" data-modal-toggle="edit-partnership" modal-edit-partnership hidden></button>
     <div class="relative bg-white border shadow-lg p-5 rounded-xl overflow-hidden">
         <div class="flex flex-col laptop:flex-row gap-4 laptop:items-center laptop:justify-between py-5">
             <div class="flex flex-row justify-between items-center laptop:items-start laptop:flex-col">
@@ -40,7 +41,7 @@
                         </td>
                         <td class="py-4 px-6">
                             <div class="flex items-center gap-4">
-                                <button type="button" data-modal-toggle="edit-partnership" class="w-7 h-7 flex items-center justify-center rounded-lg font-semibold text-white bg-green-400">
+                                <button type="button" wire:click="$emit('edit-partnership', {{ $p->id }})" class="w-7 h-7 flex items-center justify-center rounded-lg font-semibold text-white bg-green-400">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </button>
                                 <div id="edit_partner" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
@@ -68,6 +69,6 @@
                 </tbody>
             </table>
         </div>
-        {{-- {{ $announcements->onEachSide(1)->links('livewire.custom-pagination-links-view', ['pageName' => $announcements->getPageName()]) }} --}}
+        {{ $partnerships->onEachSide(1)->links('livewire.custom-pagination-links-view', ['pageName' => $partnerships->getPageName()]) }}
     </div>
 </div>

@@ -9,7 +9,8 @@ class Partnership extends Component
 {
     public $search = '';
     protected $listeners = [
-        'partnershipStored' => '$refresh'
+        'partnershipStored' => '$refresh',
+        'partnershipEdited' => '$refresh',
     ];
     public function render()
     {

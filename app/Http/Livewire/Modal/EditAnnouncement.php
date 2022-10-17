@@ -17,7 +17,10 @@ class EditAnnouncement extends Component
     protected $rules = [
         'title' => 'required',
         'description' => 'required',
-        'image' => 'nullable|image',
+        'image_temp' => 'nullable|image',
+    ];
+    protected $messages = [
+        'image_temp.image' => 'The image must be an image.'
     ];
     public function render()
     {

@@ -232,6 +232,12 @@
         window.livewire.on('partnershipStored', function() {
             $('[modal-add-partnership]').trigger('click');
         });
+        window.livewire.on('edit-partnership', function(){
+            $('[modal-edit-partnership]').trigger('click');
+        });
+        window.livewire.on('partnershipEdited', function(){
+            $('[modal-edit-partnership]').trigger('click');
+        });
     </script>
     <script>
         window.addEventListener('alert', event => {
