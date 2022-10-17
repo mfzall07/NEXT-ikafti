@@ -7,6 +7,7 @@ use App\Http\Controllers\API\AnnouncementController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\InformationController;
 use App\Http\Controllers\API\JobController;
+use App\Http\Controllers\API\PartnershipController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function(){
     Route::post('login', [AuthController::class, 'login']);
     Route::apiResource('announcement', AnnouncementController::class)->only('index', 'show');
+    Route::apiResource('partnership', PartnershipController::class)->only('index');
     Route::post('alumni-register', [AlumniController::class, 'alumniRegister']);
     Route::apiResource('job', JobController::class)->only('index', 'show');
     Route::apiResource('alumni', AlumniController::class)->only('index', 'show');
