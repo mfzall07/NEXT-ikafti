@@ -5,6 +5,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContentController;
+use App\Models\Partnership;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -20,7 +21,8 @@ use Illuminate\Support\Facades\Artisan;
 Route::group(['middleware' => 'guest'], function(){
 
     Route::get('/', function () {
-        return view('home');
+        $partnerships = Partnership::all();
+        return view('home', compact('partnerships'));
     })->name('home');
 
     Route::get('/ikafti/form-register', [AlumniController::class, 'alumniRegister'])->name('alumniRegister');
