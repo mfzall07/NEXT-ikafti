@@ -10,10 +10,13 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class="p-20">
-        <h1 class="text-white font-bold text-2xl text-center uppercase">Privacy Policy Ikafti UMI</h1>
+    <div class="px-80 py-20">
+        <img src="../../../assets/images/logo/IkaftiWhite.png" width="150" alt="">
         <br>
         <br>
+        <br>
+        <h1 class="text-white font-bold text-4xl">Privacy Policy</h1>
+        <h1 class="text-white text-xl">This Privacy Policy is effective from 10 October 2022</h1>
         <br>
         <br>
         <h1 class="text-white text-justify">
